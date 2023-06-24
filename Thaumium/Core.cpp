@@ -1,6 +1,5 @@
 #pragma once
 #include "pch.h"
-#include "TextChatHandler.h"
 #include "Core.h"
 
 void Core::Init()

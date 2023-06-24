@@ -75,6 +75,12 @@
     <ClInclude Include="NMS\GcNetworkManager.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
+    <ClInclude Include="FrontendOptions.h">
+      <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="switchtable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -91,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="Core.cpp">
       <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="FrontendOptions.cpp">
+      <Filter>Source Files\Modules</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

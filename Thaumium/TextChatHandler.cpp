@@ -22,7 +22,7 @@ void __fastcall TextChatHandler::ParseTextForCommandsHook(cGcTextChatInput* _thi
         {
             spdlog::warn("god I hate computers");
 
-            cGcApplication* gApplcation = GCAPPLICATION();
+            cGcApplication* gApplcation = GCAPPLICATION;
             cGcApplication::GetNetworkManager getNetworkManager = (cGcApplication::GetNetworkManager)OFFSET(0x1C2910);
             cGcNetworkManager* network = getNetworkManager(gApplcation);
             cGcTextChatManager* textChat = reinterpret_cast<cGcTextChatManager*>(network->mTextChatManager);
