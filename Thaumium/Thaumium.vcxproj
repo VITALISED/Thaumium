@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ChatCommand.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="FrontendOptions.h" />

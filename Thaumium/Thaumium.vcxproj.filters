@@ -19,12 +19,6 @@
     <Filter Include="Source Files\Modules">
       <UniqueIdentifier>{71023c46-3cbc-432b-89b1-7a152e23334a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Core">
-      <UniqueIdentifier>{2d15689e-56f4-4f73-83de-838c6f427176}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Core">
-      <UniqueIdentifier>{053d82ae-eba1-4799-b38e-3599499a23b7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\NMS">
       <UniqueIdentifier>{caf34234-6d8d-4445-a2f3-a562eda2ac1b}</UniqueIdentifier>
     </Filter>
@@ -54,9 +48,6 @@
     <ClInclude Include="util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
     <ClInclude Include="NMS\GcApplication.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
@@ -81,6 +72,12 @@
     <ClInclude Include="switchtable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -95,11 +92,11 @@
     <ClCompile Include="TextChatHandler.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Core.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
     <ClCompile Include="FrontendOptions.cpp">
       <Filter>Source Files\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

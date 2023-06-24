@@ -1,16 +1,17 @@
 #pragma once
 #include "GcNetworkMessageManager.h"
 
-class __declspec(align(16)) cGcNetworkManager
+#pragma pack(16)
+class cGcNetworkManager
 {
 public:
-	int* mpConnection;
+	uintptr_t mpConnection;
 	cGcNetworkMessageManager mMessageManager;
 	char mPlayerManager[0x5B70];
-	int* mpMatchmaking;
+	uintptr_t mpMatchmaking;
 	char mInteractionManager[0xA48];
 	char mMonumentManager[0x468];
-	int* mpVoiceChat;
+	uintptr_t mpVoiceChat;
 	char mTextChatManager[0x83B0];
 	char mTerrainEditsManager[0x280];
 	char mBaseBuildingManager[0x248];

@@ -2,6 +2,7 @@
 #include "TextChatHandler.h"
 
 cGcTextChatInput::ParseTextForCommands fpParseTextForCommands = NULL;
+std::vector<ChatCommand*> commands;
 
 void __fastcall TextChatHandler::ParseTextForCommandsHook(cGcTextChatInput* _this, const cTkFixedString<1023, char> lMessageText)
 {
@@ -29,11 +30,23 @@ void __fastcall TextChatHandler::ParseTextForCommandsHook(cGcTextChatInput* _thi
             return;
         }
     } 
-    else
-        return fpParseTextForCommands(_this, lMessageText);
+
+    return fpParseTextForCommands(_this, lMessageText);
 }
 
 void TextChatHandler::Init()
 {
+    commands = std::vector<ChatCommand*>();
     ADDHOOK(OFFSET(0x949870), ParseTextForCommandsHook, reinterpret_cast<LPVOID*>(&fpParseTextForCommands), cGcTextChatInput::ParseTextForCommands);
 }
+
+void TextChatHandler::AddCommand(ChatCommand* commandPtr)
+{
+
+}
+
+void TextChatHandler::RegisterStockCommands()
+{
+    // should use lookup tables, too lazy atm
+}
+
