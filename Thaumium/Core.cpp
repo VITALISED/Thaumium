@@ -4,7 +4,7 @@
 
 void Core::Init()
 {
-	cGcApplication* gApplcation = GCAPPLICATION();
+	cGcApplication* gApplcation = GCAPPLICATION;
 
 	cGcApplication::GetNetworkManager getNetworkManager = (cGcApplication::GetNetworkManager)OFFSET(0x1C2910);
 

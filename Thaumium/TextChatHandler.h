@@ -10,6 +10,5 @@
 namespace TextChatHandler
 {
 	void Init();
-	bool IsStockCommandHack(std::string* sCheck);
 	void __fastcall ParseTextForCommandsHook(cGcTextChatInput* _this, const cTkFixedString<1023, char> lMessageText);
 };

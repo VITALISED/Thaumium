@@ -13,9 +13,6 @@ void __fastcall TextChatHandler::ParseTextForCommandsHook(cGcTextChatInput* _thi
 
     if (text[0] == '/')
     {
-        if (IsStockCommandHack(&text))
-            return fpParseTextForCommands(_this, lMessageText);
-
         spdlog::info("Potential command {}", text);
 
         if (text == "/wires")
@@ -34,31 +31,6 @@ void __fastcall TextChatHandler::ParseTextForCommandsHook(cGcTextChatInput* _thi
     } 
     else
         return fpParseTextForCommands(_this, lMessageText);
-}
-
-bool TextChatHandler::IsStockCommandHack(std::string* sCheck)
-{
-    if (sCheck->find("/local") != std::string::npos)
-        return true;
-    if (sCheck->find("/l") != std::string::npos)
-        return true;
-    if (sCheck->find("/group") != std::string::npos)
-        return true;
-    if (sCheck->find("/g") != std::string::npos)
-        return true;
-    if (sCheck->find("/whisper") != std::string::npos)
-        return true;
-    if (sCheck->find("/w") != std::string::npos)
-        return true;
-    if (sCheck->find("/join") != std::string::npos)
-        return true;
-    if (sCheck->find("/leave") != std::string::npos)
-        return true;
-    if (sCheck->find("/invite") != std::string::npos)
-        return true;
-    if (sCheck->find("/kick") != std::string::npos)
-        return true;
-    return false;
 }
 
 void TextChatHandler::Init()
