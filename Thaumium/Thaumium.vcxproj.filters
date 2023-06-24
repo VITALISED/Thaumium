@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Modules">
+      <UniqueIdentifier>{300f0f3c-e770-4fa8-8c83-11215022218d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules">
+      <UniqueIdentifier>{71023c46-3cbc-432b-89b1-7a152e23334a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{2d15689e-56f4-4f73-83de-838c6f427176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{053d82ae-eba1-4799-b38e-3599499a23b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NMS">
+      <UniqueIdentifier>{caf34234-6d8d-4445-a2f3-a562eda2ac1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NMS\Components">
+      <UniqueIdentifier>{48845091-678b-4cc1-a1f4-fa0656bb55f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NMS\Tool Kit">
+      <UniqueIdentifier>{e99965ce-018e-4e01-97a5-a40733b99f64}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextChatHandler.h">
+      <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcApplication.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcTextChatInput.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkFixedString.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcTextChatManager.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNetworkMessageManager.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNetworkManager.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextChatHandler.cpp">
+      <Filter>Source Files\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
