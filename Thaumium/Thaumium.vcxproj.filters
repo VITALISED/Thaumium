@@ -69,13 +69,16 @@
     <ClInclude Include="FrontendOptions.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="switchtable.h">
+    <ClInclude Include="shadowtable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChatCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -96,6 +99,9 @@
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
     <ClCompile Include="Core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

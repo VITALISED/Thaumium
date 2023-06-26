@@ -5,7 +5,7 @@
 
 // SHADOW WIZARD MONEY GANG         //
 //          we love casting spells  //
-class ShadowJMPT {
+class ShadowVT {
 public:
     uintptr_t ObjectPtr;
     uintptr_t OriginalTable;
@@ -13,9 +13,9 @@ public:
     unsigned int MethodCount;
     unsigned int OriginalCount;
 
-    ShadowJMPT()
+    ShadowVT()
     { };
-    ShadowJMPT(uintptr_t objectPtr, unsigned int methodCount)
+    ShadowVT(uintptr_t objectPtr, unsigned int methodCount)
     {
         this->ObjectPtr = objectPtr;
         this->ShadowTable = reinterpret_cast<uintptr_t>(std::malloc(methodCount * 8));

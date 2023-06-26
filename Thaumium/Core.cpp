@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 #include "Core.h"
+#include "FrontendOptions.h"
 
 void Core::Init()
 {
@@ -11,4 +12,5 @@ void Core::Init()
 	cGcNetworkManager* network = getNetworkManager(gApplcation);
 
 	TextChatHandler::Init();
+	FrontendOptions::Init();
 }

@@ -152,6 +152,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="FrontendOptions.h" />
     <ClInclude Include="hooks.h" />
+    <ClInclude Include="memory.h" />
     <ClInclude Include="NMS\GcApplication.h" />
     <ClInclude Include="NMS\GcNetworkManager.h" />
     <ClInclude Include="NMS\GcNetworkMessageManager.h" />
@@ -160,7 +161,7 @@
     <ClInclude Include="NMS\TkFixedString.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="plugin.h" />
-    <ClInclude Include="switchtable.h" />
+    <ClInclude Include="shadowtable.h" />
     <ClInclude Include="TextChatHandler.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
@@ -169,6 +170,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="FrontendOptions.cpp" />
     <ClCompile Include="hooks.cpp" />
+    <ClCompile Include="memory.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
