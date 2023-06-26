@@ -28,6 +28,15 @@
     <Filter Include="Header Files\NMS\Tool Kit">
       <UniqueIdentifier>{e99965ce-018e-4e01-97a5-a40733b99f64}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\NMS\Interfaces">
+      <UniqueIdentifier>{bb2f3a52-2b82-4a90-a705-636b25bbb72b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NMS\Interfaces\Tool Kit">
+      <UniqueIdentifier>{bcd10b6a-d122-4947-b4db-4576011dd4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NMS\NGui">
+      <UniqueIdentifier>{b882a2b6-2414-4575-992e-cc1e3cb9cd01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -80,6 +89,27 @@
     </ClInclude>
     <ClInclude Include="memory.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNGuiElement.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNGuiText.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\ITkNGuiDraggable.h">
+      <Filter>Header Files\NMS\Interfaces\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkVector2.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkBBox2d.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\NGuiInputType.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\NGuiAnimationEvent.h">
+      <Filter>Header Files\NMS\NGui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

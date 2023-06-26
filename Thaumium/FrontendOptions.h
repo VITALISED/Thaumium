@@ -2,6 +2,8 @@
 
 #include "hooks.h"
 #include "memory.h"
+#include "shadowtable.h"
+#include "NMS/GcNGuiText.h"
 
 namespace FrontendOptions
 {
