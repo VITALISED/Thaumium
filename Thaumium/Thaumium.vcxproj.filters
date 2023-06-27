@@ -37,6 +37,9 @@
     <Filter Include="Header Files\NMS\NGui">
       <UniqueIdentifier>{b882a2b6-2414-4575-992e-cc1e3cb9cd01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\asm">
+      <UniqueIdentifier>{8bd58475-a860-4762-8a49-07412a5a9c60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -78,9 +81,6 @@
     <ClInclude Include="FrontendOptions.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="shadowtable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -111,6 +111,24 @@
     <ClInclude Include="NMS\NGuiAnimationEvent.h">
       <Filter>Header Files\NMS\NGui</Filter>
     </ClInclude>
+    <ClInclude Include="NMS\TkID.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcFrontendPageOptions.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcUIOptionListElement.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNGuiLayer.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcBooleanOption.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcOption.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -134,5 +152,10 @@
     <ClCompile Include="memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="optionsheaderhook.asm">
+      <Filter>Source Files\asm</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

@@ -5,12 +5,6 @@ void Memory::PatchBytes(uintptr_t ptr, const char* sig)
 {
     std::vector<BYTE> bytesVec = IdaPatternToByte(sig);
 
-    uint8_t* code = (uint8_t*)ptr;
-    uint8_t* code2 = (uint8_t*)ptr + 1;
-
-    spdlog::info("{}", *code);
-    spdlog::info("{}", *code2);
-
     DWORD oldprotection, newprotection;
     VirtualProtect((LPVOID)ptr, 1, PAGE_EXECUTE_READWRITE, &oldprotection);
 

@@ -2,14 +2,13 @@
 
 #include "hooks.h"
 #include "memory.h"
-#include "shadowtable.h"
 #include "NMS/GcNGuiText.h"
+#include "NMS/GcFrontendPageOptions.h"
 
 namespace FrontendOptions
 {
 	void Init();
-	void PatchOptionsPrepareSwitchStatement();
+	cGcUIOptionListElement** HookPrepareBootScreenOptions();
 	void PatchOptionsHeaderSwitchStatement();
 	void PatchSwitchMenuJZ();
-
 }

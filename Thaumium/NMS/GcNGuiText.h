@@ -2,7 +2,7 @@
 #include "GcNGuiElement.h"
 #include "TkFixedString.h"
 
-class __declspec(align(16)) cGcNGuiText : cGcNGuiElement
+class cGcNGuiText : cGcNGuiElement
 {
 	cTkFixedString<128, char> mLocBlinkText;
 	char mPreviousTextStyle[0x60];

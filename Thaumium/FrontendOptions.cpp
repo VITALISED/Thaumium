@@ -1,31 +1,41 @@
 #include "pch.h"
 #include "FrontendOptions.h"
+#include "NMS/GcBooleanOption.h"
 
-typedef void(__fastcall* HackyFuncBullyshit)(cGcNGuiText* _this, const char* lpacText);
-
-void __TextRecursiveHack()
-{
-	HackyFuncBullyshit setTextFunc = (HackyFuncBullyshit)OFFSET(0x87F0C0);
-
-	const char* headerTextID = "HEADERTEXT";
-}
+extern "C" void OptionsHeaderHook(); //optionsheaderhook.asm
+cGcFrontendPageOptions::PrepareBootScreenNetworkOptions fpPrepareBootScreenNetworkOptions = NULL;
 
 void FrontendOptions::Init()
 {
 	PatchSwitchMenuJZ();
+	PatchOptionsHeaderSwitchStatement();
+
+	ADDHOOK(OFFSET(0x651FC0), HookPrepareBootScreenOptions, fpPrepareBootScreenNetworkOptions, cGcFrontendPageOptions::PrepareBootScreenNetworkOptions);
 }
 
-void FrontendOptions::PatchOptionsPrepareSwitchStatement()
+cGcUIOptionListElement** FrontendOptions::HookPrepareBootScreenOptions()
 {
+//	std::vector<cGcUIOptionListElement*>* retVal = &std::vector<cGcUIOptionListElement*>();
 
+	bool a = false;
+	bool* aPtr = &a;
+
+	cGcUIOptionListElement mainElem = cGcUIOptionListElement{};
+	cGcUIOptionListElement* mainElem2 = &mainElem;
+
+	cGcBooleanOption option = cGcBooleanOption();
+	cGcBooleanOption::_cGcBooleanOption guh = (cGcBooleanOption::_cGcBooleanOption)OFFSET(0x631400);
+
+	guh(&option, "UI_MULTIPLAYER", aPtr, "UI_MULTIPLAYER_D", false, 0, 0);
+
+	cGcUIOptionListElement** retVal = &mainElem2;
+	return retVal;
 }
 
 void FrontendOptions::PatchOptionsHeaderSwitchStatement()
 {
-	uintptr_t table = (uintptr_t)OFFSET(0x650E76);
-	ShadowVT shadowTable = ShadowVT(table, 7);
-
-	//shadowTable.Hook(7, )
+	uintptr_t ptr = (uintptr_t)(OFFSET(0x38A9DF8));
+	Memory::PatchBytes(ptr, "77 69 72 65  73 20 69 6E 20 6D 79 20  64 65 76 69 63 65 00");
 };
 
 void FrontendOptions::PatchSwitchMenuJZ()

@@ -4,6 +4,9 @@ template <unsigned int size, typename T>
 class cTkFixedString
 {
 public: //tidy up this class later
+	cTkFixedString()
+	{ };
+
 	cTkFixedString(const char* buff)
 	{
 		strcpy_s(macBuffer, size, buff);

@@ -54,6 +54,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -153,6 +154,11 @@
     <ClInclude Include="FrontendOptions.h" />
     <ClInclude Include="hooks.h" />
     <ClInclude Include="memory.h" />
+    <ClInclude Include="NMS\GcBooleanOption.h" />
+    <ClInclude Include="NMS\GcFrontendPageOptions.h" />
+    <ClInclude Include="NMS\GcNGuiLayer.h" />
+    <ClInclude Include="NMS\GcOption.h" />
+    <ClInclude Include="NMS\GcUIOptionListElement.h" />
     <ClInclude Include="NMS\NGuiAnimationEvent.h" />
     <ClInclude Include="NMS\NGuiInputType.h" />
     <ClInclude Include="NMS\GcApplication.h" />
@@ -165,10 +171,10 @@
     <ClInclude Include="NMS\ITkNGuiDraggable.h" />
     <ClInclude Include="NMS\TkBBox2d.h" />
     <ClInclude Include="NMS\TkFixedString.h" />
+    <ClInclude Include="NMS\TkID.h" />
     <ClInclude Include="NMS\TkVector2.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="plugin.h" />
-    <ClInclude Include="shadowtable.h" />
     <ClInclude Include="TextChatHandler.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
@@ -186,7 +192,11 @@
     </ClCompile>
     <ClCompile Include="TextChatHandler.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <MASM Include="optionsheaderhook.asm" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   </ImportGroup>
 </Project>
