@@ -42,3 +42,9 @@ std::vector<BYTE> Memory::IdaPatternToByte(const char* sig)
 
     return bytes;
 }
+
+uintptr_t Memory::NMSMalloc(long size)
+{
+    cTkMemoryManager::Malloc nmsMalloc = (cTkMemoryManager::Malloc)OFFSET(0x2EDE470);
+    return (uintptr_t)nmsMalloc(TKMEMORYMANAGER, size, "kill", 69, "too lazy", 16, -1);
+}

@@ -3,7 +3,7 @@
 #include "GcNGuiLayer.h"
 #include "GcOption.h"
 
-class cGcBooleanOption : cGcOption<bool>
+class cGcBooleanOption : public cGcOption<bool>
 {
 public:
 	cGcBooleanOption() : cGcOption<bool>()

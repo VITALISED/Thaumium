@@ -5,7 +5,7 @@
 
 #pragma pack(16)
 template<typename T>
-class cGcOption : cGcUIOptionListElement
+class cGcOption : public cGcUIOptionListElement
 {
 public:
 	cGcOption() : cGcUIOptionListElement()

@@ -1,9 +1,8 @@
 #pragma once
 #include "pch.h"
 #include "framework.h"
+#include "memory.h"
 
-#define _BASE (uintptr_t)GetModuleHandleA(NULL)
-#define OFFSET(offset) (LPVOID)(_BASE + (uintptr_t)offset)
 #define ADDHOOK(pTarget, pDetour, ppOriginal, name) Hooks::AddHook(pTarget, pDetour, ppOriginal, #name)
 
 namespace Hooks
