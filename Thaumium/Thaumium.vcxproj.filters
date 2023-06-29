@@ -132,6 +132,9 @@
     <ClInclude Include="NMS\TkMemoryManager.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
+    <ClInclude Include="NMS\TkSTLAllocatorShim.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

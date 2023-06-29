@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "FrontendOptions.h"
 #include "NMS/GcBooleanOption.h"
+#include "NMS/TkSTLAllocatorShim.h"
+
+
+//std::vector<void*, TkSTLAllocatorShim<void*>> mOpenMenus = OFFSET(0x4AF14C8);
 
 extern "C" void OptionsHeaderHook(); //optionsheaderhook.asm
 cGcFrontendPageOptions::PrepareBootScreenNetworkOptions fpPrepareBootScreenNetworkOptions = NULL;
@@ -20,9 +24,8 @@ cGcUIOptionListElement** FrontendOptions::HookPrepareBootScreenOptions()
 	bool a = false;
 	bool* aPtr = &a;
 
-	char* prefix[32];
+	cGcUIOptionListElement* mainElem2 = (cGcUIOptionListElement*)Memory::NMSMalloc(0x48ui64);
 
-	cGcUIOptionListElement* mainElem2 = (cGcUIOptionListElement*)Memory::NMSMalloc(0x480ui16);
 
 	cGcBooleanOption* option = (cGcBooleanOption*)Memory::NMSMalloc(0x480ui16);
 	cGcBooleanOption::_cGcBooleanOption guh = (cGcBooleanOption::_cGcBooleanOption)OFFSET(0x631400);
@@ -30,12 +33,17 @@ cGcUIOptionListElement** FrontendOptions::HookPrepareBootScreenOptions()
 	guh(option, "UI_MULTIPLAYER", aPtr, "UI_MULTIPLAYER_D", false, 0, 0);
 
 
-	if (option)
-	{
-		// how do i apply this???
-	}
-	else
-		option = NULL;
+	//if (mainElem2)
+	//{
+	//	mainElem2->mbEnabled = 257;
+	//}
+	//else
+	//	mainElem2 = NULL;
+
+	//std::vector<cGcUIOptionListElement*, TkSTLAllocatorShim<cGcUIOptionListElement*>>::_Emplace_one_at_back<cGcUIOptionListElement* const&>(
+	//	*((std::vector<cGcUIOptionListElement*, TkSTLAllocatorShim<cGcUIOptionListElement*> **)mOpenMenus._Mypair._Myval2._Mylast
+	//		- 1),
+	//	&mainElem2);
 
 	cGcUIOptionListElement** retVal = &mainElem2;
 	return retVal;

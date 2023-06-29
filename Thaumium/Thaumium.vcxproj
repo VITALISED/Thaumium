@@ -173,6 +173,7 @@
     <ClInclude Include="NMS\TkFixedString.h" />
     <ClInclude Include="NMS\TkID.h" />
     <ClInclude Include="NMS\TkMemoryManager.h" />
+    <ClInclude Include="NMS\TkSTLAllocatorShim.h" />
     <ClInclude Include="NMS\TkVector2.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="plugin.h" />
