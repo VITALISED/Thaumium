@@ -10,7 +10,7 @@ class cGcOption : public cGcUIOptionListElement
 public:
 	cGcOption() : cGcUIOptionListElement()
 	{ 
-		mTranslatedDescription = cTkFixedString<1024, char>("");
+		mTranslatedDescription = cTkFixedString<1024, char>();
 	};
 	T mOptionsMenuValue;
 	T* mpValue;

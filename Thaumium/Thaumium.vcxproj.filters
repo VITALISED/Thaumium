@@ -135,6 +135,15 @@
     <ClInclude Include="NMS\TkSTLAllocatorShim.h">
       <Filter>Header Files\NMS\Tool Kit</Filter>
     </ClInclude>
+    <ClInclude Include="NMS\GcOptionsMenuState.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcButtonOption.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcOptionsInteractionContext.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

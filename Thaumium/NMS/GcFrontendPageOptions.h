@@ -6,5 +6,5 @@
 class cGcFrontendPageOptions
 {
 public:
-	typedef cGcUIOptionListElement** (__fastcall* PrepareBootScreenNetworkOptions)();
+	typedef cGcUIOptionListElement** (__cdecl* PrepareBootScreenNetworkOptions)();
 };

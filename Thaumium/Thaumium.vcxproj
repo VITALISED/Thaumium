@@ -155,9 +155,12 @@
     <ClInclude Include="hooks.h" />
     <ClInclude Include="memory.h" />
     <ClInclude Include="NMS\GcBooleanOption.h" />
+    <ClInclude Include="NMS\GcButtonOption.h" />
     <ClInclude Include="NMS\GcFrontendPageOptions.h" />
     <ClInclude Include="NMS\GcNGuiLayer.h" />
     <ClInclude Include="NMS\GcOption.h" />
+    <ClInclude Include="NMS\GcOptionsInteractionContext.h" />
+    <ClInclude Include="NMS\GcOptionsMenuState.h" />
     <ClInclude Include="NMS\GcUIOptionListElement.h" />
     <ClInclude Include="NMS\NGuiAnimationEvent.h" />
     <ClInclude Include="NMS\NGuiInputType.h" />

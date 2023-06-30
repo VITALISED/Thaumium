@@ -1,34 +1,32 @@
 #pragma once
 #include "GcNGuiLayer.h"
+#include "GcOptionsInteractionContext.h"
 
-struct /*VFT*/ cGcUIOptionListElement_vtbl
-{
-	void(__fastcall* UpdateUI)(void* _this);
-	void(__fastcall* Initialize)(void* _this, cGcNGuiLayer*, /*cGcOptionsInteractionContext*/void*);
-	void(__fastcall* Apply)(void* _this);
-	void(__fastcall* ResetToDefault)(void* _this);
-	void(__fastcall* DiscardChanges)(void* _this);
-	bool(__fastcall* HasChanges)(void* _this);
-	bool(__fastcall* IsNonDefault)(void* _this);
-	const char* (__fastcall* GetDescription)(void* _this);
-	const char* (__fastcall* GetName)(void* _this);
-	bool(__fastcall* IsHovering)(void* _this);
-	void(__fastcall* destructor)(void* _this);
-	void(__fastcall* TranslateDescription)(void* _this);
-};
-
-#pragma pack(8)
 class cGcUIOptionListElement
 {
 public:
 	cGcUIOptionListElement()
 	{ };
-	cGcUIOptionListElement_vtbl* __vftable /*VFT*/;
 	cGcNGuiLayer* mpElement;
-	/*cGcOptionsInteractionContext*/void* mpContext;
+	cGcOptionsInteractionContext* mpContext;
 	bool mbEnabled;
 	bool mbVisible;
+
+	virtual void UpdateUI();
+	virtual void Initialize(cGcNGuiLayer* layer, cGcOptionsInteractionContext* ctx);
+	virtual void Apply();
+	virtual void ResetToDefault();
+	virtual void DiscardChanges();
+	virtual bool HasChanges();
+	virtual bool IsNonDefault();
+	virtual const char* GetDescription();
+	virtual const char* GetName();
+	virtual bool IsHovering()
+	{
+		cGcNGuiElement::IsMouseInside isMouseInside = (cGcNGuiElement::IsMouseInside)OFFSET(0x566FF0);
+		return isMouseInside(this->mpElement);
+	};
+	virtual ~cGcUIOptionListElement();
+	virtual void TranslateDescription();
+ 
 };
-
-static_assert(sizeof(cGcUIOptionListElement) == 0x20, "wires");
-

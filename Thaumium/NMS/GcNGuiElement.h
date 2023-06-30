@@ -4,8 +4,13 @@
 #include "NGuiInputType.h"
 #include "NGuiAnimationEvent.h"
 
+class cGcNGuiLayer;
+
 class cGcNGuiElement : ITkNGuiDraggable
 {
+public:
+	typedef bool(__fastcall* IsMouseInside)(cGcNGuiLayer* layer);
+
 	enum eLayoutChangeEvent : __int8
 	{
 		ELayoutChange_Nothing = 0x0,
@@ -32,7 +37,7 @@ class cGcNGuiElement : ITkNGuiDraggable
 	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoMoveEvent;
 	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoResizeEvent;
 	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoLayoutEvent;
-	/*cGcNGuiLayer*/void* mpParent;
+	cGcNGuiLayer* mpParent;
 	/*cGcNGuiElementData*/void* mpElementData;
 	eNGuiInputType meInputThisFrame;
 	cGcNGuiElement::eLayoutChangeEvent meLayoutChangeEvent;

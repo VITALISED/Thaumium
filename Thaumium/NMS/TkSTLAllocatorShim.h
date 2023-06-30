@@ -3,11 +3,7 @@
 #include <memory>
 
 template<typename T>
-struct TkSTLAllocatorShim
-{
-	template <T*>
-	struct rebind;
+struct TkSTLAllocatorShim : std::allocator<T>
+{ };
 
-	template <std::_Container_proxy>
-	struct rebind;
-};
+static_assert(sizeof(TkSTLAllocatorShim<bool>) == 1, "guihahs");
