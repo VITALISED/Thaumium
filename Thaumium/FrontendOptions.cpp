@@ -1,13 +1,10 @@
 #include "pch.h"
 #include "FrontendOptions.h"
-#include "NMS/GcBooleanOption.h"
 #include "NMS/TkSTLAllocatorShim.h"
 #include "NMS/GcOptionsMenuState.h"
-#include "NMS/GcButtonOption.h"
+#include "NMS/GcUIOptionListElement.h"
+#include "NMS/GcBooleanOption.h"
 
-//std::vector<void*, TkSTLAllocatorShim<void*>> mOpenMenus = OFFSET(0x4AF14C8);
-
-extern "C" void OptionsHeaderHook(); //optionsheaderhook.asm
 cGcFrontendPageOptions::PrepareBootScreenNetworkOptions fpPrepareBootScreenNetworkOptions = NULL;
 
 void FrontendOptions::Init()
@@ -18,6 +15,11 @@ void FrontendOptions::Init()
 	ADDHOOK(OFFSET(0x651FC0), HookPrepareBootScreenOptions, fpPrepareBootScreenNetworkOptions, cGcFrontendPageOptions::PrepareBootScreenNetworkOptions);
 }
 
+void PrintShit()
+{
+	spdlog::info("button moment");
+}
+
 cGcUIOptionListElement** FrontendOptions::HookPrepareBootScreenOptions()
 {
 	LPVOID ptr = OFFSET(0x4AF14C8);
@@ -25,31 +27,32 @@ cGcUIOptionListElement** FrontendOptions::HookPrepareBootScreenOptions()
 	std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>> openMenus
 		= reinterpret_cast<std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>>&>(ptr);
 
+	bool wire = true;
 
-	cGcUIOptionListElement* v7 = (cGcUIOptionListElement *)Memory::NMSMalloc(0x48ui64);
-	if(v7)
-	{
-		//v7->mbEnabled = 257;
-		//v7[1].__vftable = (cGcUIOptionListElement_vtbl*)"OPTION_CREDITS";
-		//v7[2].__vftable = (cGcUIOptionListElement_vtbl*)spdlog::info("hello!");
-		////v7->__vftable = cGcButtonOption_vtbl
-		//v7[1].mpContext = 0;
-		//v7[1].mbEnabled = 0i64;
-		v7->mbEnabled = 257;
-	}
-	else
-	{
-		v7 = NULL;
-	}
+	//cGcButtonOption* v7 = (cGcButtonOption*)Memory::NMSMalloc(0x48ui64);
+	//if(v7)
+	//{
+	//	v7->mbEnabled = 257;
+	//	v7->mbEnabled = "UI_OPTIONS_GENERAL_L";
+	//	v7->mpOnClick = PrintShit;
+	//}
+	//else
+	//{
+	//	v7 = NULL;
+	//}
 
+	cGcBooleanOption wire2 = cGcBooleanOption{};
 	
 	std::vector<cGcUIOptionListElement*, TkSTLAllocatorShim<cGcUIOptionListElement*> > items = std::vector<cGcUIOptionListElement*, TkSTLAllocatorShim<cGcUIOptionListElement*> >();
+	//items.push_back(v7);
 
 	cGcOptionsMenuState state = cGcOptionsMenuState(0xF, items);
 
 	openMenus.push_back(&state);
 
-	return &v7;
+	auto agahagag = (cGcUIOptionListElement*)NULL;
+
+	return &agahagag;
 }
 
 void FrontendOptions::PatchOptionsHeaderSwitchStatement()
@@ -63,4 +66,3 @@ void FrontendOptions::PatchSwitchMenuJZ()
 	uintptr_t ptr = (uintptr_t)(OFFSET(0x6585F0));
 	Memory::PatchBytes(ptr, "FF 90 80 00 00 00 90 90 90 90"); // this NOPs AllowedMultiplayer() jz on Network header, letting us use it
 };
-

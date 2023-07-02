@@ -23,10 +23,9 @@ public:
 	virtual const char* GetName();
 	virtual bool IsHovering()
 	{
-		cGcNGuiElement::IsMouseInside isMouseInside = (cGcNGuiElement::IsMouseInside)OFFSET(0x566FF0);
-		return isMouseInside(this->mpElement);
+		cGcNGuiElement::IsMouseInside IsMouseInside = (cGcNGuiElement::IsMouseInside)OFFSET(0x566FF0);
+		return IsMouseInside(this->mpElement);
 	};
 	virtual ~cGcUIOptionListElement();
 	virtual void TranslateDescription();
- 
 };

@@ -123,9 +123,6 @@
     <ClInclude Include="NMS\GcNGuiLayer.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
-    <ClInclude Include="NMS\GcBooleanOption.h">
-      <Filter>Header Files\NMS\Components</Filter>
-    </ClInclude>
     <ClInclude Include="NMS\GcOption.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
@@ -138,10 +135,10 @@
     <ClInclude Include="NMS\GcOptionsMenuState.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
-    <ClInclude Include="NMS\GcButtonOption.h">
+    <ClInclude Include="NMS\GcOptionsInteractionContext.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
-    <ClInclude Include="NMS\GcOptionsInteractionContext.h">
+    <ClInclude Include="NMS\GcBooleanOption.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
   </ItemGroup>
