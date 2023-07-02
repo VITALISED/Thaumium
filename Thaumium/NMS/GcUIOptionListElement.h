@@ -12,20 +12,41 @@ public:
 	bool mbEnabled;
 	bool mbVisible;
 
-	virtual void UpdateUI();
-	virtual void Initialize(cGcNGuiLayer* layer, cGcOptionsInteractionContext* ctx);
-	virtual void Apply();
-	virtual void ResetToDefault();
-	virtual void DiscardChanges();
-	virtual bool HasChanges();
-	virtual bool IsNonDefault();
-	virtual const char* GetDescription();
-	virtual const char* GetName();
+	virtual void UpdateUI()
+	{ }
+	virtual void Initialize(cGcNGuiLayer* layer, cGcOptionsInteractionContext* ctx)
+	{ }
+	virtual void Apply()
+	{ }
+	virtual void ResetToDefault()
+	{ }
+	virtual void DiscardChanges()
+	{ }
+	virtual bool HasChanges()
+	{
+		return false;
+	}
+	virtual bool IsNonDefault()
+	{
+		return false;
+	}
+	virtual const char* GetDescription()
+	{ 
+		return "what";
+	}
+	virtual const char* GetName()
+	{ 
+		return "what";
+	}
 	virtual bool IsHovering()
 	{
 		cGcNGuiElement::IsMouseInside IsMouseInside = (cGcNGuiElement::IsMouseInside)OFFSET(0x566FF0);
 		return IsMouseInside(this->mpElement);
 	};
-	virtual ~cGcUIOptionListElement();
-	virtual void TranslateDescription();
+	virtual ~cGcUIOptionListElement()
+	{
+		delete this;
+	}
+	virtual void TranslateDescription()
+	{ }
 };

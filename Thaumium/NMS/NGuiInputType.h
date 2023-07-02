@@ -1,6 +1,6 @@
 #pragma once
 
-enum eNGuiInputType : __int8
+enum eNGuiInputType
 {
 	eInput_RightDragged = 0xF8,
 	eInput_RightPressed = 0xF9,

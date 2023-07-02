@@ -22,7 +22,7 @@ public:
 	bool(__fastcall* mpVisibilityCondition)();
 	bool(__fastcall* mpEnabledCondition)();
 
-	void virtual Apply()
+	void Apply()
 	{
 		T* mpValue;
 		mpValue = this->mpValue;
@@ -31,7 +31,7 @@ public:
 			*mpValue = this->mOptionsMenuValue;
 	}
 
-	void virtual DiscardChanges()
+	void DiscardChanges()
 	{
 		T* mpValue;
 		//void __fastcall** p_mpOnUserChanged;
@@ -51,7 +51,7 @@ public:
 		}
 	}
 
-	bool virtual HasChanges()
+	bool HasChanges()
 	{
 		bool result = false;
 		T* mpValue;
@@ -71,7 +71,7 @@ public:
 		return result;
 	}
 
-	bool virtual IsNonDefault()
+	bool IsNonDefault()
 	{
 		T* mpValue;
 
@@ -79,7 +79,7 @@ public:
 		return mpValue && *mpValue != this->mDefaultValue;
 	}
 
-	void virtual ResetToDefault()
+	void ResetToDefault()
 	{
 		T mDefaultValue; // al
 		void(__fastcall * *p_mpOnUserChanged)(); // rbx
@@ -97,8 +97,13 @@ public:
 			(*p_mpOnUserChanged)();
 	}
 
-	void virtual CreateElement();
-	void virtual TranslateDescription();
-	void virtual CreateElement();
-	cTkFixedString<32, char>* virtual GetTranslatedDefaultValue(cTkFixedString<32, char>* result);
+	void virtual CreateElement()
+	{ }
+	void virtual TranslateDescription()
+	{ }
+	virtual cTkFixedString<32, char>* GetTranslatedDefaultValue(cTkFixedString<32, char>* result)
+	{
+		cTkFixedString<32, char> retVal = cTkFixedString<32, char>("wires");
+		return &retVal;
+	}
 };

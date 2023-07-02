@@ -6,6 +6,7 @@
 #include "NMS/GcBooleanOption.h"
 
 cGcFrontendPageOptions::PrepareBootScreenNetworkOptions fpPrepareBootScreenNetworkOptions = NULL;
+bool called = false;
 
 void FrontendOptions::Init()
 {
@@ -22,35 +23,32 @@ void PrintShit()
 
 cGcUIOptionListElement** FrontendOptions::HookPrepareBootScreenOptions()
 {
+
 	LPVOID ptr = OFFSET(0x4AF14C8);
 
-	std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>> openMenus
-		= reinterpret_cast<std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>>&>(ptr);
+	DWORD oldprotection, newprotection;
+	VirtualProtect((LPVOID)ptr, 1, PAGE_EXECUTE_READWRITE, &oldprotection);
+
+	std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>>* openMenusPtr
+		= reinterpret_cast<std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>>*>(ptr);
+
+	std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>> openMenus = *openMenusPtr;
 
 	bool wire = true;
 
-	//cGcButtonOption* v7 = (cGcButtonOption*)Memory::NMSMalloc(0x48ui64);
-	//if(v7)
-	//{
-	//	v7->mbEnabled = 257;
-	//	v7->mbEnabled = "UI_OPTIONS_GENERAL_L";
-	//	v7->mpOnClick = PrintShit;
-	//}
-	//else
-	//{
-	//	v7 = NULL;
-	//}
+	cGcBooleanOption* wire2 = new cGcBooleanOption("UI_MULTIPLAYER", &wire, "UI_MULTIPLAYER_D", true, NULL, NULL);
+	wire2->mbVisible = true;
 
-	cGcBooleanOption wire2 = cGcBooleanOption{};
-	
 	std::vector<cGcUIOptionListElement*, TkSTLAllocatorShim<cGcUIOptionListElement*> > items = std::vector<cGcUIOptionListElement*, TkSTLAllocatorShim<cGcUIOptionListElement*> >();
-	//items.push_back(v7);
+	items.push_back((cGcUIOptionListElement*)wire2);
 
 	cGcOptionsMenuState state = cGcOptionsMenuState(0xF, items);
 
 	openMenus.push_back(&state);
 
-	auto agahagag = (cGcUIOptionListElement*)NULL;
+	auto agahagag = (cGcUIOptionListElement*)wire2;
+
+	VirtualProtect((LPVOID)ptr, 1, oldprotection, &newprotection);
 
 	return &agahagag;
 }
