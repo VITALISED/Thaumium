@@ -161,6 +161,7 @@
     <ClInclude Include="NMS\eShape.h" />
     <ClInclude Include="NMS\GcBooleanOption.h" />
     <ClInclude Include="NMS\GcFrontendPageOptions.h" />
+    <ClInclude Include="NMS\GcNGuiElementData.h" />
     <ClInclude Include="NMS\GcNGuiLayer.h" />
     <ClInclude Include="NMS\GcNGuiLayerData.h" />
     <ClInclude Include="NMS\GcOption.h" />

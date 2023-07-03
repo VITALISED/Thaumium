@@ -126,9 +126,6 @@
     <ClInclude Include="NMS\GcOption.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
-    <ClInclude Include="NMS\TkMemoryManager.h">
-      <Filter>Header Files\NMS\Components</Filter>
-    </ClInclude>
     <ClInclude Include="NMS\TkSTLAllocatorShim.h">
       <Filter>Header Files\NMS\Tool Kit</Filter>
     </ClInclude>
@@ -176,6 +173,12 @@
     </ClInclude>
     <ClInclude Include="NMS\eCurve.h">
       <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkMemoryManager.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNGuiElementData.h">
+      <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
