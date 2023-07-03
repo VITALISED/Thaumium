@@ -93,8 +93,46 @@ public:
 
 	void UpdateUI()
 	{
-		cGcBooleanOption::__UpdateUI offset = (cGcBooleanOption::__UpdateUI)OFFSET(0x5757C0);
-		offset(this);
+		__int64 (*mpVisibilityCondition)(void); // rax
+		char v3; // al
+		__int64 (*mpEnabledCondition)(void); // rax
+		char v5; // al
+		const char* mpacEnabledString; // rdx
+		bool mOptionsMenuValue; // al
+		void(__fastcall * *p_mpOnUserChanged)(); // rdi
+		bool v9; // si
+		bool v10; // zf
+
+		mpVisibilityCondition = (__int64 (*)(void))this->mpVisibilityCondition;
+		if (mpVisibilityCondition)
+		{
+			v3 = mpVisibilityCondition();
+			this->mpElement->mpElementData->mbIsHidden = v3 == 0;
+			this->mbVisible = v3;
+		}
+		mpEnabledCondition = (__int64 (*)(void))this->mpEnabledCondition;
+		if (mpEnabledCondition)
+		{
+			v5 = mpEnabledCondition();
+			cGcUIOptionListElement::SetEnabled(this, v5);
+		}
+		if (this->mOptionsMenuValue)
+			mpacEnabledString = this->mpacEnabledString;
+		else
+			mpacEnabledString = this->mpacDisabledString;
+		this->mpText->SetText(this->mpText, mpacEnabledString);
+		if (this->mbEnabled && cGcOptionsInteractionContext::Confirm(this->mpContext, this->mpElement, 0))
+		{
+			mOptionsMenuValue = this->mOptionsMenuValue;
+			p_mpOnUserChanged = &this->mpOnUserChanged;
+			v9 = mOptionsMenuValue != !mOptionsMenuValue && *p_mpOnUserChanged;
+			v10 = !this->mbAutoApply;
+			this->mOptionsMenuValue = !mOptionsMenuValue;
+			if (!v10)
+				this->Apply();
+			if (v9)
+				(*p_mpOnUserChanged)();
+		}
 	}
 	~cGcBooleanOption()
 	{

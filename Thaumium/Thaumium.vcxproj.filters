@@ -141,6 +141,42 @@
     <ClInclude Include="NMS\GcBooleanOption.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
+    <ClInclude Include="NMS\eAltMode.h">
+      <Filter>Header Files\NMS</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNGuiLayerData.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkDynamicArray.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkNGuiGraphicStyleData.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\eShape.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkColour.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkVector4.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\eGradient.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkNGuiGraphicStyle.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\eAnimate.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkCurveType.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\eCurve.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
