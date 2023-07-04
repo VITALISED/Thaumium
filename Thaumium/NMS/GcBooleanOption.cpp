@@ -112,3 +112,13 @@ void cGcBooleanOption::UpdateUI()
 			(*p_mpOnUserChanged)();
 	}
 }
+
+void cGcBooleanOption::CreateElement()
+{
+
+}
+
+void cGcBooleanOption::GetTranslatedDefaultValue()
+{
+	std::cout << "is this used?";
+}

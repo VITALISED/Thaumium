@@ -18,17 +18,9 @@ public:
 	cGcNGuiText* mpText;
 	cGcNGuiLayer* mpButton;
 
-	void GetTranslatedDefaultValue()
-	{
-		std::cout << "is this used?";
-	}
-
+	void GetTranslatedDefaultValue();
 	void UpdateUI();
-	void CreateElement()
-	{
-		cGcBooleanOption::__CreateElement offset = (cGcBooleanOption::__CreateElement)OFFSET(0x562AE0);
-		offset(this);
-	}
+	void CreateElement();
 
 	~cGcBooleanOption()
 	{
