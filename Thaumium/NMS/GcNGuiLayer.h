@@ -22,6 +22,6 @@ public:
 	void* mpElementHashTable;
 	unsigned __int64 muUniqueID;
 	bool mbExpanded;
-};
 
-static_assert(sizeof(cGcNGuiLayer) == 0x160, "cGcNGuiLayer incorrect size");
+	void LoadFromMetadata(const char* lpacFilename, bool lbUseCached);
+};

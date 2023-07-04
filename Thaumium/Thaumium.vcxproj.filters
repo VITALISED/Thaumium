@@ -239,6 +239,9 @@
     <ClCompile Include="NMS\GcBooleanOption.cpp">
       <Filter>Source Files\NMS</Filter>
     </ClCompile>
+    <ClCompile Include="NMS\GcNGuiLayer.cpp">
+      <Filter>Source Files\NMS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="optionsheaderhook.asm">

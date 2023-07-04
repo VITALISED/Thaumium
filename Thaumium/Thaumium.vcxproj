@@ -211,6 +211,7 @@
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="memory.cpp" />
     <ClCompile Include="NMS\GcBooleanOption.cpp" />
+    <ClCompile Include="NMS\GcNGuiLayer.cpp" />
     <ClCompile Include="NMS\GcUIOptionListElement.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

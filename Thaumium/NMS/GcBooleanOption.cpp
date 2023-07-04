@@ -115,7 +115,16 @@ void cGcBooleanOption::UpdateUI()
 
 void cGcBooleanOption::CreateElement()
 {
+	TkID<128> lID;
+	cGcNGuiLayer* layer;
+	layer = (cGcNGuiLayer*)Memory::NMSMalloc(0x160ui64);
+	layer->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
 
+	this->mpElement = layer;
+
+	TKIDSTR(lID, "TEXT");
+
+	this->mpText = this->mpElement->FindTextRecursive(&lID);
 }
 
 void cGcBooleanOption::GetTranslatedDefaultValue()
