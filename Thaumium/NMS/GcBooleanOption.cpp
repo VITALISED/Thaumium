@@ -92,13 +92,13 @@ void cGcBooleanOption::UpdateUI()
 	if (mpEnabledCondition)
 	{
 		v5 = mpEnabledCondition();
-		cGcUIOptionListElement::SetEnabled(this, v5);
+		cGcUIOptionListElement::SetEnabled(v5);
 	}
 	if (this->mOptionsMenuValue)
 		mpacEnabledString = this->mpacEnabledString;
 	else
 		mpacEnabledString = this->mpacDisabledString;
-	this->mpText->SetText(this->mpText, mpacEnabledString);
+	this->mpText->SetText(mpacEnabledString);
 	if (this->mbEnabled && cGcOptionsInteractionContext::Confirm(this->mpContext, this->mpElement, 0))
 	{
 		mOptionsMenuValue = this->mOptionsMenuValue;

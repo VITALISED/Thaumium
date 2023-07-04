@@ -6,6 +6,7 @@
 
 class cGcNGuiTextData
 {
+public:
 	cGcNGuiElementData mElementData;
 	cTkNGuiTextStyle mStyle;
 	cTkNGuiGraphicStyle mGraphicStyle;
