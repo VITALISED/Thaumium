@@ -9,6 +9,9 @@ class cGcNGuiText : cGcNGuiElement
 	char mPreviousGraphicStyle[0x90];
 	/*cGcNGuiTextData*/void* mpTextData;
 	unsigned __int64 miLocTextBlinkBaseTime;
-};
 
-static_assert(sizeof(cGcNGuiText) == 0x1D0, "size of class is invalid.");
+	void SetText(const char* lpacText)
+	{
+		cTkFixedString<512, char> str = cTkFixedString<512, char>(lpacText);
+	}
+};

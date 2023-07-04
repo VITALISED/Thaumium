@@ -158,12 +158,17 @@
     <ClInclude Include="NMS\eAnimate.h" />
     <ClInclude Include="NMS\eCurve.h" />
     <ClInclude Include="NMS\eGradient.h" />
+    <ClInclude Include="NMS\eHorizontal.h" />
+    <ClInclude Include="NMS\eNGuiForcedStyle.h" />
     <ClInclude Include="NMS\eShape.h" />
+    <ClInclude Include="NMS\eVertical.h" />
     <ClInclude Include="NMS\GcBooleanOption.h" />
     <ClInclude Include="NMS\GcFrontendPageOptions.h" />
     <ClInclude Include="NMS\GcNGuiElementData.h" />
     <ClInclude Include="NMS\GcNGuiLayer.h" />
     <ClInclude Include="NMS\GcNGuiLayerData.h" />
+    <ClInclude Include="NMS\GcNGuiLayoutData.h" />
+    <ClInclude Include="NMS\GcNGuiTextData.h" />
     <ClInclude Include="NMS\GcOption.h" />
     <ClInclude Include="NMS\GcOptionsInteractionContext.h" />
     <ClInclude Include="NMS\GcOptionsMenuState.h" />
@@ -185,8 +190,12 @@
     <ClInclude Include="NMS\TkFixedString.h" />
     <ClInclude Include="NMS\TkID.h" />
     <ClInclude Include="NMS\TkMemoryManager.h" />
+    <ClInclude Include="NMS\TkNGuiAlignment.h" />
+    <ClInclude Include="NMS\TkNGuiForcedStyle.h" />
     <ClInclude Include="NMS\TkNGuiGraphicStyle.h" />
     <ClInclude Include="NMS\TkNGuiGraphicStyleData.h" />
+    <ClInclude Include="NMS\TkNGuiTextStyle.h" />
+    <ClInclude Include="NMS\TkNGuiTextStyleData.h" />
     <ClInclude Include="NMS\TkSTLAllocatorShim.h" />
     <ClInclude Include="NMS\TkVector2.h" />
     <ClInclude Include="NMS\TkVector4.h" />
@@ -201,6 +210,8 @@
     <ClCompile Include="FrontendOptions.cpp" />
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="memory.cpp" />
+    <ClCompile Include="NMS\GcBooleanOption.cpp" />
+    <ClCompile Include="NMS\GcUIOptionListElement.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

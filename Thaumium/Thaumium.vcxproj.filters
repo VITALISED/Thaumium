@@ -40,6 +40,9 @@
     <Filter Include="Source Files\asm">
       <UniqueIdentifier>{8bd58475-a860-4762-8a49-07412a5a9c60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\NMS">
+      <UniqueIdentifier>{cac1fadb-3269-458f-9742-5bfb0f60a075}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -180,6 +183,33 @@
     <ClInclude Include="NMS\GcNGuiElementData.h">
       <Filter>Header Files\NMS\Components</Filter>
     </ClInclude>
+    <ClInclude Include="NMS\TkNGuiForcedStyle.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNGuiLayoutData.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkNGuiAlignment.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\eNGuiForcedStyle.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\eHorizontal.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\eVertical.h">
+      <Filter>Header Files\NMS\NGui</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\GcNGuiTextData.h">
+      <Filter>Header Files\NMS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkNGuiTextStyle.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
+    <ClInclude Include="NMS\TkNGuiTextStyleData.h">
+      <Filter>Header Files\NMS\Tool Kit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -202,6 +232,12 @@
     </ClCompile>
     <ClCompile Include="memory.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NMS\GcUIOptionListElement.cpp">
+      <Filter>Source Files\NMS</Filter>
+    </ClCompile>
+    <ClCompile Include="NMS\GcBooleanOption.cpp">
+      <Filter>Source Files\NMS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

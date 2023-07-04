@@ -3,9 +3,12 @@
 #include "TkFixedString.h"
 #include "TkDynamicArray.h"
 #include "TkNGuiGraphicStyle.h"
+#include "GcNGuiElementData.h"
 
+#pragma pack(16)
 class cGcNGuiLayerData
 {
+public:
 	cGcNGuiElementData mElementData;
 	cTkNGuiGraphicStyle mStyle;
 	cTkFixedString<128, char> macImage;

@@ -1,6 +1,7 @@
 #pragma once
 #include "GcNGuiLayer.h"
 #include "GcOptionsInteractionContext.h"
+#include "../memory.h"
 
 class cGcUIOptionListElement
 {
@@ -32,11 +33,11 @@ public:
 	}
 	virtual const char* GetDescription()
 	{ 
-		return "what";
+		return "";
 	}
 	virtual const char* GetName()
 	{ 
-		return "what";
+		return "";
 	}
 	virtual bool IsHovering()
 	{
@@ -49,4 +50,6 @@ public:
 	}
 	virtual void TranslateDescription()
 	{ }
+
+	void SetEnabled(bool lbEnabled);
 };

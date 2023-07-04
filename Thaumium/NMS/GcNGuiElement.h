@@ -3,10 +3,11 @@
 #include "TkBBox2d.h"
 #include "NGuiInputType.h"
 #include "NGuiAnimationEvent.h"
+#include "GcNGuiElementData.h"
 
 class cGcNGuiLayer;
 
-class cGcNGuiElement : ITkNGuiDraggable
+class cGcNGuiElement : public ITkNGuiDraggable
 {
 public:
 	typedef bool(__fastcall* IsMouseInside)(cGcNGuiLayer* layer);
@@ -38,7 +39,7 @@ public:
 	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoResizeEvent;
 	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoLayoutEvent;
 	cGcNGuiLayer* mpParent;
-	/*cGcNGuiElementData*/void* mpElementData;
+	cGcNGuiElementData* mpElementData;
 	eNGuiInputType meInputThisFrame;
 	cGcNGuiElement::eLayoutChangeEvent meLayoutChangeEvent;
 	eNGuiAnimationEvent meRequestAnim;
