@@ -24,7 +24,7 @@ void __fastcall TextChatHandler::ParseTextForCommandsHook(cGcTextChatInput* _thi
             cGcNetworkManager* network = getNetworkManager(gApplcation);
             cGcTextChatManager* textChat = reinterpret_cast<cGcTextChatManager*>(network->mTextChatManager);
             cGcTextChatManager::Say say = (cGcTextChatManager::Say)OFFSET(0x94C160);
-            cTkFixedString<1023, char> msg = cTkFixedString<1023, char>("wires in MY wireless device?!??!?!");
+            cTkFixedString<1023, char> msg = cTkFixedString<1023, char>("wires in MY wireless device!");
             say(textChat, &msg, true);
             return;
         }

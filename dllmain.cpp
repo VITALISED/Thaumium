@@ -1,6 +1,8 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-#include "modules/Core.h"
+#include <mutex>
+#include <condition_variable>
+#include "./modules/core.h"
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
@@ -22,6 +24,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     {
     case DLL_PROCESS_ATTACH:
         spdlog::info("Thaumium attached, hi :)");
+        spdlog::info(sizeof(std::vector<int>));
         MH_Initialize();
         DisableThreadLibraryCalls(hModule);
         CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr);

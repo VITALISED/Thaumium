@@ -3,8 +3,8 @@
 #include "../util/memory.h"
 #include "../nms/GameComponents/GcApplication.h"
 
-#include "TextChatHandler.h"
-#include "FrontendOptions.h"
+#include "textchathandler.h"
+#include "frontendoptions.h"
 
 #define GCAPPLICATION (cGcApplication*)OFFSET(0x463F810)
 

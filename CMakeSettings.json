@@ -6,7 +6,7 @@
       "configurationType": "Release",
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++",
+      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=g++",
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "msvc_x64_x64" ]
@@ -18,7 +18,7 @@
       "inheritEnvironments": [ "msvc_x64_x64" ],
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++",
+      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=g++",
       "buildCommandArgs": "",
       "ctestCommandArgs": ""
     },
@@ -28,8 +28,7 @@
       "configurationType": "Debug",
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++",
-      "buildCommandArgs": "",
+      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=g++",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "msvc_x64_x64" ]
     }

@@ -1,5 +1,5 @@
 #include "../pch.h"
-#include "FrontendOptions.h"
+#include "frontendoptions.h"
 
 cGcFrontendPageOptions::PrepareBootScreenNetworkOptions fpPrepareBootScreenNetworkOptions = NULL;
 bool called = false;

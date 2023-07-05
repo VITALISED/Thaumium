@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
 #set(CMAKE_CXX_COMPILER "clang++")
-project(Thaumium CXX ASM_MASM)
+project(Thaumium CXX)
 
 # Language specs
 set(CMAKE_CXX_STANDARD 20)
@@ -67,25 +67,11 @@ add_library(ThaumiumDLL SHARED
 )
 
 target_link_libraries(ThaumiumDLL PRIVATE
-        "${CMAKE_SOURCE_DIR}/lib/libMinHook.x64.lib"
-        shlwapi.lib
-        kernel32.lib
-        user32.lib
-        gdi32.lib
-        winspool.lib
-        comdlg32.lib
-        advapi32.lib
-        shell32.lib
-        ole32.lib
-        oleaut32.lib
-        uuid.lib
-        odbc32.lib
-        odbccp32.lib
-        WS2_32.lib
+        ${CMAKE_SOURCE_DIR}/lib/MinHook.x64.lib
 )
 
 target_include_directories(ThaumiumDLL PRIVATE
-        "${CMAKE_SOURCE_DIR}/include"
+        ${CMAKE_SOURCE_DIR}/include
 )
 
 target_precompile_headers(ThaumiumDLL PRIVATE pch.h)

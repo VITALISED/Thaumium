@@ -12,7 +12,6 @@
 #include <spdlog/spdlog.h>
 #include <fmt/format.h>
 #include <MinHook.h>
-#pragma comment(lib,"libMinHook.x64.lib")
 
 // some libs used by nms
 // TODO: is nanovg used? if so, how the fuck; the game uses vulkan, is it legacy?

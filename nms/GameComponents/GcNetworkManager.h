@@ -29,3 +29,4 @@ public:
 	char mBaseImageManager[0x78];
 	bool mbPrepared;
 };
+#pragma pack()

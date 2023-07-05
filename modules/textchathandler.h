@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../util/hooks.h"
-#include "Core.h"
+#include "core.h"
 
 #include "../nms/GameComponents/GcTextChatInput.h"
 #include "../nms/GameComponents/GcApplication.h"
