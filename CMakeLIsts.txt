@@ -1,0 +1,98 @@
+cmake_minimum_required(VERSION 3.15)
+
+#set(CMAKE_CXX_COMPILER "clang++")
+project(Thaumium CXX ASM_MASM)
+
+# Language specs
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Thaumium
+add_library(ThaumiumDLL SHARED
+        "dllmain.cpp"
+        "framework.h"
+        "util/memory.h"
+        "util/memory.cpp"
+        "util/hooks.h"
+        "util/hooks.cpp"
+        "modules/core.h"
+        "modules/core.cpp"
+        "modules/frontendoptions.h"
+        "modules/frontendoptions.cpp"
+        "modules/textchathandler.h"
+        "modules/textchathandler.cpp"
+
+        #NMS
+
+        #GameComponents
+        "nms/GameComponents/GcApplication.h"
+        "nms/GameComponents/GcBooleanOption.h"
+        "nms/GameComponents/GcBooleanOption.cpp"
+        "nms/GameComponents/GcFrontendPageOptions.h"
+        "nms/GameComponents/GcNetworkManager.h"
+        "nms/GameComponents/GcNetworkMessageManager.h"
+        "nms/GameComponents/GcNGuiElement.h"
+        "nms/GameComponents/GcNGuiElementData.h"
+        "nms/GameComponents/GcNGuiLayer.h"
+        "nms/GameComponents/GcNGuiLayer.cpp"
+        "nms/GameComponents/GcNGuiLayoutData.h"
+        "nms/GameComponents/GcNGuiText.h"
+        "nms/GameComponents/GcNGuiTextData.h"
+        "nms/GameComponents/GcOption.h"
+        "nms/GameComponents/GcOptionsInteractionContext.h"
+        "nms/GameComponents/GcOptionsInteractionContext.cpp"
+        "nms/GameComponents/GcOptionsMenuState.h"
+        "nms/GameComponents/GcTextChatInput.h"
+        "nms/GameComponents/GcTextChatManager.h"
+        "nms/GameComponents/GcUIOptionListElement.h"
+        "nms/GameComponents/GcUIOptionListElement.cpp"
+
+        #ToolKit
+        "nms/ToolKit/TkBBox2d.h"
+        "nms/ToolKit/TkColour.h"
+        "nms/ToolKit/TkCurveType.h"
+        "nms/ToolKit/TkDynamicArray.h"
+        "nms/ToolKit/TkFixedString.h"
+        "nms/ToolKit/TkID.h"
+        "nms/ToolKit/TkMemoryManager.h"
+        "nms/ToolKit/TkNGuiAlignment.h"
+        "nms/ToolKit/TkNGuiDraggable.h"
+        "nms/ToolKit/TkNGuiForcedStyle.h"
+        "nms/ToolKit/TkNGuiGraphicStyle.h"
+        "nms/ToolKit/TkNGuiGraphicStyleData.h"
+        "nms/ToolKit/TkSTLAllocatorShim.h"
+        "nms/ToolKit/TkVector2.h"
+        "nms/ToolKit/TkVector4.h"
+)
+
+target_link_libraries(ThaumiumDLL PRIVATE
+        "${CMAKE_SOURCE_DIR}/lib/libMinHook.x64.lib"
+        shlwapi.lib
+        kernel32.lib
+        user32.lib
+        gdi32.lib
+        winspool.lib
+        comdlg32.lib
+        advapi32.lib
+        shell32.lib
+        ole32.lib
+        oleaut32.lib
+        uuid.lib
+        odbc32.lib
+        odbccp32.lib
+        WS2_32.lib
+)
+
+target_include_directories(ThaumiumDLL PRIVATE
+        "${CMAKE_SOURCE_DIR}/include"
+)
+
+target_precompile_headers(ThaumiumDLL PRIVATE pch.h)
+
+set_target_properties(ThaumiumDLL PROPERTIES
+        OUTPUT_NAME Thaumium
+)   
+
+# Targets
+# add_subdirectory(Launcher) //TODO: create cool launcher
