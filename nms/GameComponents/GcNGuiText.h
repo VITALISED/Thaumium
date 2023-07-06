@@ -20,8 +20,8 @@ public:
 		}
 	}
 	cTkFixedString<128, char> mLocBlinkText;
-	cTkNGuiTextStyleData mPreviousTextStyle[0x60];
-	char mPreviousGraphicStyle[0x90];
+	cTkNGuiTextStyleData mPreviousTextStyle;
+	cTkNGuiGraphicStyleData mPreviousGraphicStyle;
 	cGcNGuiTextData* mpTextData;
 	unsigned __int64 miLocTextBlinkBaseTime;
 

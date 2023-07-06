@@ -3,5 +3,17 @@
 
 class cTkVector4
 {
-	__m128 mVal; //TODO: reverse xmmintrinsics values (im lazy)
+public:
+	cTkVector4(float x, float y, float z, float w)
+	{
+		this->mfX = x;
+		this->mfY = y;
+		this->mfZ = z;
+		this->mfW = w;
+	}
+
+	float mfX;
+	float mfY;
+	float mfW;
+	float mfZ;
 };

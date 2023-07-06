@@ -5,6 +5,7 @@
 
 class cTkNGuiAlignment
 {
+public:
 	eVertical meVertical;
 	eHorizontal meHorizontal;
 };
