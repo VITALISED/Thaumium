@@ -2,7 +2,6 @@
 #include "GcNGuiLayer.h"
 #include "GcOptionsInteractionContext.h"
 
-#pragma pack(16)
 class cGcUIOptionListElement
 {
 public:
@@ -54,4 +53,3 @@ public:
 
 	void SetEnabled(bool lbEnabled);
 };
-#pragma pack()

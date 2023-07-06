@@ -19,37 +19,36 @@ void PrintShit()
 
 typedef cGcUIOptionListElement** (__fastcall* wirelessss)(void* thiscall, cGcUIOptionListElement** thing);
 
+static_assert(sizeof(std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>>) == 0x18, "");
+
 cGcUIOptionListElement** FrontendOptions::HookPrepareBootScreenOptions()
 {
-	LPVOID ptr = OFFSET(0x4AF14C8);
-	wirelessss ptr2 = (wirelessss)OFFSET(0x630220);
+	std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>> mOpenMenus = *(std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>>*)OFFSET(0x4AF14C8);
 
-	cGcOptionsMenuState* state = (cGcOptionsMenuState*)malloc(sizeof(cGcOptionsMenuState));
-	//state = new cGcOptionsMenuState()
+	spdlog::info("mOpenMenus size: {}", mOpenMenus.size());
+	
 
-	std::vector<cGcOptionsMenuState*,TkSTLAllocatorShim<cGcOptionsMenuState*>> coolVec = 
-		*(std::vector<cGcOptionsMenuState*, TkSTLAllocatorShim<cGcOptionsMenuState*>>*)ptr;
+	//wirelessss ptr2 = (wirelessss)OFFSET(0x630220);
 
-	bool wire = true;
-	bool wire2 = true;
+	//cGcOptionsMenuState* state = (cGcOptionsMenuState*)malloc(sizeof(cGcOptionsMenuState));
+	////state = new cGcOptionsMenuState()
 
-	cGcBooleanOption* guhh = (cGcBooleanOption*)malloc(0x480u);
-	cGcBooleanOption* guhh2 = (cGcBooleanOption*)malloc(0x480u);
+	bool* check = (bool*)malloc(sizeof(bool));
+	*check = false;
 
-	guhh = new cGcBooleanOption("UI_MULTIPLAYER", &wire, "UI_MULTIPLAYER_D", true, "kill", "kill");
-	guhh2 = new cGcBooleanOption("UI_MULTIPLAYER", &wire2, "UI_MULTIPLAYER_D", true, "kill", "kill");
-	state->mItems.push_back(guhh);
+	bool* check2 = (bool*)malloc(sizeof(bool));
+	*check2 = false;
 
-	cGcUIOptionListElement** ptrPtr = (cGcUIOptionListElement**)malloc(sizeof(uintptr_t));
-	cGcUIOptionListElement** ptrPtr2 = (cGcUIOptionListElement**)malloc(sizeof(uintptr_t));
-	ptrPtr = (cGcUIOptionListElement**)&guhh;
-	ptrPtr2 = (cGcUIOptionListElement**)&guhh2;
+	cGcBooleanOption* item = (cGcBooleanOption*)malloc(0x480u);
+	cGcBooleanOption* item2 = (cGcBooleanOption*)malloc(0x480u);
 
-	coolVec.push_back(state);
+	cGcBooleanOption* thing = new(item) cGcBooleanOption("UI_MULTIPLAYER", check, "UI_MULTIPLAYER_D", false, "wired", "wireless");
+	cGcBooleanOption* thing2 = new(item2) cGcBooleanOption("UI_MULTIPLAYER", check, "UI_MULTIPLAYER_D", false, "wired", "wireless");
 
-	spdlog::info(coolVec.size());
+	mOpenMenus.back()->mItems.push_back(thing);
+	mOpenMenus.back()->mItems.push_back(thing2);
 
-	return NULL;
+	return &mOpenMenus.back()->mItems.back();
 }
 void FrontendOptions::PatchOptionsHeaderSwitchStatement()
 {

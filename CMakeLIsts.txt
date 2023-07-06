@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
 
-#set(CMAKE_CXX_COMPILER "clang++")
 project(Thaumium CXX)
 
 # Language specs
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_compile_options(-ggdb)
 
 # Thaumium
 add_library(ThaumiumDLL SHARED
@@ -64,7 +65,7 @@ add_library(ThaumiumDLL SHARED
         "nms/ToolKit/TkSTLAllocatorShim.h"
         "nms/ToolKit/TkVector2.h"
         "nms/ToolKit/TkVector4.h"
-)
+ "nms/GameComponents/GcNGuiText.cpp")
 
 target_link_libraries(ThaumiumDLL PRIVATE
         ${CMAKE_SOURCE_DIR}/lib/MinHook.x64.lib

@@ -23,7 +23,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        spdlog::info("Thaumium attached, hi :)");
+        spdlog::info("Thaumium attached");
+        spdlog::info(sizeof(cGcBooleanOption));
         spdlog::info(sizeof(std::vector<int>));
         MH_Initialize();
         DisableThreadLibraryCalls(hModule);
