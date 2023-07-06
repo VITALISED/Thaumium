@@ -12,8 +12,8 @@ cGcNGuiText::cGcNGuiText()
 	this->mpUndoLayoutEvent = NULL;
 	this->mContentBBox = cTkBBox2d{};
 	this->mLocBlinkText = cTkFixedString<128, char>();
-
 	cTkNGuiTextStyleData* p_mPreviousTextStyle = this->mPreviousTextStyle;
+	cTkNGuiTextStyleData::SetDefaults(p_mPreviousTextStyle);
 }
 
 void cGcNGuiText::SetText(const char* lpacText)
