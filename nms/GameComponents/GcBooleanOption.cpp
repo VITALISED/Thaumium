@@ -4,46 +4,35 @@
 
 cGcBooleanOption::cGcBooleanOption(const char* lpacName, bool* lpbValue, const char* lpacDescriptionLocKey, bool lbDefault, const char* lpacEnabledString, const char* lpacDisabledString)
 {
-	bool v8; // al
-	const char* mpacEnabledString; // rcx
-	const char* mpacDisabledString; // rcx
-	const char* v12; // rax
-	char* v13; // rax
-	char* v14; // r9
-	int v15; // edi
-	__int64 v16; // rcx
-	int v17; // ecx
-	__int64 v18; // r8
-	char acPrefix[40]; // [rsp+20h] [rbp-28h] BYREF
-
 	this->mbEnabled = true;
 	if (lpbValue)
-		v8 = *lpbValue;
+		this->mOptionsMenuValue = *lpbValue;
 	else
-		v8 = lbDefault;
-	this->mOptionsMenuValue = v8;
+		this->mOptionsMenuValue = lbDefault;
 	this->mDefaultValue = lbDefault;
 	this->mpOnUserChanged = 0;
 	this->mpVisibilityCondition = 0;
 	this->mpEnabledCondition = 0;
 	this->mpacDescriptionLocKey = lpacDescriptionLocKey;
-	this->mTranslatedDescription.macBuffer[0] = 0;
+	this->mTranslatedDescription = cTkFixedString<1024, char>();
 	this->mpacEnabledString = "UI_ENABLED";
-	mpacEnabledString = this->mpacEnabledString;
 	this->mpacDisabledString = "UI_DISABLED";
 	this->mpValue = lpbValue;
 	this->mbAutoApply = 0;
 	if (lpacEnabledString)
-		mpacEnabledString = lpacEnabledString;
+		this->mpacEnabledString = lpacEnabledString;
 	this->mpacOptionName = lpacName;
-	this->mpacEnabledString = mpacEnabledString;
-	mpacDisabledString = this->mpacDisabledString;
 	if (lpacDisabledString)
-		mpacDisabledString = lpacDisabledString;
+		this->mpacDisabledString = lpacDisabledString;
 	this->mpacDisabledString = mpacDisabledString;
-	v12 = this->mpacDescriptionLocKey;
-	v13 = (char*)"wires!";
-	v14 = v13;
+	//v12 = this->mpacDescriptionLocKey;
+	auto v13 = (char*)"wires!";
+	auto v14 = v13;
+	int v15;
+	long v16;
+	int v17;
+	long v18;
+
 	spdlog::info("hi");
 	if (v13)
 	{
@@ -117,15 +106,15 @@ void cGcBooleanOption::UpdateUI()
 void cGcBooleanOption::CreateElement()
 {
 	TkID<128> lID;
-	cGcNGuiLayer* layer;
-	layer = (cGcNGuiLayer*)Memory::NMSMalloc(0x160u);
-	layer->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
-
-	this->mpElement = layer;
+	this->mpElement = new cGcNGuiLayer();
+	this->mpElement->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
 
 	TKIDSTR(lID, "TEXT");
 
 	this->mpText = this->mpElement->FindTextRecursive(&lID);
+	
+	TKIDSTR(lID, "BUTTONMAIN");
+	this->mpButton = this->mpElement->FindLayerRecursive(&lID);
 }
 
 void cGcBooleanOption::GetTranslatedDefaultValue()

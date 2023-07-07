@@ -2,6 +2,7 @@
 
 #include "../ToolKit/TkNGuiDraggable.h"
 #include "../ToolKit/TkBBox2d.h"
+#include "../ToolKit/TkNGuiTypeUndoable.h"
 #include "../NGui/NGuiInputType.h"
 #include "../NGui/NGuiAnimationEvent.h"
 #include "GcNGuiElementData.h"
@@ -33,12 +34,11 @@ public:
 		__int8 mbRequestAnimReset : 1;
 	};
 
-
 	cTkBBox2d mContentBBox;
 	cTkVector2 mvParallaxOffset;
-	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoMoveEvent;
-	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoResizeEvent;
-	/*cTkNGuiTypeUndoable<cGcNGuiLayoutData>**/void* mpUndoLayoutEvent;
+	cTkNGuiTypeUndoable<cGcNGuiLayoutData>* mpUndoMoveEvent;
+	cTkNGuiTypeUndoable<cGcNGuiLayoutData>* mpUndoResizeEvent;
+	cTkNGuiTypeUndoable<cGcNGuiLayoutData>* mpUndoLayoutEvent;
 	cGcNGuiLayer* mpParent;
 	cGcNGuiElementData* mpElementData;
 	eNGuiInputType meInputThisFrame;

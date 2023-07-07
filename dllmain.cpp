@@ -25,7 +25,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     case DLL_PROCESS_ATTACH:
         spdlog::info("Thaumium attached");
         spdlog::info(sizeof(cGcBooleanOption));
-        spdlog::info(sizeof(std::vector<int>));
+        spdlog::info(sizeof(cGcNGuiLayer));
         MH_Initialize();
         DisableThreadLibraryCalls(hModule);
         CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr);

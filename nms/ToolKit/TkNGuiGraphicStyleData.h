@@ -32,4 +32,6 @@ class cTkNGuiGraphicStyleData
 	bool mbHasInnerGradient;
 	bool mbGradientOffsetPercent;
 	bool mbStrokeGradient;
+
+	void SetDefaults();
 };
