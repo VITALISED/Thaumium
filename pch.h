@@ -13,6 +13,9 @@
 #include <fmt/format.h>
 #include <MinHook.h>
 
+#include "util/memory.h"
+#include "util/hooks.h"
+
 // some libs used by nms
 // TODO: is nanovg used? if so, how the fuck; the game uses vulkan, is it legacy?
 #include <robin_hood.h>
