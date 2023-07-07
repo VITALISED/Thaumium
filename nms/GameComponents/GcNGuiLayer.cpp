@@ -21,7 +21,7 @@ cGcNGuiLayer::cGcNGuiLayer()
 	this->mapElements = std::vector<cGcNGuiElement*, TkSTLAllocatorShim<cGcNGuiElement*> >();
 	this->mapLayerElements = std::vector<cGcNGuiLayer*, TkSTLAllocatorShim<cGcNGuiLayer*> >();
 	this->maPinnedPositions = std::vector<cTkVector2, TkSTLAllocatorShim<cTkVector2> >();
-	this->mPreviousGraphicsStyle->SetDefaults();
+	this->mPreviousGraphicsStyle.SetDefaults();
 }
 
 void cGcNGuiLayer::LoadFromMetadata(const char* lpacFilename, bool lbUseCached)

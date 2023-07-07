@@ -6,6 +6,10 @@
 
 class cTkNGuiGraphicStyleData
 {
+public:
+	cTkNGuiGraphicStyleData()
+	{ }
+
 	cTkColour mColour;
 	cTkColour mIconColour;
 	cTkColour mStrokeColour;

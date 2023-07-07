@@ -4,6 +4,9 @@
 class cTkVector4
 {
 public:
+	cTkVector4()
+	{ }
+
 	cTkVector4(float x, float y, float z, float w)
 	{
 		this->mfX = x;

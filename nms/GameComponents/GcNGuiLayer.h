@@ -16,7 +16,7 @@ public:
 	std::vector<cGcNGuiElement*, TkSTLAllocatorShim<cGcNGuiElement*> > mapElements;
 	std::vector<cGcNGuiLayer*, TkSTLAllocatorShim<cGcNGuiLayer*> > mapLayerElements;
 	std::vector<cTkVector2, TkSTLAllocatorShim<cTkVector2> > maPinnedPositions;
-	__declspec(align(16)) cTkNGuiGraphicStyleData mPreviousGraphicsStyle;
+	cTkNGuiGraphicStyleData mPreviousGraphicsStyle;
 	void(__fastcall* mpRenderFunction)(void*);
 	void* mpRenderFunctionData;
 	cGcNGuiLayerData* mpLayerData;
