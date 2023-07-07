@@ -22,6 +22,14 @@ cGcNGuiLayer::cGcNGuiLayer()
 	this->mapLayerElements = std::vector<cGcNGuiLayer*, TkSTLAllocatorShim<cGcNGuiLayer*> >();
 	this->maPinnedPositions = std::vector<cTkVector2, TkSTLAllocatorShim<cTkVector2> >();
 	this->mPreviousGraphicsStyle.SetDefaults();
+	this->mpLayerData = new cGcNGuiLayerData();
+	this->mpLayerData->mElementData.mForcedStyle.meNGuiForcedStyle = ENGuiForcedStyle_None;
+	this->mpLayerData->mElementData.mLayout.maVROverrides.mArray.miOffset = NULL;
+	this->mpLayerData->mElementData.mLayout.maVROverrides.miSize = NULL;
+	this->mpLayerData->mElementData.mLayout.maVROverrides.mbAllocatedFromData = NULL;
+	this->mpLayerData->mElementData.mLayout.maAccessibleOverrides.mArray.miOffset = NULL;
+	this->mpLayerData->mElementData.mLayout.maAccessibleOverrides.miSize = NULL;
+	this->mpLayerData->mElementData.mLayout.maAccessibleOverrides.mbAllocatedFromData = NULL;
 }
 
 void cGcNGuiLayer::LoadFromMetadata(const char* lpacFilename, bool lbUseCached)

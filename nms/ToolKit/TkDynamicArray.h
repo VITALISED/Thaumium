@@ -3,6 +3,7 @@
 template <typename T>
 class cTkDynamicArray
 {
+public:
 	union cTkDynamicArrayPointer
 	{
 		T* mpaArray;

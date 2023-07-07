@@ -6,6 +6,7 @@
 #pragma pack(8)
 class cGcNGuiLayoutData
 {
+public:
 	cTkDynamicArray</*cGcVROverride_Layout*/char[0x8]> maVROverrides;
 	cTkDynamicArray</*cGcAccessibleOverride_Layout*/char[0x8]> maAccessibleOverrides;
 	float mfPositionX;
@@ -23,4 +24,6 @@ class cGcNGuiLayoutData
 	bool mbAnchorPercent;
 	bool mbSameLine;
 	bool mbSlowCursorOnHover;
+
+	void SetDefaults();
 };

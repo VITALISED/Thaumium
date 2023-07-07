@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GcNGuiElementData.h"
+#include "GcNGuiSpacingData.h"
 #include "../NGui/eAltMode.h"
 #include "../ToolKit/TkFixedString.h"
 #include "../ToolKit/TkDynamicArray.h"
@@ -10,6 +11,8 @@
 class cGcNGuiLayerData
 {
 public:
+	cGcNGuiLayerData();
+
 	cGcNGuiElementData mElementData;
 	cTkNGuiGraphicStyle mStyle;
 	cTkFixedString<128, char> macImage;

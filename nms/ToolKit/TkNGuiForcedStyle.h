@@ -3,5 +3,6 @@
 
 class cTkNGuiForcedStyle
 {
+public:
 	eNGuiForcedStyle meNGuiForcedStyle;
 };
