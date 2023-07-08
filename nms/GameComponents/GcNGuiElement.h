@@ -6,6 +6,7 @@
 #include "../NGui/NGuiInputType.h"
 #include "../NGui/NGuiAnimationEvent.h"
 #include "GcNGuiElementData.h"
+#include "../../pch.h"
 
 class cGcNGuiLayer;
 
@@ -46,4 +47,6 @@ public:
 	eNGuiAnimationEvent meRequestAnim;
 	cGcNGuiElement::sGcNGuiElementAnimSettings mAnim;
 	bool mbSelectedToEdit;
+
+	virtual void Render();
 };
