@@ -110,7 +110,6 @@ void cGcBooleanOption::CreateElement()
 	this->mpElement->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
 
 	TKIDSTR(lID, "TEXT");
-
 	this->mpText = this->mpElement->FindTextRecursive(&lID);
 	
 	TKIDSTR(lID, "BUTTONMAIN");

@@ -4,9 +4,11 @@
 #include "TkVector2.h"
 #include "TkCurveType.h"
 #include "../NGui/eAnimate.h"
+#include "../GameComponents/GcPlayerControlInput.h"
 
 class cTkNGuiGraphicStyle
 {
+public:
 	cTkNGuiGraphicStyleData mDefault;
 	cTkNGuiGraphicStyleData mHighlight;
 	cTkNGuiGraphicStyleData mActive;
@@ -21,4 +23,6 @@ class cTkNGuiGraphicStyle
 	cTkCurveType mAnimCurve2;
 	eAnimate meAnimate;
 	bool mbInheritStyleFromParentLayer;
+
+	void SetDefaults();
 };

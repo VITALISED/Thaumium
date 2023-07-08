@@ -3,6 +3,7 @@
 
 class cTkCurveType
 {
+public:
 	eCurve meCurve;
 };
 

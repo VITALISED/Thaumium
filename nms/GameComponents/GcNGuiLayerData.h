@@ -19,5 +19,7 @@ public:
 	cTkDynamicArray</*cTkClassPointer*/char[0x50]> maChildren;
 	cTkFixedString<128, char> macDataFilename;
 	eAltMode meAltMode;
+
+	void SetDefaults();
 };
 #pragma pack()

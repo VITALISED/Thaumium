@@ -66,7 +66,7 @@ add_library(ThaumiumDLL SHARED
         "nms/ToolKit/TkSTLAllocatorShim.h"
         "nms/ToolKit/TkVector2.h"
         "nms/ToolKit/TkVector4.h"
- "nms/ToolKit/TkNGuiTypeUndoable.h" "nms/ToolKit/TkNGuiUndoable.h" "nms/ToolKit/TkNGuiGraphicStyleData.cpp" "nms/GameComponents/GcNGuiLayoutData.cpp" "nms/GameComponents/GcNGuiLayerData.cpp" "nms/GameComponents/GcNGuiSpacingData.h" "nms/GameComponents/GcNGuiSpacingData.cpp" "nms/GameComponents/GcFreighterFlybyType.h" "nms/Reality/FrigateFlybyType.h" "nms/GameComponents/GcAtlasDownloadType.h" "nms/Atlas/DownloadType.h")
+ "nms/ToolKit/TkNGuiTypeUndoable.h" "nms/ToolKit/TkNGuiUndoable.h" "nms/ToolKit/TkNGuiGraphicStyleData.cpp" "nms/GameComponents/GcNGuiLayoutData.cpp" "nms/GameComponents/GcNGuiLayerData.cpp" "nms/GameComponents/GcNGuiSpacingData.h" "nms/GameComponents/GcNGuiSpacingData.cpp" "nms/GameComponents/GcFrigateFlybyType.h" "nms/Reality/FrigateFlybyType.h" "nms/GameComponents/GcAtlasDownloadType.h" "nms/Atlas/DownloadType.h" "nms/GameComponents/GcFrigateFlybyType.cpp" "nms/ToolKit/TkNGuiAlignment.cpp" "nms/ToolKit/TkNGuiGraphicStyle.cpp" "nms/GameComponents/GcPlayerControlInput.h" "nms/GameComponents/GcPlayerControlInput.cpp")
 
 target_link_libraries(ThaumiumDLL PRIVATE
         ${CMAKE_SOURCE_DIR}/lib/MinHook.x64.lib

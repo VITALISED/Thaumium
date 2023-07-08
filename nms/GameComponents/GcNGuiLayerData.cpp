@@ -12,7 +12,10 @@ cGcNGuiLayerData::cGcNGuiLayerData()
 	this->mElementData.mLayout.mAlign.meHorizontal = (eHorizontal)NULL;
 	this->mElementData.mLayout.mAlign.meVertical = (eVertical)NULL;
 	this->mElementData.mLayout.SetDefaults();
-
-	cGcNGuiSpacingData* p_this = (cGcNGuiSpacingData*)this;
-	p_this->SetDefaults()
+	reinterpret_cast<cGcNGuiSpacingData*>(this)->SetDefaults();
+	this->mStyle.mDefault.SetDefaults();
+	this->mStyle.mHighlight.SetDefaults();
+	this->mStyle.mActive.SetDefaults();
+	this->mStyle.mAnimCurve1.meCurve = ECurve_Linear;
+	this->mStyle.SetDefaults();
 }
