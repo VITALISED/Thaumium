@@ -110,10 +110,14 @@ void cGcBooleanOption::CreateElement()
 	this->mpElement->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
 
 	TKIDSTR(lID, "TEXT");
+	lID.mChars[5] = 0;
+	lID.mChars[13] = 0;
 	this->mpText = this->mpElement->FindTextRecursive(&lID);
 	
-	TKIDSTR(lID, "BUTTONMAIN");
-	this->mpButton = this->mpElement->FindLayerRecursive(&lID);
+	TkID<128> lID2;
+	TKIDSTR(lID2, "BUTTONMAIN");
+	lID2.mChars[11] = 0;
+	this->mpButton = this->mpElement->FindLayerRecursive(&lID2);
 }
 
 void cGcBooleanOption::GetTranslatedDefaultValue()

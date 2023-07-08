@@ -7,6 +7,9 @@ typedef cGcNGuiLayer* (*__FindLayerRecursive)(cGcNGuiLayer* thiscall, const TkID
 
 cGcNGuiLayer::cGcNGuiLayer()
 {
+	//TODO: set up class globals
+	unsigned __int64* mguLayerIdCount = (unsigned __int64*)OFFSET(0x41F7C48);
+
 	this->mAnim = cGcNGuiLayer::sGcNGuiElementAnimSettings{};
 	short bwStuff = *reinterpret_cast<short*>(&this->mAnim) & 0xFC | 1;
 	this->mAnim = *reinterpret_cast<cGcNGuiLayer::sGcNGuiElementAnimSettings*>(&bwStuff);
@@ -23,7 +26,16 @@ cGcNGuiLayer::cGcNGuiLayer()
 	this->maPinnedPositions = std::vector<cTkVector2, TkSTLAllocatorShim<cTkVector2> >();
 	this->mPreviousGraphicsStyle.SetDefaults();
 	this->mpLayerData = new cGcNGuiLayerData();
-
+	this->mpElementData = &this->mpLayerData->mElementData;
+	this->mpElementHashTable = new cTkLinearHashTable<cTkHashedNGuiElement, cGcNGuiElement*>();
+	this->mpLayerData->mStyle.mDefault.mbSolidColour = false;
+	this->mpLayerData->mStyle.mDefault.mbSolidColour = false;
+	this->mpLayerData->mStyle.mActive.mbSolidColour = false;
+	this->mpLayerData->mStyle.mHighlight.mbSolidColour = false;
+	this->mbExpanded = false;
+	this->muUniqueID = *mguLayerIdCount++;
+	this->mpElementData->mLayout.mfHeight = 200;
+	this->mpElementData->mLayout.mfWidth = 200;
 }
 
 void cGcNGuiLayer::LoadFromMetadata(const char* lpacFilename, bool lbUseCached)

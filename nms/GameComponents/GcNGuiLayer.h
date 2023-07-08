@@ -6,6 +6,8 @@
 #include "GcNGuiLayerData.h"
 #include "GcNGuiText.h"
 #include "../ToolKit/TkSTLAllocatorShim.h"
+#include "../ToolKit/TkLinearHashTable.h"
+#include "../ToolKit/TkHashedNGuiElement.h"
 
 #pragma pack(16)
 class cGcNGuiLayer : public cGcNGuiElement

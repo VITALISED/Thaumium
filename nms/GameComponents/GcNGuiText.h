@@ -3,6 +3,7 @@
 #include "GcNGuiElement.h"
 #include "GcNGuiTextData.h"
 #include "../ToolKit/TkFixedString.h"
+#include "../../pch.h"
 
 class cGcNGuiText : public cGcNGuiElement
 {

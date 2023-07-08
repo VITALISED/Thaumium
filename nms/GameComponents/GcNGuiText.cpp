@@ -2,5 +2,5 @@
 
 void cGcNGuiText::SetText(const char* lpacText)
 {
-	this->mpTextData->macText = cTkFixedString<512, char>(lpacText);
+	this->mpTextData->macText.Copy(lpacText);
 }
