@@ -7,6 +7,7 @@
 #include "../NGui/NGuiAnimationEvent.h"
 #include "GcNGuiElementData.h"
 #include "../../pch.h"
+#include "GcNGuiPreset.h"
 
 class cGcNGuiLayer;
 
@@ -49,4 +50,7 @@ public:
 	bool mbSelectedToEdit;
 
 	virtual void Render();
+	virtual void EditElement();
+	virtual void EditPresets(cGcNGuiPreset* lpGuiPreset);
+	virtual ~cGcNGuiElement();
 };
