@@ -62,10 +62,16 @@ public:
 	virtual void Resized();
 	virtual void AttachMetadata(cTkClassPointer* lClass) = 0;
 	virtual void DetachMetadata(cTkClassPointer* lClass) = 0;
-	virtual bool IsLayer() = 0;
+	virtual inline bool IsLayer()
+	{
+		return (sizeof(*this) == 0x160);
+	}
 	virtual eNGuiEditorIcons GetSceneTreeIcon() = 0;
 	virtual void GetSceneTreeText(cTkFixedString<128, char>* lOutResult) = 0;
 	virtual void RenderAdditionalOverlayIcons(const cTkVector2* lOrigin, const cTkVector2* lSize) = 0;
 	virtual void RenderTreeControls() = 0;
-	virtual ~cGcNGuiElement();
+	virtual ~cGcNGuiElement()
+	{
+		delete this;
+	}
 };

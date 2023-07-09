@@ -29,4 +29,28 @@ public:
 	void LoadFromMetadata(const char* lpacFilename, bool lbUseCached);
 	cGcNGuiText* FindTextRecursive(const TkID<128>* lID);
 	cGcNGuiLayer* FindLayerRecursive(const TkID<128>* lID);
+	void DeallocateLayerChildrenRecursive();
+	void Render();
+	int GetType()
+	{
+		return sizeof(*this); // honestly just a guess for now.
+	}
+	void EditElement();
+	bool SelectableInEditor();
+	void SetNeedsUpdate();
+	void Deselect();
+	void Resized();
+	void AttachMetadata(cTkClassPointer* lClass);
+	void DetachMetadata(cTkClassPointer* lClass);
+	eNGuiEditorIcons GetSceneTreeIcon();
+	void GetSceneTreeText(cTkFixedString<128, char>* lOutResult);
+	void RenderAdditionalOverlayIcons(const cTkVector2* lOrigin, const cTkVector2* lSize);
+	void RenderTreeControls()
+	{ };
+	cGcNGuiLayer* GetSelected();
+
+	~cGcNGuiLayer()
+	{
+		delete this;
+	}
 };

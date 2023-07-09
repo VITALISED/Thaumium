@@ -4,6 +4,7 @@
 #include "../Toolkit/TkFixedString.h"
 #include "../Toolkit/TkNGuiTextStyle.h"
 #include "../Toolkit/TkNGuiGraphicStyle.h"
+#include "../ToolKit/TkClassPointer.h"
 
 class cGcNGuiTextData
 {
@@ -18,4 +19,6 @@ public:
 	cTkDynamicArray</*cGcAccessibleOverride_Text*/char[0x8]> maAccessibleOverrides;
 	bool mbSpecial;
 	bool mbForcedAllowScroll;
+
+	void WriteToClassPtr(cTkClassPointer* lClassPtr);
 };

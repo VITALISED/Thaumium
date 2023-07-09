@@ -14,5 +14,16 @@ public:
 	cGcNGuiTextData* mpTextData;
 	unsigned __int64 miLocTextBlinkBaseTime;
 
-	void SetText(const char* lpacText);
+
+	void Render();
+	~cGcNGuiText()
+	{
+		delete this;
+	}
+	void EditElement();
+	void AttachMetadata(cTkClassPointer* lClass);
+	eNGuiEditorIcons GetSceneTreeIcon();
+	void GetSceneTreeText(cTkFixedString<128, char>* lOutResult);
+	virtual void Convert();
+	virtual void SetText(const char* lpacText);
 };

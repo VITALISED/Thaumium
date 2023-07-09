@@ -71,3 +71,126 @@ cGcNGuiLayer* cGcNGuiLayer::FindLayerRecursive(const TkID<128>* lID)
 	VirtualProtect((LPVOID)this, 1, oldprotection, &newprotection);
 	return retval;
 }
+
+void cGcNGuiLayer::DeallocateLayerChildrenRecursive()
+{
+	typedef void (*fptr)(cGcNGuiLayer*);
+	fptr func = (fptr)OFFSET(0x1BBA90);
+	func(this);
+}
+
+void cGcNGuiLayer::Render()
+{
+	typedef void (*fptr)(cGcNGuiLayer*);
+	fptr func = (fptr)OFFSET(0x8543B0);
+	func(this);
+}
+
+void cGcNGuiLayer::EditElement()
+{
+	typedef void (*fptr)(cGcNGuiLayer*);
+	fptr func = (fptr)OFFSET(0x854AF0);
+	func(this);
+}
+
+bool cGcNGuiLayer::SelectableInEditor()
+{
+	return this->mpLayerData->mStyle.mDefault.mbSolidColour;
+}
+
+void cGcNGuiLayer::SetNeedsUpdate()
+{
+	int size = this->mapElements.size();
+
+	for (int i = 0; i < size; i++)
+	{
+		this->mapElements[i]->SetNeedsUpdate();
+	}
+}
+
+void cGcNGuiLayer::Deselect()
+{
+	this->mbSelectedToEdit = 0;
+	int size = this->mapElements.size();
+
+	for (int i; i < size; i++)
+	{
+		this->mapElements[i]->Deselect();
+	}
+}
+
+// uses weird lambda stuff that i dont want to implement.
+void cGcNGuiLayer::Resized()
+{
+	typedef void (*fptr)(cGcNGuiLayer*);
+	fptr func = (fptr)OFFSET(0x1CA410);
+	func(this);
+}
+
+void cGcNGuiLayer::AttachMetadata(cTkClassPointer* lClass)
+{
+	typedef void (*fptr)(cGcNGuiLayer*, cTkClassPointer*);
+	fptr func = (fptr)OFFSET(0x1B8B60);
+	func(this, lClass);
+}
+
+void cGcNGuiLayer::DetachMetadata(cTkClassPointer* lClass)
+{
+	lClass->mClassData.miOffset = NULL;
+	lClass->mClassName = cTkFixedString<63, char>("");
+	lClass->mbClassFixed = NULL;
+	lClass->mClassNameHash = NULL;
+	this->DeallocateLayerChildrenRecursive();
+}
+
+eNGuiEditorIcons cGcNGuiLayer::GetSceneTreeIcon()
+{
+	if (this->mapElements.size())
+	{
+		return EIcon_folder3;
+	}
+	else {
+		return EIcon_folder;
+	}
+}
+
+void cGcNGuiLayer::GetSceneTreeText(cTkFixedString<128, char>* lOutResult)
+{
+	typedef void (*fptr)(cGcNGuiLayer*, cTkFixedString<128, char>*);
+	fptr func = (fptr)OFFSET(0x854E00);
+	func(this, lOutResult);
+}
+
+void cGcNGuiLayer::RenderAdditionalOverlayIcons(const cTkVector2* lOrigin, const cTkVector2* lSize)
+{
+	typedef void (*fptr)(cGcNGuiLayer*, const cTkVector2*, const cTkVector2*);
+	fptr func = (fptr)OFFSET(0x855220);
+	func(this, lOrigin, lSize);
+}
+
+cGcNGuiLayer* cGcNGuiLayer::GetSelected()
+{
+	if (this->IsSelected())
+		return this;
+
+	for (int i; i < this->mapElements.size(); i++)
+	{
+		if (this->mapElements[i]->IsLayer())
+		{
+			if (this->mapElements[i]->IsSelected())
+			{
+				return (cGcNGuiLayer*)this->mapElements[i];
+			}
+		}
+		else
+		{
+			// I have no idea what the fuck ida thinks this is
+			//result = (cGcNGuiLayer*)((__int64 (*)(void))v6[1].Render)();
+			//if (result)
+			//	return result;
+			return NULL;
+		}
+	}
+
+	return NULL;
+}
