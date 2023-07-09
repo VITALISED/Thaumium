@@ -8,6 +8,8 @@
 #include "GcNGuiElementData.h"
 #include "../../pch.h"
 #include "GcNGuiPreset.h"
+#include "../ToolKit/TkClassPointer.h"
+#include "../NGui/NGuiEditorIcons.h"
 
 class cGcNGuiLayer;
 
@@ -52,5 +54,18 @@ public:
 	virtual void Render();
 	virtual void EditElement();
 	virtual void EditPresets(cGcNGuiPreset* lpGuiPreset);
+	virtual void RenderUIEditorToolbar(cGcNGuiPreset* lpGuiPreset); //probably debug build only. 
+	virtual bool SelectableInEditor() = 0;
+	virtual void SetNeedsUpdate() = 0;
+	virtual void Deselect();
+	virtual bool IsSelected();
+	virtual void Resized();
+	virtual void AttachMetadata(cTkClassPointer* lClass) = 0;
+	virtual void DetachMetadata(cTkClassPointer* lClass) = 0;
+	virtual bool IsLayer() = 0;
+	virtual eNGuiEditorIcons GetSceneTreeIcon() = 0;
+	virtual void GetSceneTreeText(cTkFixedString<128, char>* lOutResult) = 0;
+	virtual void RenderAdditionalOverlayIcons(const cTkVector2* lOrigin, const cTkVector2* lSize) = 0;
+	virtual void RenderTreeControls() = 0;
 	virtual ~cGcNGuiElement();
 };
