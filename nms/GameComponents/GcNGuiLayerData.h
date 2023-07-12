@@ -6,8 +6,8 @@
 #include "../ToolKit/TkFixedString.h"
 #include "../ToolKit/TkDynamicArray.h"
 #include "../ToolKit/TkNGuiGraphicStyle.h"
+#include "../ToolKit/TkClassPointer.h"
 
-#pragma pack(16)
 class cGcNGuiLayerData
 {
 public:
@@ -16,10 +16,11 @@ public:
 	cGcNGuiElementData mElementData;
 	cTkNGuiGraphicStyle mStyle;
 	cTkFixedString<128, char> macImage;
-	cTkDynamicArray</*cTkClassPointer*/char[0x50]> maChildren;
+	cTkDynamicArray<cTkClassPointer> maChildren;
 	cTkFixedString<128, char> macDataFilename;
 	eAltMode meAltMode;
 
 	void SetDefaults();
 };
-#pragma pack()
+
+constexpr int alignofafa = sizeof(cGcNGuiLayerData);

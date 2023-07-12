@@ -19,7 +19,7 @@ cGcNGuiLayerData::cGcNGuiLayerData()
 	this->mStyle.mAnimCurve1.meCurve = ECurve_Linear;
 	this->mStyle.SetDefaults();
 	this->macImage = cTkFixedString<128, char>();
-	this->maChildren = cTkDynamicArray<char[0x50]>();
+	this->maChildren = cTkDynamicArray<cTkClassPointer>();
 	this->macDataFilename = cTkFixedString<128, char>();
 	this->SetDefaults();
 }

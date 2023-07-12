@@ -4,7 +4,7 @@
 #include "../NGui/eGradient.h"
 #include "../NGui/eShape.h"
 
-class cTkNGuiGraphicStyleData
+class __declspec(align(16)) cTkNGuiGraphicStyleData
 {
 public:
 	cTkNGuiGraphicStyleData()

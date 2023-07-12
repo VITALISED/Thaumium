@@ -52,6 +52,10 @@ public:
 	bool mbSelectedToEdit;
 
 	virtual void Render();
+	virtual ~cGcNGuiElement()
+	{
+		delete this;
+	}
 	virtual void EditElement();
 	virtual void EditPresets(cGcNGuiPreset* lpGuiPreset);
 	virtual void RenderUIEditorToolbar(cGcNGuiPreset* lpGuiPreset); //probably debug build only. 
@@ -70,8 +74,5 @@ public:
 	virtual void GetSceneTreeText(cTkFixedString<128, char>* lOutResult) = 0;
 	virtual void RenderAdditionalOverlayIcons(const cTkVector2* lOrigin, const cTkVector2* lSize) = 0;
 	virtual void RenderTreeControls() = 0;
-	virtual ~cGcNGuiElement()
-	{
-		delete this;
-	}
+
 };

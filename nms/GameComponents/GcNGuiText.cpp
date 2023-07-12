@@ -2,7 +2,7 @@
 
 void cGcNGuiText::SetText(const char* lpacText)
 {
-	this->mpTextData->macText.Copy(lpacText);
+	this->mpTextData->macText = cTkFixedString<512, char>("wires");
 }
 
 void cGcNGuiText::Render()

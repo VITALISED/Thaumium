@@ -22,16 +22,13 @@ public:
 	bool(__fastcall* mpVisibilityCondition)();
 	bool(__fastcall* mpEnabledCondition)();
 
-	void Apply()
+	void virtual Apply()
 	{
-		T* mpValue;
-		mpValue = this->mpValue;
-		
-		if (mpValue)
-			*mpValue = this->mOptionsMenuValue;
+		if (this->mpValue)
+			this->mpValue = &this->mOptionsMenuValue;
 	}
 
-	void DiscardChanges()
+	void virtual DiscardChanges()
 	{
 		T* mpValue;
 		//void __fastcall** p_mpOnUserChanged;
@@ -107,3 +104,5 @@ public:
 		return &retVal;
 	}
 };
+
+constexpr int guh = sizeof(cGcOption<bool>);

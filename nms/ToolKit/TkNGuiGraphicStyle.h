@@ -6,7 +6,7 @@
 #include "../NGui/eAnimate.h"
 #include "../GameComponents/GcPlayerControlInput.h"
 
-class cTkNGuiGraphicStyle
+class __declspec(align(16))cTkNGuiGraphicStyle
 {
 public:
 	cTkNGuiGraphicStyleData mDefault;

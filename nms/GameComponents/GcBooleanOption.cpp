@@ -82,13 +82,17 @@ void cGcBooleanOption::UpdateUI()
 	if (mpEnabledCondition)
 	{
 		v5 = mpEnabledCondition();
-		cGcUIOptionListElement::SetEnabled(v5);
+		this->SetEnabled(v5);
 	}
 	if (this->mOptionsMenuValue)
 		mpacEnabledString = this->mpacEnabledString;
 	else
 		mpacEnabledString = this->mpacDisabledString;
-	this->mpText->SetText(mpacEnabledString);
+	if (!this->mpText)
+	{
+		spdlog::info("mptext is undefined");
+	}
+	//this->mpText->SetText("hello!");
 	if (this->mbEnabled && this->mpContext->Confirm(this->mpElement, false))
 	{
 		mOptionsMenuValue = this->mOptionsMenuValue;
@@ -103,10 +107,13 @@ void cGcBooleanOption::UpdateUI()
 	}
 }
 
+constexpr int T = sizeof(cGcNGuiLayer);
+
 void cGcBooleanOption::CreateElement()
 {
 	TkID<128> lID;
-	this->mpElement = new cGcNGuiLayer();
+	this->mpElement = (cGcNGuiLayer*)malloc(0x160);
+	*this->mpElement = cGcNGuiLayer();
 	this->mpElement->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
 
 	TKIDSTR(lID, "TEXT");

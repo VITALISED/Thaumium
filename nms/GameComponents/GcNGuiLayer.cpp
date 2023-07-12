@@ -26,6 +26,7 @@ cGcNGuiLayer::cGcNGuiLayer()
 	this->maPinnedPositions = std::vector<cTkVector2, TkSTLAllocatorShim<cTkVector2> >();
 	this->mPreviousGraphicsStyle.SetDefaults();
 	this->mpLayerData = new cGcNGuiLayerData();
+	this->mpElementData = (cGcNGuiElementData*)malloc(sizeof(cGcNGuiElementData));
 	this->mpElementData = &this->mpLayerData->mElementData;
 	this->mpElementHashTable = new cTkLinearHashTable<cTkHashedNGuiElement, cGcNGuiElement*>();
 	this->mpLayerData->mStyle.mDefault.mbSolidColour = false;
