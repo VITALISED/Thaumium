@@ -12,10 +12,10 @@ public:
 		this->Copy(lpacBuffer);
 	}
 
-	T macBuffer[size];
-
 	void Copy(const char* lpacBuffer)
 	{
 		strcpy_s(macBuffer, size, lpacBuffer);
 	}
+
+	T macBuffer[size];
 };
