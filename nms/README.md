@@ -10,4 +10,5 @@ Some of this might not be true
 - **Tk/Tool kit**: utility types.
 - **NGui**: Hello Game's UI framework for NMS.
 - **Atlas**: Auth, networking and discovery stuff. Sort of like a master server.
+- **Eg**: ? really got no idea on this one. Could mean Engine Graphics considering it's all render pipeline stuff.
 
