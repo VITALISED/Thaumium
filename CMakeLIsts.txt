@@ -83,4 +83,4 @@ set_target_properties(ThaumiumDLL PROPERTIES
 )   
 
 # Targets
-# add_subdirectory(Launcher) //TODO: create cool launcher
+add_subdirectory(proxy)
