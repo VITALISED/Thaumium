@@ -8,5 +8,8 @@
 #define PCH_H
 
 #include "framework.h"
+#include "exports.h"
+
+#define DLLTARGET "Thaumium"
 
 #endif //PCH_H

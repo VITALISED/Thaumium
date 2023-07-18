@@ -1,6 +1,7 @@
 add_library(ThaumiumProxy SHARED
 	"dllmain.cpp"
 	"framework.h"
+	"exports.h"
 )
 
 target_precompile_headers(ThaumiumProxy PRIVATE pch.h)
