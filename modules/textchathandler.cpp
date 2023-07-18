@@ -1,5 +1,5 @@
 #include "../pch.h"
-#include "TextChatHandler.h"
+#include "textchathandler.h"
 
 cGcTextChatInput::ParseTextForCommands fpParseTextForCommands = NULL;
 

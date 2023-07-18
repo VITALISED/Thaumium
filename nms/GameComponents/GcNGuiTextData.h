@@ -1,9 +1,9 @@
 #pragma once
 
 #include "GcNGuiElementData.h"
-#include "../Toolkit/TkFixedString.h"
-#include "../Toolkit/TkNGuiTextStyle.h"
-#include "../Toolkit/TkNGuiGraphicStyle.h"
+#include "../ToolKit/TkFixedString.h"
+#include "../ToolKit/TkNGuiTextStyle.h"
+#include "../ToolKit/TkNGuiGraphicStyle.h"
 #include "../ToolKit/TkClassPointer.h"
 
 class cGcNGuiTextData
