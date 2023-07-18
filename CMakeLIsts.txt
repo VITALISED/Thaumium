@@ -11,6 +11,7 @@ add_compile_options(-ggdb)
 
 # Thaumium
 add_library(ThaumiumDLL SHARED
+        "dllmain.h"
         "dllmain.cpp"
         "framework.h"
         "util/memory.h"
@@ -25,48 +26,76 @@ add_library(ThaumiumDLL SHARED
         "modules/textchathandler.cpp"
 
         #NMS
+        "nms/version.h"
 
         #GameComponents
         "nms/GameComponents/GcApplication.h"
+        "nms/GameComponents/GcAtlasDownloadType.h"
         "nms/GameComponents/GcBooleanOption.h"
         "nms/GameComponents/GcBooleanOption.cpp"
         "nms/GameComponents/GcFrontendPageOptions.h"
         "nms/GameComponents/GcNetworkManager.h"
         "nms/GameComponents/GcNetworkMessageManager.h"
         "nms/GameComponents/GcNGuiElement.h"
+        "nms/GameComponents/GcNGuiElement.cpp"
         "nms/GameComponents/GcNGuiElementData.h"
         "nms/GameComponents/GcNGuiLayer.h"
         "nms/GameComponents/GcNGuiLayer.cpp"
+        "nms/GameComponents/GcNGuiLayerData.cpp"
         "nms/GameComponents/GcNGuiLayoutData.h"
+        "nms/GameComponents/GcNGuiLayoutData.cpp"
+        "nms/GameComponents/GcNGuiPreset.h"
+        "nms/GameComponents/GcNGuiPresetText.h"
+        "nms/GameComponents/GcNGuiPresetGraphic.h"
+        "nms/GameComponents/GcNGuiSpacingData.h"
+        "nms/GameComponents/GcNGuiSpacingData.cpp"
         "nms/GameComponents/GcNGuiText.h"
         "nms/GameComponents/GcNGuiText.cpp"
         "nms/GameComponents/GcNGuiTextData.h"
+        "nms/GameComponents/GcNGuiTextData.cpp"
         "nms/GameComponents/GcOption.h"
         "nms/GameComponents/GcOptionsInteractionContext.h"
         "nms/GameComponents/GcOptionsInteractionContext.cpp"
         "nms/GameComponents/GcOptionsMenuState.h"
         "nms/GameComponents/GcTextChatInput.h"
         "nms/GameComponents/GcTextChatManager.h"
+        "nms/GameComponents/GcPlayerControlInput.h"
+        "nms/GameComponents/GcPlayerControlInput.cpp"
         "nms/GameComponents/GcUIOptionListElement.h"
         "nms/GameComponents/GcUIOptionListElement.cpp"
+        "nms/GameComponents/GcFrigateFlybyType.h"
+        "nms/GameComponents/GcFrigateFlybyType.cpp"
 
         #ToolKit
         "nms/ToolKit/TkBBox2d.h"
         "nms/ToolKit/TkColour.h"
         "nms/ToolKit/TkCurveType.h"
         "nms/ToolKit/TkDynamicArray.h"
+        "nms/ToolKit/TkFixedArray.h"
         "nms/ToolKit/TkFixedString.h"
         "nms/ToolKit/TkID.h"
         "nms/ToolKit/TkMemoryManager.h"
         "nms/ToolKit/TkNGuiAlignment.h"
+        "nms/ToolKit/TkNGuiAlignment.cpp"
         "nms/ToolKit/TkNGuiDraggable.h"
         "nms/ToolKit/TkNGuiForcedStyle.h"
         "nms/ToolKit/TkNGuiGraphicStyle.h"
+        "nms/ToolKit/TkNGuiGraphicStyle.cpp"
         "nms/ToolKit/TkNGuiGraphicStyleData.h"
         "nms/ToolKit/TkSTLAllocatorShim.h"
         "nms/ToolKit/TkVector2.h"
         "nms/ToolKit/TkVector4.h"
- "nms/ToolKit/TkNGuiTypeUndoable.h" "nms/ToolKit/TkNGuiUndoable.h" "nms/ToolKit/TkNGuiGraphicStyleData.cpp" "nms/GameComponents/GcNGuiLayoutData.cpp" "nms/GameComponents/GcNGuiLayerData.cpp" "nms/GameComponents/GcNGuiSpacingData.h" "nms/GameComponents/GcNGuiSpacingData.cpp" "nms/GameComponents/GcFrigateFlybyType.h" "nms/Reality/FrigateFlybyType.h" "nms/GameComponents/GcAtlasDownloadType.h" "nms/Atlas/DownloadType.h" "nms/GameComponents/GcFrigateFlybyType.cpp" "nms/ToolKit/TkNGuiAlignment.cpp" "nms/ToolKit/TkNGuiGraphicStyle.cpp" "nms/GameComponents/GcPlayerControlInput.h" "nms/GameComponents/GcPlayerControlInput.cpp" "nms/ToolKit/TkLinearHashTable.h" "nms/ToolKit/TkHashedNGuiElement.h" "nms/GameComponents/GcNGuiElement.cpp" "nms/GameComponents/GcNGuiPreset.h" "nms/ToolKit/TkFixedArray.h" "nms/GameComponents/GcNGuiPresetText.h" "nms/GameComponents/GcNGuiPresetGraphic.h" "nms/version.h" "nms/ToolKit/TkClassPointer.h" "nms/NGui/NGuiEditorIcons.h" "nms/GameComponents/GcNGuiTextData.cpp" "dllmain.h")
+        "nms/ToolKit/TkNGuiTypeUndoable.h"
+        "nms/ToolKit/TkNGuiUndoable.h"
+        "nms/ToolKit/TkNGuiGraphicStyleData.cpp"
+        "nms/ToolKit/TkLinearHashTable.h"
+        "nms/ToolKit/TkHashedNGuiElement.h"
+        "nms/ToolKit/TkClassPointer.h"
+        #Misc
+        "nms/Reality/FrigateFlybyType.h"
+        "nms/Atlas/DownloadType.h"
+        "nms/NGui/NGuiEditorIcons.h"
+)
 
 target_link_libraries(ThaumiumDLL PRIVATE
         ${CMAKE_SOURCE_DIR}/lib/MinHook.x64.lib
