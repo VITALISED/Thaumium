@@ -1,10 +1,5 @@
 #include "hooks.h"
 
-//void Hooks::Init()
-//{
-//	uintptr_t base = (uintptr_t)GetModuleHandleA(NULL);
-//}
-
 void Hooks::AddHook(LPVOID pTarget, LPVOID pDetour, void* ppOriginal, const char* name)
 {
 	std::string formatName = fmt::format("{} ({})", name, pTarget);

@@ -1,8 +1,6 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-#include <mutex>
-#include <condition_variable>
-#include "./modules/core.h"
+#include "dllmain.h"
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
@@ -23,11 +21,9 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        spdlog::info("Thaumium attached");
-        spdlog::info(sizeof(cGcBooleanOption));
-        spdlog::info(sizeof(cGcNGuiLayer));
-        MH_Initialize();
         DisableThreadLibraryCalls(hModule);
+        spdlog::info("Thaumium running on build: {}", THAUMIUM_VER);
+        MH_Initialize();
         CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr);
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:

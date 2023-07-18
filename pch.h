@@ -20,4 +20,6 @@
 // TODO: is nanovg used? if so, how the fuck; the game uses vulkan, is it legacy?
 #include <robin_hood.h>
 
+#define THAUMIUM_VER "alpha"
+
 #endif //PCH_H
