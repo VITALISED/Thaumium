@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "../NGui/eVertical.h"
-#include "../NGui/eHorizontal.h"
+#include "../NGui/Vertical.h"
+#include "../NGui/Horizontal.h"
 
 class cTkNGuiAlignment
 {

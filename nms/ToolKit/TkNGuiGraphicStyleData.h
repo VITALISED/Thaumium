@@ -1,8 +1,8 @@
 #pragma once
 
 #include "TkColour.h"
-#include "../NGui/eGradient.h"
-#include "../NGui/eShape.h"
+#include "../NGui/Gradient.h"
+#include "../NGui/Shape.h"
 
 class __declspec(align(16)) cTkNGuiGraphicStyleData
 {

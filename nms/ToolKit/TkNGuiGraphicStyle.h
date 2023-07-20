@@ -3,7 +3,7 @@
 #include "TkNGuiGraphicStyleData.h"
 #include "TkVector2.h"
 #include "TkCurveType.h"
-#include "../NGui/eAnimate.h"
+#include "../NGui/Animate.h"
 #include "../GameComponents/GcPlayerControlInput.h"
 
 class __declspec(align(16))cTkNGuiGraphicStyle

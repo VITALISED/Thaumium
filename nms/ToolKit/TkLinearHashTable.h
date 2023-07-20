@@ -2,7 +2,6 @@
 
 #include <utility>
 
-#pragma pack(8)
 template<typename T, typename U>
 class cTkLinearHashTable
 {
@@ -23,4 +22,3 @@ class cTkLinearHashTable
 	int miSize;
 	int miTableSize;
 };
-#pragma pack()

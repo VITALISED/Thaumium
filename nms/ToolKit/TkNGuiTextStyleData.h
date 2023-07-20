@@ -2,7 +2,6 @@
 #include "TkColour.h"
 #include "TkNGuiAlignment.h"
 
-#pragma pack(16)
 class cTkNGuiTextStyleData
 {
 public:
@@ -40,4 +39,3 @@ public:
 		this->mbBlockAudio = false;
 	}
 };
-#pragma pack()

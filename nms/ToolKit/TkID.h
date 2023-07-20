@@ -5,7 +5,7 @@
 									lID.mChars[i] = chars[i];						\
 									int val = 0x19;									\
 									if((chars - 97) <= (const char*)&val)			\
-										lID.mChars[i] = (char)(chars - (char)32);	\
+										lID.mChars[i] = (char)(*chars - (char)32);	\
 								}													\
 								lID.mChars[15] = 0;									\
 

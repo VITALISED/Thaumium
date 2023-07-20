@@ -2,7 +2,7 @@
 
 #include "GcNGuiElementData.h"
 #include "GcNGuiSpacingData.h"
-#include "../NGui/eAltMode.h"
+#include "../NGui/AltMode.h"
 #include "../ToolKit/TkFixedString.h"
 #include "../ToolKit/TkDynamicArray.h"
 #include "../ToolKit/TkNGuiGraphicStyle.h"
@@ -12,6 +12,8 @@ class cGcNGuiLayerData
 {
 public:
 	cGcNGuiLayerData();
+
+	typedef bool(*Save)(cGcNGuiLayerData* thiscall, const char* lpacFileName, bool lbClearAllExistingData);
 
 	cGcNGuiElementData mElementData;
 	cTkNGuiGraphicStyle mStyle;

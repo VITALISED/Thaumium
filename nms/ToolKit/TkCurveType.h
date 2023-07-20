@@ -1,5 +1,5 @@
 #pragma once
-#include "../NGui/eCurve.h"
+#include "../NGui/Curve.h"
 
 class cTkCurveType
 {
