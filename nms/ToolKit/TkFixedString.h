@@ -1,7 +1,7 @@
 #pragma once
 
 template <unsigned int size, typename T>
-class cTkFixedString
+class __declspec(align(4)) cTkFixedString
 {
 public: 
 	cTkFixedString()

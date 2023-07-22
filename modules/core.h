@@ -6,6 +6,7 @@
 #include "textchathandler.h"
 #include "frontendoptions.h"
 #include "nguimbinexport.h"
+#include "curlhook.h"
 
 #define GCAPPLICATION (cGcApplication*)OFFSET(0x463F810)
 

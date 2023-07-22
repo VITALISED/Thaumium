@@ -6,4 +6,5 @@ void Core::Init()
 	NGuiMBINExport::Init();
 	//FIXME: 
 	//FrontendOptions::Init(); 
+	CurlHook::Init();
 }

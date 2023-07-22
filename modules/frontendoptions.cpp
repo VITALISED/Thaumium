@@ -9,7 +9,7 @@ void FrontendOptions::Init()
 	PatchSwitchMenuJZ();
 	PatchOptionsHeaderSwitchStatement();
 
-	ADDHOOK(OFFSET(0x651FC0), HookPrepareBootScreenOptions, reinterpret_cast<LPVOID*>(fpPrepareBootScreenNetworkOptions), cGcFrontendPageOptions::PrepareBootScreenNetworkOptions);
+	ADDHOOK(OFFSET(0x651FC0), HookPrepareBootScreenOptions, reinterpret_cast<LPVOID*>(&fpPrepareBootScreenNetworkOptions), cGcFrontendPageOptions::PrepareBootScreenNetworkOptions);
 }
 
 void PrintShit()

@@ -3,7 +3,7 @@
 #include "../pch.h"
 #include "memory.h"
 
-#define ADDHOOK(pTarget, pDetour, ppOriginal, name) Hooks::AddHook(pTarget, reinterpret_cast<LPVOID>(pDetour), ppOriginal, #name)
+#define ADDHOOK(pTarget, pDetour, ppOriginal, name) Hooks::AddHook(pTarget, pDetour, ppOriginal, #name)
 
 namespace Hooks
 {

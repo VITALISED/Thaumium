@@ -22,6 +22,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     {
     case DLL_PROCESS_ATTACH:
         DisableThreadLibraryCalls(hModule);
+        spdlog::set_level(spdlog::level::debug);
         spdlog::info("Thaumium running on build: {}", THAUMIUM_VER);
         MH_Initialize();
         CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr);
