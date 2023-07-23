@@ -1,3 +1,3 @@
 # Thaumium
 
-Thaumium is a No Man's Sky reverse engineering project currently just as a scratchpad for 4.13.
+Thaumium is a No Man's Sky reverse engineering project currently working mostly as a scratchpad targeting Fractal 4.13 Debug.
