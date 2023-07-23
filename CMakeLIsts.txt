@@ -96,7 +96,7 @@ add_library(ThaumiumDLL SHARED
         "nms/Reality/FrigateFlybyType.h"
         "nms/Atlas/DownloadType.h"
         "nms/NGui/NGuiEditorIcons.h"
- "modules/nguimbinexport.h" "modules/nguimbinexport.cpp" "nms/ToolKit/TkMetaDataXML.h" "nms/ToolKit/TkLinearMemoryPool.h" "nms/ToolKit/TkMemoryPool.h" "nms/ToolKit/TkBitArray.h" "nms/ToolKit/TkBitArrayStorage.h" "modules/curlhook.cpp" "nms/ToolKit/TkStackVector.h" "nms/ToolKit/TkAlignedBlock.h" "nms/GameComponents/GcAtlasTransportWinHttp.h" "nms/Atlas/Http.h" "nms/GameComponents/GcPlayer.h" "nms/Havok/hknpShapeKeyMask.h" "nms/ToolKit/TkVector3.h")
+ "modules/nguimbinexport.h" "modules/nguimbinexport.cpp" "nms/ToolKit/TkMetaDataXML.h" "nms/ToolKit/TkLinearMemoryPool.h" "nms/ToolKit/TkMemoryPool.h" "nms/ToolKit/TkBitArray.h" "nms/ToolKit/TkBitArrayStorage.h" "modules/curlhook.cpp" "nms/ToolKit/TkStackVector.h" "nms/ToolKit/TkAlignedBlock.h" "nms/GameComponents/GcAtlasTransportWinHttp.h" "nms/Atlas/Http.h" "nms/GameComponents/GcPlayer.h" "nms/Havok/hknpShapeKeyMask.h" "nms/ToolKit/TkVector3.h" "nms/ToolKit/TkFileSystem.h" "nms/Engine/FileOpenMode.h" "nms/Engine/FIOS2HANDLE.h")
 
 target_link_libraries(ThaumiumDLL PRIVATE
         ${CMAKE_SOURCE_DIR}/lib/MinHook.x64.lib

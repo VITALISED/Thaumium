@@ -1,9 +1,9 @@
 #pragma once
-#include "../nms/GameComponents/GcNGuiLayerData.h"
-#include "../nms/ToolKit/TkMetaDataXML.h"
+#include "../nms/ToolKit/TkFileSystem.h"
+
 
 namespace NGuiMBINExport
 {
 	void Init();
-	bool SaveHook(cGcNGuiLayerData* thiscall, const char* lpacFileName, bool lbClearAllExistingData);
+	FIOS2HANDLE* FileSystemOpenHook(cTkFileSystem* thiscall, const char* lpacFileName, eFileOpenMode leMode);
 }

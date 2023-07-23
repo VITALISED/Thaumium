@@ -1,25 +1,37 @@
 #include "../pch.h"
 #include "nguimbinexport.h"
 
-cGcNGuiLayerData::Save fpSave = NULL;
+cTkFileSystem::Open fpOpen = NULL;
 
 void NGuiMBINExport::Init()
 {
-	//ADDHOOK(OFFSET(0x23C8350), SaveHook, reinterpret_cast<LPVOID*>(fpSave), cGcNGuiLayerData::Save);
+	ADDHOOK(OFFSET(0x2FF8A50), FileSystemOpenHook, reinterpret_cast<LPVOID*>(&fpOpen), cTkFileSystem::Open);
 }
 
-bool NGuiMBINExport::SaveHook(cGcNGuiLayerData* thiscall, const char* lpacFileName, bool lbClearAllExistingData)
+FIOS2HANDLE* NGuiMBINExport::FileSystemOpenHook(cTkFileSystem* thiscall, const char* lpacFileName, eFileOpenMode leMode)
 {
-/*	std::string wires = lpacFileName;
-	std::size_t found = wires.find(".mXml");
+	FIOS2HANDLE* result = fpOpen(thiscall, lpacFileName, leMode);
 
-	if (found != std::string::npos)
+	if (leMode == EFOM_Write && result == NULL)
 	{
-		wires.replace(found, wires.length(), ".mBin");
+		std::string fileName = lpacFileName;
+		if (fileName.rfind(".", 0) == std::string::npos)
+		{
+			//invalid open call, happens in some places namely mxml writes which spit out mbin, we obviously want tasty mbins.
+			fileName.insert(0, "../Exported/");
+			size_t pos = fileName.find_last_of("\\/");
+			if (pos != std::string::npos)
+			{
+				std::string path = fileName.substr(0, pos);
+				cTkFileSystem::CreatePath createPath = (cTkFileSystem::CreatePath)OFFSET(0x2FF8A50);
+				createPath(thiscall, path.c_str());
+			}
+
+			spdlog::debug(fileName.c_str());
+			spdlog::debug(lpacFileName);
+			return fpOpen(thiscall, fileName.c_str(), leMode);
+		}
 	}
 
-	spdlog::info("Writing cGcNGuiLayerData to {}", wires);
-
-	cTkMetaDataXML<cGcNGuiLayerData const>::WriteToXMLFile saveFunc = (cTkMetaDataXML<cGcNGuiLayerData const>::WriteToXMLFile)OFFSET(0x23AD9B0);
-	return saveFunc(thiscall, "GcNGuiLayerData", wires.c_str(), false, false, lbClearAllExistingData, true);*/	
+	return fpOpen(thiscall, lpacFileName, leMode);
 }
