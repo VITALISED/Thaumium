@@ -1,18 +1,7 @@
 {
   "configurations": [
     {
-      "name": "x64-Release",
-      "generator": "Ninja",
-      "configurationType": "Release",
-      "buildRoot": "${projectDir}\\build",
-      "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang++",
-      "buildCommandArgs": "",
-      "ctestCommandArgs": "",
-      "inheritEnvironments": [ "msvc_x64_x64" ]
-    },
-    {
-      "name": "x64-RelWithDebInfo",
+      "name": "Upstream",
       "generator": "Ninja",
       "configurationType": "RelWithDebInfo",
       "inheritEnvironments": [ "msvc_x64_x64" ],
@@ -23,9 +12,9 @@
       "ctestCommandArgs": ""
     },
     {
-      "name": "x64-Debug",
+      "name": "Fractal",
       "generator": "Ninja",
-      "configurationType": "Debug",
+      "configurationType": "RelWithDebInfo",
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
       "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang++",

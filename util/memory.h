@@ -7,6 +7,7 @@
 
 #define _BASE (uintptr_t)GetModuleHandleA(NULL)
 #define OFFSET(offset) (LPVOID)(_BASE + (uintptr_t)offset)
+#define SIGSCAN(pattern) (LPVOID)(Memory::ScanPattern(Memory::IdaPatternToByte(#pattern)))
 
 #define TKMEMORYMANAGER (cTkMemoryManager*)OFFSET(0x45835D0)
 
@@ -14,5 +15,5 @@ namespace Memory
 {
 	void PatchBytes(uintptr_t ptr, const char* sig);
 	std::vector<BYTE> IdaPatternToByte(const char* sig);
-	uintptr_t NMSMalloc(long size);
+	uintptr_t ScanPattern(std::vector<BYTE> bytes);
 }
