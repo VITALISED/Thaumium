@@ -4,5 +4,11 @@
 // Right now this doesn't do anything but I'll be adding specific version targets at some point
 // Below is some example naming schemes
 
-#define NMS_101263
-#define NMS_101263_DEBUG
+#if FRACTAL
+#define NMS_FRACTAL_101263
+#endif
+
+#if UPSTREAM
+#define NMS_UPSTREAM
+#define NMS_SINGULARITY_107985
+#endif

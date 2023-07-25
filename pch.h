@@ -16,10 +16,18 @@
 #include "util/memory.h"
 #include "util/hooks.h"
 
-// some libs used by nms
-// TODO: is nanovg used? if so, how the fuck; the game uses vulkan, is it legacy?
 #include <robin_hood.h>
 
-#define THAUMIUM_VER "alpha"
+#if FRACTAL
+#define BRANCH "fractal"
+#elif UPSTREAM
+#define BRANCH "upstream"
+#endif
+
+#define VERSION "0.0.1_alpha"
+#define __THAUMIUM_VER(branch, version) (std::string(branch) + "_" + version)
+
+#define THAUMIUM_VER __THAUMIUM_VER(BRANCH, VERSION)
 
 #endif //PCH_H
+
