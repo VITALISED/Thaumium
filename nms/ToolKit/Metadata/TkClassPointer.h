@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TkFixedString.h"
+#include "../Utilities/TkString.h"
 
 class cTkClassPointer
 {

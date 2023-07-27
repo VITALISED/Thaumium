@@ -1,10 +1,10 @@
 #pragma once
 
 #include "TkNGuiGraphicStyleData.h"
-#include "TkVector2.h"
-#include "TkCurveType.h"
-#include "../NGui/Animate.h"
-#include "../GameComponents/GcPlayerControlInput.h"
+#include "../nms/ToolKit/Maths/TkVector2.h"
+#include "../TkCurveType.h"
+#include "../nms/NGui/Animate.h"
+#include "../nms/GameComponents/GcPlayerControlInput.h"
 
 class __declspec(align(16))cTkNGuiGraphicStyle
 {

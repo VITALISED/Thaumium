@@ -27,76 +27,123 @@ add_library(ThaumiumDLL SHARED
 
         #NMS
         "nms/version.h"
+        
+        #Application
+        "nms/Application/GcApplication.h"
 
-        #GameComponents
-        "nms/GameComponents/GcApplication.h"
-        "nms/GameComponents/GcAtlasDownloadType.h"
-        "nms/GameComponents/GcBooleanOption.h"
-        "nms/GameComponents/GcBooleanOption.cpp"
-        "nms/GameComponents/GcFrontendPageOptions.h"
-        "nms/GameComponents/GcNetworkManager.h"
-        "nms/GameComponents/GcNetworkMessageManager.h"
-        "nms/GameComponents/GcNGuiElement.h"
-        "nms/GameComponents/GcNGuiElement.cpp"
-        "nms/GameComponents/GcNGuiElementData.h"
-        "nms/GameComponents/GcNGuiLayer.h"
-        "nms/GameComponents/GcNGuiLayer.cpp"
-        "nms/GameComponents/GcNGuiLayerData.cpp"
-        "nms/GameComponents/GcNGuiLayoutData.h"
-        "nms/GameComponents/GcNGuiLayoutData.cpp"
-        "nms/GameComponents/GcNGuiPreset.h"
-        "nms/GameComponents/GcNGuiPresetText.h"
-        "nms/GameComponents/GcNGuiPresetGraphic.h"
-        "nms/GameComponents/GcNGuiSpacingData.h"
-        "nms/GameComponents/GcNGuiSpacingData.cpp"
-        "nms/GameComponents/GcNGuiText.h"
-        "nms/GameComponents/GcNGuiText.cpp"
-        "nms/GameComponents/GcNGuiTextData.h"
-        "nms/GameComponents/GcNGuiTextData.cpp"
-        "nms/GameComponents/GcOption.h"
-        "nms/GameComponents/GcOptionsInteractionContext.h"
-        "nms/GameComponents/GcOptionsInteractionContext.cpp"
-        "nms/GameComponents/GcOptionsMenuState.h"
-        "nms/GameComponents/GcTextChatInput.h"
-        "nms/GameComponents/GcTextChatManager.h"
-        "nms/GameComponents/GcPlayerControlInput.h"
-        "nms/GameComponents/GcPlayerControlInput.cpp"
-        "nms/GameComponents/GcUIOptionListElement.h"
-        "nms/GameComponents/GcUIOptionListElement.cpp"
-        "nms/GameComponents/GcFrigateFlybyType.h"
-        "nms/GameComponents/GcFrigateFlybyType.cpp"
-        "nms/GameComponents/GcURL.h"
+        #Engine
+        "nms/Engine/FileOpenMode.h"
+        "nms/Engine/FIOS2HANDLE.h"
+
+        #Graphics
+
+        #NGui
+        "nms/Graphics/NGui/AltMode.h"
+        "nms/Graphics/NGui/Animate.h"
+        "nms/Graphics/NGui/Curve.h"
+        "nms/Graphics/NGui/GcNGuiElement.h"
+        "nms/Graphics/NGui/GcNGuiElement.cpp"
+        "nms/Graphics/NGui/GcNGuiLayer.h"
+        "nms/Graphics/NGui/GcNGuiLayer.cpp"
+        "nms/Graphics/NGui/GcNGuiPreset.h"
+        "nms/Graphics/NGui/GcNGuiPresetGraphic.h"
+        "nms/Graphics/NGui/GcNGuiPresetText.h"
+        "nms/Graphics/NGui/GcNGuiText.h"
+        "nms/Graphics/NGui/GcNGuiText.cpp"
+        "nms/Graphics/NGui/Gradient.h"
+        "nms/Graphics/NGui/Horizontal.h"
+        "nms/Graphics/NGui/NGuiAnimationEvent.h"
+        "nms/Graphics/NGui/NGuiEditorIcons.h"
+        "nms/Graphics/NGui/NGuiForcedStyle.h"
+        "nms/Graphics/NGui/NGuiInputType.h"
+        "nms/Graphics/NGui/Shape.h"
+        "nms/Graphics/NGui/Vertical.h"
+
+        "nms/Graphics/NGui/Options/GcBooleanOption.h"
+        "nms/Graphics/NGui/Options/GcBooleanOption.cpp"
+        "nms/Graphics/NGui/Options/GcFrontendPageOptions.h"
+        "nms/Graphics/NGui/Options/Option.h"
+        "nms/Graphics/NGui/Options/GcOptionsInteractionContext.h"
+        "nms/Graphics/NGui/Options/GcOptionsInteractionContext.cpp"
+        "nms/Graphics/NGui/Options/GcOptionsMenuState.h"
+        "nms/Graphics/NGui/Options/GcUIOptionListElement.h"
+        "nms/Graphics/NGui/Options/GcUIOptionListElement.cpp"
+
+        #Havok 
+        "nms/Havok/hknpShapeKeyMask.h"
+
+        #Metadata
+        "nms/Metadata/Graphics/NGui/GcNGuiElementData.meta.h"
+        "nms/Metadata/Graphics/NGui/GcNGuiLayerData.meta.h"
+        "nms/Metadata/Graphics/NGui/GcNGuiLayerData.meta.cpp"
+        "nms/Metadata/Graphics/NGui/GcNGuiLayoutData.meta.h"
+        "nms/Metadata/Graphics/NGui/GcNGuiLayoutData.meta.cpp"
+        "nms/Metadata/Graphics/NGui/GcNGuiSpacingData.meta.h"
+        "nms/Metadata/Graphics/NGui/GcNGuiSpacingData.meta.cpp"
+        "nms/Metadata/Graphics/NGui/GcNGuiTextData.meta.h"
+        "nms/Metadata/Graphics/NGui/GcNGuiTextData.meta.cpp"
+        "nms/Metadata/Graphics/NGui/TkNGuiAlignment.meta.h"
+        "nms/Metadata/Graphics/NGui/TkNGuiAlignment.meta.cpp"
+        "nms/Metadata/Graphics/NGui/TkNGuiForcedStyle.meta.h"
+        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyle.meta.h"
+        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyle.meta.cpp"
+        "nms/Metadata/Graphics/NGui/TkNGuiTextStyleData.meta.h"
+
+        #Simulation
+        "nms/Metadata/Simulation/GcFrigateFlybyType.meta.h"
+        "nms/Metadata/Simulation/GcFrigateFlybyType.meta.cpp"
+
+        #Network
+        "nms/Network/GcNetworkManager.h"
+        "nms/Network/GcNetworkMessageManager.h"
+        "nms/Network/GcTextChatInput.h"
+        "nms/Network/GcTextChatManager.h"
+        "nms/Network/GcURL.h"
+
+        #Atlas
+        "nms/Network/Atlas/DownloadType.h"
+        "nms/Network/Atlas/GcAtlasDownloadType.h"
+        "nms/Network/Atlas/GcAtlasTransportWinHttp.h"
+        "nms/Network/Atlas/Http.h"
+        "nms/Network/Atlas/WinHttpTask.h"
+
+        #Simulation
+        "nms/Simulation/GcPlayer.h"
+        "nms/Simulation/GcPlayerControlInput.h"
+        "nms/Simulation/GcPlayerControlInput.cpp"
 
         #ToolKit
-        "nms/ToolKit/TkBBox2d.h"
-        "nms/ToolKit/TkColour.h"
-        "nms/ToolKit/TkCurveType.h"
-        "nms/ToolKit/TkDynamicArray.h"
-        "nms/ToolKit/TkFixedArray.h"
-        "nms/ToolKit/TkFixedString.h"
-        "nms/ToolKit/TkID.h"
-        "nms/ToolKit/TkMemoryManager.h"
-        "nms/ToolKit/TkNGuiAlignment.h"
-        "nms/ToolKit/TkNGuiAlignment.cpp"
-        "nms/ToolKit/TkNGuiDraggable.h"
-        "nms/ToolKit/TkNGuiForcedStyle.h"
-        "nms/ToolKit/TkNGuiGraphicStyle.h"
-        "nms/ToolKit/TkNGuiGraphicStyle.cpp"
-        "nms/ToolKit/TkNGuiGraphicStyleData.h"
-        "nms/ToolKit/TkSTLAllocatorShim.h"
-        "nms/ToolKit/TkVector2.h"
-        "nms/ToolKit/TkVector4.h"
-        "nms/ToolKit/TkNGuiTypeUndoable.h"
-        "nms/ToolKit/TkNGuiUndoable.h"
-        "nms/ToolKit/TkNGuiGraphicStyleData.cpp"
-        "nms/ToolKit/TkLinearHashTable.h"
-        "nms/ToolKit/TkHashedNGuiElement.h"
-        "nms/ToolKit/TkClassPointer.h"
-        #Misc
-        "nms/Reality/FrigateFlybyType.h"
-        "nms/Atlas/DownloadType.h"
-        "nms/NGui/NGuiEditorIcons.h"
- "modules/nguimbinexport.h" "modules/nguimbinexport.cpp" "nms/ToolKit/TkMetaDataXML.h" "nms/ToolKit/TkLinearMemoryPool.h" "nms/ToolKit/TkMemoryPool.h" "nms/ToolKit/TkBitArray.h" "nms/ToolKit/TkBitArrayStorage.h" "modules/curlhook.cpp" "nms/ToolKit/TkStackVector.h" "nms/ToolKit/TkAlignedBlock.h" "nms/GameComponents/GcAtlasTransportWinHttp.h" "nms/Atlas/Http.h" "nms/GameComponents/GcPlayer.h" "nms/Havok/hknpShapeKeyMask.h" "nms/ToolKit/TkVector3.h" "nms/ToolKit/TkFileSystem.h" "nms/Engine/FileOpenMode.h" "nms/Engine/FIOS2HANDLE.h")
+        "nms/ToolKit/Graphics/NGui/TkHashedNGuiElement.h"
+        "nms/ToolKit/Graphics/NGui/TkNGuiDraggable.h"
+        "nms/ToolKit/Graphics/NGui/TkNGuiTextStyle.h"
+        "nms/ToolKit/Graphics/NGui/TkNGuiTypeUndoable.h"
+        "nms/ToolKit/Graphics/NGui/TkNGuiUndoable.h"
+
+        "nms/ToolKit/Graphics/TkColour.h"
+        "nms/ToolKit/Graphics/TkCurveType.h"
+
+        "nms/ToolKit/Maths/TkBBox2d.h"
+        "nms/ToolKit/Maths/TkVector2.h"
+        "nms/ToolKit/Maths/TkVector3.h"
+        "nms/ToolKit/Maths/TkVector4.h"
+
+        "nms/ToolKit/Metadata/TkClassPointer.h"
+        "nms/ToolKit/Metadata/TkID.h"
+        "nms/ToolKit/MetaData/TkMetaDataXML.h"
+
+        "nms/ToolKit/Utilities/Memory/TkAlignedBlock.h"
+        "nms/ToolKit/Utilities/Memory/TkLinearHashTable.h"
+        "nms/ToolKit/Utilities/Memory/TkLinearMemoryPool.h"
+        "nms/ToolKit/Utilities/Memory/TkMemoryManager.h"
+        "nms/ToolKit/Utilities/Memory/TkMemoryPool.h"
+        "nms/ToolKit/Utilities/Memory/TkStackVector.h"
+        "nms/ToolKit/Utilities/Memory/TKSTLAllocatorShim.h"
+
+        "nms/ToolKit/Utilities/TkArray.h"
+        "nms/ToolKit/Utilities/TkBitArray.h"
+        "nms/ToolKit/Utilities/TkFileSystem.h"
+        "nms/ToolKit/Utilities/TkString.h"
+)
 
 IF(USEFRACTAL)
     target_compile_definitions(ThaumiumDLL PRIVATE FRACTAL=1)

@@ -14,3 +14,9 @@ public:
 	bool mbAllocatedFromData;
 	unsigned __int8 macMagicPad[3];
 };
+
+template <typename T, unsigned int size>
+class cTkFixedArray
+{
+	T maArray[size];
+};

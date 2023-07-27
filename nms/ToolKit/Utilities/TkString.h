@@ -1,9 +1,12 @@
 #pragma once
 
+#include "../pch.h"
+#include "./TkArray.h"
+
 template <unsigned int size, typename T>
-class __declspec(align(4)) cTkFixedString
+class ALIGN(4) cTkFixedString
 {
-public: 
+public:
 	cTkFixedString()
 	{ };
 
@@ -19,3 +22,6 @@ public:
 
 	T macBuffer[size];
 };
+
+class cTkDynamicString : cTkDynamicArray<char>
+{ };

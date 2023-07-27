@@ -1,5 +1,5 @@
 #pragma once
-#include "TkBitArray.h"
+#include "../TkBitArray.h"
 
 class __declspec(align(8)) cTkMemoryPool
 {

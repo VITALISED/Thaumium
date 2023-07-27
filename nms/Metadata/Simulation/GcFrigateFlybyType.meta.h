@@ -1,4 +1,5 @@
 #pragma once
+#include "GcAtlasDownloadType.h"
 
 enum eFrigateFlybyType
 {
@@ -9,4 +10,12 @@ enum eFrigateFlybyType
 	EFrigateFlybyType_DeepSpaceCommon = 0x4,
 	EFrigateFlybyType_NumTypes = 0x5,
 	EFrigateFlybyType_Unspecified = 0xFFFFFFFF,
+};
+
+class cGcFrigateFlybyType
+{
+public:
+	eFrigateFlybyType meFrigateFlybyType;
+
+	void SetDefaults();
 };

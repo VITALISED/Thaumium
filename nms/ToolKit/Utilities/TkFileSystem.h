@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../Engine/FIOS2HANDLE.h"
-#include "../Engine/FileOpenMode.h"
+#include "../nms/Engine/FIOS2HANDLE.h"
+#include "../nms/Engine/FileOpenMode.h"
 
 class cTkFileSystem
 {

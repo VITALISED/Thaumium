@@ -1,5 +1,5 @@
 #pragma once
-#include "TkID.h"
+#include "../nms/ToolKit/Metadata/TkID.h"
 
 class cTkHashedNGuiElement
 {

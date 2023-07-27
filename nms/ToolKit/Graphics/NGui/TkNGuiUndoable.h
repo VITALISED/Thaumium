@@ -1,5 +1,5 @@
 #pragma once
-#include "TkFixedString.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
 
 class cTkNGuiUndoable
 {
