@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GcNGuiLayoutData.h"
+#include "GcNGuiLayoutData.meta.h"
 #include "../ToolKit/TkID.h"
 #include "../ToolKit/TkNGuiForcedStyle.h"
 

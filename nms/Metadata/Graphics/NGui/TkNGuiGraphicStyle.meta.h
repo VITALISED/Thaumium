@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TkNGuiGraphicStyleData.h"
+#include "TkNGuiGraphicStyleData.meta.h"
 #include "../nms/ToolKit/Maths/TkVector2.h"
 #include "../TkCurveType.h"
 #include "../nms/NGui/Animate.h"

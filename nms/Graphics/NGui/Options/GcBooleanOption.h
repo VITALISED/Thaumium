@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
 
+#include "../pch.h"
 #include "GcOption.h"
-#include "GcNGuiText.h"
+#include "../GcNGuiText.h"
 
 class cGcBooleanOption : public cGcOption<bool>
 {

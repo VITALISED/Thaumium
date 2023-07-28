@@ -1,5 +1,3 @@
-#include "../pch.h"
-#include "../util/memory.h"
 #include "GcUIOptionListElement.h"
 
 void cGcUIOptionListElement::SetEnabled(bool lbEnabled)

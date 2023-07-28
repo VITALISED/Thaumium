@@ -1,5 +1,4 @@
 #include "GcNGuiLayer.h"
-#include "../../util/memory.h"
 
 typedef void(*__LoadFromMetadata)(cGcNGuiLayer* thiscall, const char* lpacFilename, bool lbUseCached);
 typedef cGcNGuiText*(*__FindTextRecursive)(cGcNGuiLayer* thiscall, const TkID<128>* lID);

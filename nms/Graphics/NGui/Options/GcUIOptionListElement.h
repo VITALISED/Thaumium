@@ -1,5 +1,6 @@
 #pragma once
-#include "GcNGuiLayer.h"
+#include "../pch.h"
+#include "../GcNGuiLayer.h"
 #include "GcOptionsInteractionContext.h"
 
 class cGcUIOptionListElement

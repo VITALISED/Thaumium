@@ -1,8 +1,9 @@
 #pragma once
-#include "GcNGuiLayoutData.h"
-#include "../ToolKit/TkID.h"
-#include "../ToolKit/TkNGuiGraphicStyle.h"
-#include "../ToolKit/TkFixedString.h"
+
+#include "../nms/Metadata/Graphics/NGui/GcNGuiLayoutData.meta.h"
+#include "../nms/Metadata/Graphics/NGui/TkNGuiGraphicStyle.meta.h"
+#include "../nms/ToolKit/Metadata/TkID.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
 
 class cGcNGuiPresetGraphic
 {

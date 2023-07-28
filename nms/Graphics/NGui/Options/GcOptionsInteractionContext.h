@@ -1,5 +1,5 @@
 #pragma once
-#include "GcNGuiLayer.h"
+#include "../GcNGuiLayer.h"
 
 class cGcOptionsInteractionContext
 {

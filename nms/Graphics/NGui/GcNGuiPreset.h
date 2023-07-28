@@ -1,10 +1,10 @@
 #pragma once
 
-#include "GcNGuiPresetText.h"
-#include "GcNGuiLayoutData.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
+#include "../nms/ToolKit/Utilities/TkArray.h"
+#include "../nms/Metadata/Graphics/NGui/GcNGuiLayoutData.meta.h"
 #include "GcNGuiPresetGraphic.h"
-#include "../ToolKit/TkFixedString.h"
-#include "../ToolKit/TkFixedArray.h"
+#include "GcNGuiPresetText.h"
 
 class cGcNGuiPreset
 {

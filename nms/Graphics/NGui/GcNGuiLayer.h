@@ -2,15 +2,15 @@
 
 #include <vector>
 
+#include "../pch.h"
+#include "../nms/ToolKit/Utilities/Memory/TkSTLAllocatorShim.h"
+#include "../nms/ToolKit/Utilities/Memory/TkLinearHashTable.h"
+#include "../nms/ToolKit/Graphics/NGui/TkHashedNGuiElement.h"
+#include "../nms/Metadata/Graphics/NGui/GcNGuiLayerData.meta.h"
 #include "GcNGuiElement.h"
-#include "GcNGuiLayerData.h"
 #include "GcNGuiText.h"
-#include "../ToolKit/TkSTLAllocatorShim.h"
-#include "../ToolKit/TkLinearHashTable.h"
-#include "../ToolKit/TkHashedNGuiElement.h"
 
-#pragma pack(16)
-class cGcNGuiLayer : public cGcNGuiElement
+class ALIGN(16) cGcNGuiLayer : public cGcNGuiElement
 {
 public:
 	cGcNGuiLayer();

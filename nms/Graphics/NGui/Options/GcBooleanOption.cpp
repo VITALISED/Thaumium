@@ -1,6 +1,5 @@
 #include "GcBooleanOption.h"
-#include "../../pch.h"
-#include "../../util/memory.h"
+#include "../pch.h"
 
 cGcBooleanOption::cGcBooleanOption(const char* lpacName, bool* lpbValue, const char* lpacDescriptionLocKey, bool lbDefault, const char* lpacEnabledString, const char* lpacDisabledString)
 {

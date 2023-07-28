@@ -2,10 +2,10 @@
 #include <vector>
 
 #include "GcUIOptionListElement.h"
-#include "../ToolKit/TkSTLAllocatorShim.h"
+#include "../nms/ToolKit/Utilities/Memory/TkSTLAllocatorShim.h"
+#include "../pch.h"
 
-#pragma pack(8)
-class cGcOptionsMenuState
+class ALIGN(8) cGcOptionsMenuState
 {
 public:
 	cGcOptionsMenuState(int type, std::vector<cGcUIOptionListElement*, TkSTLAllocatorShim<cGcUIOptionListElement*> > items)

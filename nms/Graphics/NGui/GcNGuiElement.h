@@ -1,15 +1,15 @@
 #pragma once
 
-#include "../ToolKit/TkNGuiDraggable.h"
-#include "../ToolKit/TkBBox2d.h"
-#include "../ToolKit/TkNGuiTypeUndoable.h"
+#include "../pch.h"
+#include "../nms/ToolKit/Graphics/NGui/TkNGuiDraggable.h"
+#include "../nms/ToolKit/Maths/TkBBox2d.h"
+#include "../nms/ToolKit/Graphics/NGui/TkNGuiTypeUndoable.h"
+#include "../nms/ToolKit/Metadata/TkClassPointer.h"
+#include "../nms/Metadata/Graphics/NGui/GcNGuiElementData.meta.h"
 #include "../NGui/NGuiInputType.h"
 #include "../NGui/NGuiAnimationEvent.h"
-#include "GcNGuiElementData.h"
-#include "../../pch.h"
+#include "NGuiEditorIcons.h"
 #include "GcNGuiPreset.h"
-#include "../ToolKit/TkClassPointer.h"
-#include "../NGui/NGuiEditorIcons.h"
 
 class cGcNGuiLayer;
 
