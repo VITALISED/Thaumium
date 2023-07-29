@@ -7,9 +7,9 @@
       "inheritEnvironments": [ "msvc_x64_x64" ],
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang-cl",
       "buildCommandArgs": "",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang-cl"
     },
     {
       "name": "Fractal",
@@ -19,7 +19,7 @@
       "installRoot": "${projectDir}\\out\\install\\${name}",
       "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang-cl -D USEFRACTAL=ON",
       "ctestCommandArgs": "",
-      "inheritEnvironments": [ "msvc_x64_x64" ]
+      "inheritEnvironments": [ "clang_cl_x64_x64" ]
     }
   ]
 }

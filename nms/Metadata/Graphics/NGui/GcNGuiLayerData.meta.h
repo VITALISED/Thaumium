@@ -11,8 +11,7 @@
 class cGcNGuiLayerData
 {
 public:
-	cGcNGuiLayerData()
-	{ };
+	cGcNGuiLayerData();
 	typedef bool(*Save)(cGcNGuiLayerData* thiscall, const char* lpacFileName, bool lbClearAllExistingData);
 
 	cGcNGuiElementData mElementData;
@@ -23,8 +22,4 @@ public:
 	eAltMode meAltMode;
 
 	void SetDefaults();
-	~cGcNGuiLayerData()
-	{
-		delete this;
-	}
 };

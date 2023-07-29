@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 project(Thaumium CXX)
 
 # Language specs
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -24,6 +24,10 @@ add_library(ThaumiumDLL SHARED
         "modules/frontendoptions.cpp"
         "modules/textchathandler.h"
         "modules/textchathandler.cpp"
+        "modules/curlhook.h"
+        "modules/curlhook.cpp"
+        "modules/nguimbinexport.h"
+        "modules/nguimbinexport.cpp"
 
         #NMS
         "nms/version.h"
@@ -87,6 +91,8 @@ add_library(ThaumiumDLL SHARED
         "nms/Metadata/Graphics/NGui/TkNGuiForcedStyle.meta.h"
         "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyle.meta.h"
         "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyle.meta.cpp"
+        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyleData.meta.h"
+        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyleData.meta.cpp"
         "nms/Metadata/Graphics/NGui/TkNGuiTextStyleData.meta.h"
 
         #Simulation

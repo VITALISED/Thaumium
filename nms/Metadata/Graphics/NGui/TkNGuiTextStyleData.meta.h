@@ -36,7 +36,7 @@ public:
 		this->mfDropShadowOffset = 1.0;
 		this->mfOutlineSize = 1065353216; // see above
 		this->mAlign.meVertical = EVertical_Top;
-		this->mbAutoAdjustHeight = 256;
+		this->mbAutoAdjustHeight = true;
 		this->mbBlockAudio = false;
 	}
 };

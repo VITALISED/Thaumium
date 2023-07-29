@@ -12,3 +12,5 @@
 #define NMS_UPSTREAM
 #define NMS_SINGULARITY_107985
 #endif
+
+#define GCAPPLICATION (cGcApplication*)OFFSET(0x463F810)

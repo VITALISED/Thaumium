@@ -1,7 +1,6 @@
 #pragma once
 #include "../nms/ToolKit/Utilities/TkFileSystem.h"
 
-
 namespace NGuiMBINExport
 {
 	void Init();

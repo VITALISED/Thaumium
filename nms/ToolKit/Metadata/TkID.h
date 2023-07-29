@@ -3,6 +3,8 @@
 template<int size>
 union TkID
 {
+	TkID()
+	{ }
 	TkID(const char* lacString)
 	{
 		// uses hashes pretty sure, gonna have to figure out spookyhash later

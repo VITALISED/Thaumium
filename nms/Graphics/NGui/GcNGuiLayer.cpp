@@ -113,7 +113,7 @@ void cGcNGuiLayer::Deselect()
 	this->mbSelectedToEdit = 0;
 	int size = this->mapElements.size();
 
-	for (int i; i < size; i++)
+	for (int i = 0; i < size; i++)
 	{
 		this->mapElements[i]->Deselect();
 	}
@@ -173,7 +173,7 @@ cGcNGuiLayer* cGcNGuiLayer::GetSelected()
 	if (this->IsSelected())
 		return this;
 
-	for (int i; i < this->mapElements.size(); i++)
+	for (int i = 0; i < this->mapElements.size(); i++)
 	{
 		if (this->mapElements[i]->IsLayer())
 		{

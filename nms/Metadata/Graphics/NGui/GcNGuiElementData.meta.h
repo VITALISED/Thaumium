@@ -7,6 +7,8 @@
 class cGcNGuiElementData
 {
 public:
+	cGcNGuiElementData()
+	{ }
 	TkID<128> mID;
 	TkID<128> mPresetID;
 	bool mbIsHidden;
