@@ -1,5 +1,5 @@
 #pragma once
-#include "../nms/NGui/NGuiForcedStyle.h"
+#include "../nms/Graphics/NGui/NGuiForcedStyle.h"
 
 class cTkNGuiForcedStyle
 {

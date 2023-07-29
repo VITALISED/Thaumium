@@ -1,5 +1,5 @@
 #pragma once
-#include "GcNetworkManager.h"
+#include "../nms/Network/GcNetworkManager.h"
 
 class cGcApplication
 {

@@ -1,6 +1,7 @@
 #pragma once
-#include "../TkColour.h"
-#include "TkNGuiAlignment.h"
+
+#include "TkNGuiAlignment.meta.h"
+#include "../nms/ToolKit/Graphics/TkColour.h"
 
 class cTkNGuiTextStyleData
 {

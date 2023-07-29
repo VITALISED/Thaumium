@@ -2,7 +2,7 @@
 
 #include <functional>
 #include "../Atlas/Http.h"
-#include "../ToolKit/TkVector3.h"
+#include "../nms/ToolKit/Maths/TkVector3.h"
 
 class cGcAtlasTransportWinHttp
 {

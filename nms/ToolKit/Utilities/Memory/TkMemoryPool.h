@@ -1,7 +1,9 @@
 #pragma once
+
+#include "../pch.h"
 #include "../TkBitArray.h"
 
-class __declspec(align(8)) cTkMemoryPool
+class ALIGN(8) cTkMemoryPool
 {
 public:
 	//void* __vftable /*VFT*/;

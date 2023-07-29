@@ -2,9 +2,9 @@
 
 #include "TkNGuiGraphicStyleData.meta.h"
 #include "../nms/ToolKit/Maths/TkVector2.h"
-#include "../TkCurveType.h"
-#include "../nms/NGui/Animate.h"
-#include "../nms/GameComponents/GcPlayerControlInput.h"
+#include "../nms/ToolKit/Graphics/TkCurveType.h"
+#include "../nms/Graphics/Animate.h"
+#include "../nms/Simulation/GcPlayerControlInput.h"
 
 class __declspec(align(16))cTkNGuiGraphicStyle
 {

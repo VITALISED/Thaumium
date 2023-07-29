@@ -1,5 +1,5 @@
 #pragma once
-#include "../ToolKit/TkFixedString.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
 
 class cGcTextChatManager
 {

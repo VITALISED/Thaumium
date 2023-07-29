@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../util/hooks.h"
-#include "../util/memory.h"
-#include "../nms/GameComponents/GcNGuiText.h"
-#include "../nms/GameComponents/GcFrontendPageOptions.h"
-#include "../nms/GameComponents/GcOptionsMenuState.h"
-#include "../nms/GameComponents/GcUIOptionListElement.h"
-#include "../nms/GameComponents/GcBooleanOption.h"
-#include "../nms/ToolKit/TkSTLAllocatorShim.h"
+#include "../pch.h"
+
+#include "../nms/Graphics/NGui/GcNGuiText.h"
+#include "../nms/Graphics/NGui/Options/GcFrontendPageOptions.h"
+#include "../nms/Graphics/NGui/Options/GcOptionsMenuState.h"
+#include "../nms/Graphics/NGui/Options/GcUIOptionListElement.h"
+#include "../nms/Graphics/NGui/Options/GcBooleanOption.h"
+#include "../nms/ToolKit/Utilities/Memory/TkSTLAllocatorShim.h"
 
 namespace FrontendOptions
 {

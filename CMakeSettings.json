@@ -7,7 +7,7 @@
       "inheritEnvironments": [ "msvc_x64_x64" ],
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang++",
+      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang-cl",
       "buildCommandArgs": "",
       "ctestCommandArgs": ""
     },
@@ -17,7 +17,7 @@
       "configurationType": "RelWithDebInfo",
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang++ -D USEFRACTAL=ON",
+      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang-cl -D USEFRACTAL=ON",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "msvc_x64_x64" ]
     }

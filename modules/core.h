@@ -1,7 +1,8 @@
 #pragma once
 
-#include "../util/memory.h"
-#include "../nms/GameComponents/GcApplication.h"
+#include "../pch.h"
+#include "../nms/Application/GcApplication.h"
+#include "../nms/ToolKit/Metadata/TkClassPointer.h"
 
 #include "textchathandler.h"
 #include "frontendoptions.h"

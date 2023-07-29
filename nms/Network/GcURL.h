@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../ToolKit/TkFixedString.h"
-#include "../ToolKit/TkStackVector.h"
-#include "../Atlas/WinHttpTask.h"
+#include "../nms/Network/Atlas/WinHttpTask.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
+#include "../nms/ToolKit/Utilities/Memory/TkStackVector.h"
 
 class cGcURL
 {

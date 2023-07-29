@@ -1,10 +1,10 @@
 #pragma once
 
-#include "GcNGuiElementData.h"
-#include "../ToolKit/TkFixedString.h"
-#include "../ToolKit/TkNGuiTextStyle.h"
-#include "../ToolKit/TkNGuiGraphicStyle.h"
-#include "../ToolKit/TkClassPointer.h"
+#include "GcNGuiElementData.meta.h"
+#include "TkNGuiGraphicStyle.meta.h"
+#include "TkNGuiTextStyle.meta.h"
+#include "../nms/ToolKit/Metadata/TkClassPointer.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
 
 class cGcNGuiTextData
 {

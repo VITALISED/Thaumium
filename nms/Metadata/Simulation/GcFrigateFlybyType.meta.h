@@ -1,5 +1,5 @@
 #pragma once
-#include "GcAtlasDownloadType.h"
+#include "../nms/Network/Atlas/GcAtlasDownloadType.h"
 
 enum eFrigateFlybyType
 {

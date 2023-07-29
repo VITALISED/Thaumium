@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../ToolKit/TkDynamicArray.h"
-#include "../ToolKit/TkNGuiAlignment.h"
+#include "../pch.h"
+#include "TkNGuiAlignment.meta.h"
+#include "../nms/ToolKit/Utilities/TkArray.h"
 
-#pragma pack(8)
-class cGcNGuiLayoutData
+class ALIGN(8) cGcNGuiLayoutData
 {
 public:
 	cTkDynamicArray</*cGcVROverride_Layout*/char[0x8]> maVROverrides;

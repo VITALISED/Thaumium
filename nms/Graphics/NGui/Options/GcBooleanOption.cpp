@@ -23,7 +23,6 @@ cGcBooleanOption::cGcBooleanOption(const char* lpacName, bool* lpbValue, const c
 	this->mpacOptionName = lpacName;
 	if (lpacDisabledString)
 		this->mpacDisabledString = lpacDisabledString;
-	this->mpacDisabledString = mpacDisabledString;
 	//v12 = this->mpacDescriptionLocKey;
 	auto v13 = (char*)"wires!";
 	auto v14 = v13;
@@ -110,20 +109,20 @@ constexpr int T = sizeof(cGcNGuiLayer);
 
 void cGcBooleanOption::CreateElement()
 {
-	TkID<128> lID;
-	this->mpElement = (cGcNGuiLayer*)malloc(0x160);
-	*this->mpElement = cGcNGuiLayer();
-	this->mpElement->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
+	//TkID<128> lID;
+	//this->mpElement = (cGcNGuiLayer*)malloc(0x160);
+	//*this->mpElement = cGcNGuiLayer();
+	//this->mpElement->LoadFromMetadata("UI\\Components\\Options\\OPTIONBUTTON.MXML", 0);
 
-	TKIDSTR(lID, "TEXT");
-	lID.mChars[5] = 0;
-	lID.mChars[13] = 0;
-	this->mpText = this->mpElement->FindTextRecursive(&lID);
-	
-	TkID<128> lID2;
-	TKIDSTR(lID2, "BUTTONMAIN");
-	lID2.mChars[11] = 0;
-	this->mpButton = this->mpElement->FindLayerRecursive(&lID2);
+	//TKIDSTR(lID, "TEXT");
+	//lID.mChars[5] = 0;
+	//lID.mChars[13] = 0;
+	//this->mpText = this->mpElement->FindTextRecursive(&lID);
+	//
+	//TkID<128> lID2;
+	//TKIDSTR(lID2, "BUTTONMAIN");
+	//lID2.mChars[11] = 0;
+	//this->mpButton = this->mpElement->FindLayerRecursive(&lID2);
 }
 
 void cGcBooleanOption::GetTranslatedDefaultValue()

@@ -1,4 +1,5 @@
-#include "GcNGuiLayerData.h"
+#include "../pch.h"
+#include "GcNGuiLayerData.meta.h"
 
 cGcNGuiLayerData::cGcNGuiLayerData()
 {

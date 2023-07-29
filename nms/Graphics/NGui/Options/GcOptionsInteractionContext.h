@@ -1,5 +1,6 @@
 #pragma once
 #include "../GcNGuiLayer.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
 
 class cGcOptionsInteractionContext
 {

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "GcNGuiElementData.h"
-#include "GcAtlasDownloadType.h"
-#include "GcFrigateFlybyType.h"
-#include "../ToolKit/TkNGuiAlignment.h"
+#include "GcNGuiElementData.meta.h"
+#include "TkNGuiAlignment.meta.h"
+#include "../nms/Metadata/Simulation/GcFrigateFlybyType.meta.h"
+#include "../nms/Network/Atlas/GcAtlasDownloadType.h"
 
 class cGcNGuiSpacingData
 {

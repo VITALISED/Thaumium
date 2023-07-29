@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../nms/GameComponents/GcAtlasTransportWinHttp.h"
+#include "../nms/Network/Atlas/GcAtlasTransportWinHttp.h"
 
 namespace CurlHook
 {

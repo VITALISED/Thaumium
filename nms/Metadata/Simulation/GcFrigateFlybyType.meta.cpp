@@ -1,4 +1,4 @@
-#include "GcFrigateFlybyType.h"
+#include "GcFrigateFlybyType.meta.h"
 
 void cGcFrigateFlybyType::SetDefaults()
 {

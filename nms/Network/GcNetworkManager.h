@@ -1,10 +1,11 @@
 #pragma once
 
 #include <iostream>
+
+#include "../pch.h"
 #include "GcNetworkMessageManager.h"
 
-#pragma pack(16)
-class cGcNetworkManager
+class ALIGN(16) cGcNetworkManager
 {
 public:
 	uintptr_t mpConnection;
@@ -29,4 +30,3 @@ public:
 	char mBaseImageManager[0x78];
 	bool mbPrepared;
 };
-#pragma pack()

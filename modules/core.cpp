@@ -1,5 +1,4 @@
 #include "core.h"
-#include "../nms/ToolKit/Metadata/TkClassPointer.h"
 
 std::vector<cTkClassPointer> gvDefinedMetadata;
 

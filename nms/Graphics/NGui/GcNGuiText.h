@@ -1,9 +1,9 @@
 #pragma once
 
+#include "../pch.h"
+#include "../nms/Metadata/Graphics/NGui/GcNGuiTextData.meta.h"
+#include "../nms/ToolKit/Utilities/TkString.h"
 #include "GcNGuiElement.h"
-#include "GcNGuiTextData.h"
-#include "../ToolKit/TkFixedString.h"
-#include "../../pch.h"
 
 class cGcNGuiText : public cGcNGuiElement
 {

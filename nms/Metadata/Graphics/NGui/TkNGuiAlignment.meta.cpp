@@ -1,4 +1,4 @@
-#include "TkNGuiAlignment.h"
+#include "TkNGuiAlignment.meta.h"
 
 void cTkNGuiAlignment::SetDefaults()
 {

@@ -1,4 +1,4 @@
-#include "TkNGuiGraphicStyleData.h"
+#include "TkNGuiGraphicStyleData.meta.h"
 
 void cTkNGuiGraphicStyleData::SetDefaults()
 {

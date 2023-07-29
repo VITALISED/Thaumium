@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GcNGuiLayoutData.meta.h"
-#include "../ToolKit/TkID.h"
-#include "../ToolKit/TkNGuiForcedStyle.h"
+#include "TkNGuiForcedStyle.meta.h"
+#include "../nms/ToolKit/Metadata/TkID.h"
 
 class cGcNGuiElementData
 {

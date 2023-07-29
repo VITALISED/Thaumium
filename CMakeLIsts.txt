@@ -115,7 +115,7 @@ add_library(ThaumiumDLL SHARED
         #ToolKit
         "nms/ToolKit/Graphics/NGui/TkHashedNGuiElement.h"
         "nms/ToolKit/Graphics/NGui/TkNGuiDraggable.h"
-        "nms/ToolKit/Graphics/NGui/TkNGuiTextStyle.h"
+        "nms/Metadata/Graphics/NGui/TkNGuiTextStyle.meta.h"
         "nms/ToolKit/Graphics/NGui/TkNGuiTypeUndoable.h"
         "nms/ToolKit/Graphics/NGui/TkNGuiUndoable.h"
 

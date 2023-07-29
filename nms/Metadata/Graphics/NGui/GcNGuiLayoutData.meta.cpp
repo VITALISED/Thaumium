@@ -1,4 +1,4 @@
-#include "GcNGuiLayoutData.h"
+#include "GcNGuiLayoutData.meta.h"
 
 void cGcNGuiLayoutData::SetDefaults()
 {

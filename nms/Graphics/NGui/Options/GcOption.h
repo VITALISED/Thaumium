@@ -1,7 +1,6 @@
 #pragma once
 
 #include "GcUIOptionListElement.h"
-#include "../nms/ToolKit/Utilities/TkString.h"
 
 template<typename T>
 class cGcOption : public cGcUIOptionListElement

@@ -1,5 +1,5 @@
 #pragma once
-#include "TkNGuiTextStyleData.h"
+#include "TkNGuiTextStyleData.meta.h"
 
 class cTkNGuiTextStyle
 {

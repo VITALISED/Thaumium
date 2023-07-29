@@ -1,4 +1,4 @@
-#include "GcNGuiSpacingData.h"
+#include "GcNGuiSpacingData.meta.h"
 
 void cGcNGuiSpacingData::SetDefaults()
 {

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../util/hooks.h"
+#include "../pch.h"
 #include "core.h"
 
-#include "../nms/GameComponents/GcTextChatInput.h"
-#include "../nms/GameComponents/GcApplication.h"
-#include "../nms/GameComponents/GcTextChatManager.h"
+#include "../nms/Application/GcApplication.h"
+#include "../nms/Network/GcTextChatInput.h"
+#include "../nms/Network/GcTextChatManager.h"
 
 #define NEWCOMMAND(commandPtr) TextChatHandler::AddCommand(commandPtr)
 

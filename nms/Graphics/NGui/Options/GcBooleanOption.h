@@ -2,8 +2,8 @@
 #include <iostream>
 
 #include "../pch.h"
-#include "GcOption.h"
 #include "../GcNGuiText.h"
+#include "GcOption.h"
 
 class cGcBooleanOption : public cGcOption<bool>
 {

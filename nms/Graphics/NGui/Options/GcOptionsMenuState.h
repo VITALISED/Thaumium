@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 
+#include "../pch.h"
 #include "GcUIOptionListElement.h"
 #include "../nms/ToolKit/Utilities/Memory/TkSTLAllocatorShim.h"
-#include "../pch.h"
 
 class ALIGN(8) cGcOptionsMenuState
 {

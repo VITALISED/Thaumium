@@ -1,4 +1,4 @@
-#include "GcNGuiTextData.h"
+#include "GcNGuiTextData.meta.h"
 
 void cGcNGuiTextData::WriteToClassPtr(cTkClassPointer* lClassPtr)
 {
