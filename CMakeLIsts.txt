@@ -149,7 +149,7 @@ add_library(ThaumiumDLL SHARED
         "nms/ToolKit/Utilities/TkBitArray.h"
         "nms/ToolKit/Utilities/TkFileSystem.h"
         "nms/ToolKit/Utilities/TkString.h"
-)
+  )
 
 IF(USEFRACTAL)
     target_compile_definitions(ThaumiumDLL PRIVATE FRACTAL=1)

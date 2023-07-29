@@ -1,8 +1,7 @@
 #pragma once
 
-// This file is for managing different builds and versions. 
-// Right now this doesn't do anything but I'll be adding specific version targets at some point
-// Below is some example naming schemes
+// This file is primarly for managing offsets and signatures for specific calls I can't really reimplement/too lazy to.
+// Not all of them are using this format at the moment (namely my fairly outdated NGui code), however should be fixed at some point.
 
 #if FRACTAL
 #define NMS_FRACTAL_101263
