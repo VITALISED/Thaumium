@@ -1,0 +1,6 @@
+#pramga once
+
+class cTkResource
+{
+
+};
