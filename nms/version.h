@@ -13,3 +13,7 @@
 #endif
 
 #define GCAPPLICATION (cGcApplication*)OFFSET(0x463F810)
+
+// Double check this constant is used in other places
+#define HASHBASE 0x72C085E2EE7C6F27 
+#define HASHFAILED 0x1D39488B798170F

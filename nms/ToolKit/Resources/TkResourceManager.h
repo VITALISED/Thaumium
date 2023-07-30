@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../pch.h"
+#include "../nms/version.h"
 #include "../Utilities/Memory/TkLinearHashTable.h"
 #include "../Utilities/Memory/TkSTLAllocatorShim.h"
 #include "../Utilities/TkStrongType.h"
@@ -17,6 +18,7 @@ public:
 
 class cTkResourceManager : public cTkResourceManagerBase
 {
+public:
 	class cTkKillResource
 	{
 		cTkResource* mpResource;

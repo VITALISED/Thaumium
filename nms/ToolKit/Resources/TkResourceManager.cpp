@@ -18,4 +18,20 @@ cTkResource* cTkResourceManager::FindResourceA(int liType, char* lsName, const c
 	if (!*lsName)
 		return NULL;
 
+	char message[256];
+	strcpy_s(message, lsName);
+
+	uint64_t hash1 = HASHBASE;
+	uint64_t hash2 = HASHBASE;
+	uint64_t hashRes;
+	if (strlen(message))
+	{
+		SpookyHash::Hash128(message, sizeof(message), &hash1, &hash2);
+		hashRes = hash1;
+	}
+	else
+	{
+		hashRes = HASHFAILED;
+	}
+
 }

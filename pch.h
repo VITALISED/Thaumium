@@ -17,8 +17,7 @@
 #include "util/hooks.h"
 
 #include <robin_hood.h>
-#include <spookyhash_api.h>
-#pragma comment(lib, "spookyhash.lib")
+#include "spookyhash/SpookyV2.h"
 
 #if FRACTAL
 #define BRANCH "fractal"

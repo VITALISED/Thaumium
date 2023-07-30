@@ -12,5 +12,5 @@ cTkSmartResHandle* Engine::AddResource(
 		spdlog::error("Trying to add resource file without filename");
 	}
 
-	cEgModules::mgpResourceManager
+	return cEgModules::mgpResourceManager->AddResource(result, liType, lpcName, liFlags, false, lAlternateMaterialId);
 }
