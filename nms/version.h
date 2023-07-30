@@ -16,4 +16,5 @@
 
 // Double check this constant is used in other places
 #define HASHBASE 0x72C085E2EE7C6F27 
+// Not sure on this one either
 #define HASHFAILED 0x1D39488B798170F
