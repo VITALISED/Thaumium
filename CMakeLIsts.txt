@@ -30,8 +30,8 @@ add_library(ThaumiumDLL SHARED
         "modules/nguimbinexport.cpp"
 
         #Spookyhash
-        "spookyhash/SpookyV2.h"
-        "spookyhash/SpookyV2.cpp"
+        "util/spookyhash/SpookyV2.h"
+        "util/spookyhash/SpookyV2.cpp"
 
         #NMS
         "nms/version.h"
