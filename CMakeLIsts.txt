@@ -149,7 +149,7 @@ add_library(ThaumiumDLL SHARED
         "nms/ToolKit/Utilities/TkBitArray.h"
         "nms/ToolKit/Utilities/TkFileSystem.h"
         "nms/ToolKit/Utilities/TkString.h"
-   "nms/Engine/Engine.h" "nms/Engine/Engine.cpp" "nms/Engine/EgModules.h" "nms/ToolKit/Resources/TkResourceManager.h" "nms/ToolKit/Resources/TkSmartResHandle.h" "nms/ToolKit/Utilities/TkStrongTypeIDs.h" "nms/ToolKit/Utilities/TkStrongType.h" "nms/ToolKit/Resources/TkResourceDescriptor.h" "nms/ToolKit/Simulation/TkSeed.h" "nms/ToolKit/Resources/TkResource.h")
+   "nms/Engine/Engine.h" "nms/Engine/Engine.cpp" "nms/Engine/EgModules.h" "nms/ToolKit/Resources/TkResourceManager.h" "nms/ToolKit/Resources/TkSmartResHandle.h" "nms/ToolKit/Utilities/TkStrongTypeIDs.h" "nms/ToolKit/Utilities/TkStrongType.h" "nms/ToolKit/Resources/TkResourceDescriptor.h" "nms/ToolKit/Simulation/TkSeed.h" "nms/ToolKit/Resources/TkResource.h" "nms/ToolKit/Resources/TkResourceRegistryEntry.h" "nms/ToolKit/Resources/TkResourceManager.cpp")
 
 IF(USEFRACTAL)
     target_compile_definitions(ThaumiumDLL PRIVATE FRACTAL=1)
@@ -159,6 +159,7 @@ ENDIF(USEFRACTAL)
 
 target_link_libraries(ThaumiumDLL PRIVATE
         ${CMAKE_SOURCE_DIR}/lib/MinHook.x64.lib
+        ${CMAKE_SOURCE_DIR}/lib/spookyhash.lib
 )
 
 target_include_directories(ThaumiumDLL PRIVATE

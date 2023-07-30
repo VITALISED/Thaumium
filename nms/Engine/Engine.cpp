@@ -1,6 +1,6 @@
 #include "Engine.h"
 
-cTkSmartResHandle* AddResource(
+cTkSmartResHandle* Engine::AddResource(
 	cTkSmartResHandle* result,
 	int liType,
 	const char* lpcName,
@@ -12,5 +12,5 @@ cTkSmartResHandle* AddResource(
 		spdlog::error("Trying to add resource file without filename");
 	}
 
-	//cEgModules::mgpResourceManager
+	cEgModules::mgpResourceManager
 }

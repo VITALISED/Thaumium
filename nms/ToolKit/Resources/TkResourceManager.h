@@ -7,6 +7,7 @@
 #include "../Utilities/TkStrongTypeIDs.h"
 #include "TkResourceDescriptor.h"
 #include "TkResource.h"
+#include "TkResourceRegistryEntry.h"
 
 class cTkResourceManagerBase
 {
@@ -16,13 +17,19 @@ public:
 
 class cTkResourceManager : public cTkResourceManagerBase
 {
-	robin_hood::detail::Table<false, 80, int, cTkLinearHashTable<unsigned __int64, TkStrongType<int, TkStrongTypeIDs::TkResHandleID>, 6, 0, cTkLinearHashTableHash<unsigned __int64> >, robin_hood::hash<int, void>, std::equal_to<int> > mLookup;
+	class cTkKillResource
+	{
+		cTkResource* mpResource;
+		unsigned int muKillFrame;
+	};
+
+	robin_hood::detail::Table<false, 80, int, cTkLinearHashTable<unsigned __int64, TkStrongType<int, TkStrongTypeIDs::TkResHandleID> >, robin_hood::hash<int, void>, std::equal_to<int> > mLookup;
 	std::vector<cTkResource*, TkSTLAllocatorShim<cTkResource*> > mResources;
 	std::vector<TkStrongType<int, TkStrongTypeIDs::TkResHandleID>, TkSTLAllocatorShim<TkStrongType<int, TkStrongTypeIDs::TkResHandleID> > > mFreeResourceHandles;
-	std::unordered_map<cTkResource*, cTkResourceManager::cTkKillResource, std::hash<cTkResource*>, std::equal_to<cTkResource*>, TkSTLAllocatorShim<std::pair<cTkResource* const, cTkResourceManager::cTkKillResource>, 8, 6> > mKillMap;
-	robin_hood::detail::Table<0, 80, int, cTkResourceRegistryEntry, robin_hood::hash<int, void>, std::equal_to<int> > mRegistry;
-	robin_hood::detail::Table<1, 80, int, void, robin_hood::hash<int, void>, std::equal_to<int> > mResourcesLoading;
-	std::vector<std::pair<cTkResource*, cTkResourceDescriptor const*>, TkSTLAllocatorShim<std::pair<cTkResource*, cTkResourceDescriptor const*>, 8, 6> > mGeometryWaitingForStream;
+	std::unordered_map<cTkResource*, cTkResourceManager::cTkKillResource, std::hash<cTkResource*>, std::equal_to<cTkResource*>, TkSTLAllocatorShim<std::pair<cTkResource* const, cTkResourceManager::cTkKillResource> > > mKillMap;
+	robin_hood::detail::Table<false, 80, int, cTkResourceRegistryEntry, robin_hood::hash<int, void>, std::equal_to<int> > mRegistry;
+	robin_hood::detail::Table<true, 80, int, void, robin_hood::hash<int, void>, std::equal_to<int> > mResourcesLoading;
+	std::vector<std::pair<cTkResource*, cTkResourceDescriptor const*>, TkSTLAllocatorShim<std::pair<cTkResource*, cTkResourceDescriptor const*> > > mGeometryWaitingForStream;
 	int miDebugResourceType;
 	bool mbForceReload;
 	bool mbIgnoreTimestamp;
@@ -31,6 +38,10 @@ class cTkResourceManager : public cTkResourceManagerBase
 	__int64 miLastHotReloadTime;
 	unsigned __int16 muHotReloadRequestNumber;
 
+	// Considering we only ever access TkResourceManager from EgModules we probably won't need to ever implement this
 	~cTkResourceManager()
 	{ };
+
+	cTkSmartResHandle* AddResource(cTkSmartResHandle* result, int liType, const char* lsName, unsigned int lxFlags, bool lbUserCall, cTkResourceDescriptor* lpResourceDescriptor);
+	cTkResource* FindResourceA(int liType, char* lsName, const cTkResourceDescriptor* lpResourceDescriptor, bool lbIgnoreDefaultFallback, bool lbIgnoreKilled);
 };
