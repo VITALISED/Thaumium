@@ -5,8 +5,10 @@
 template<typename T, typename U>
 class cTkLinearHashTable
 {
+public:
 	class cTkListNode
 	{
+	public:
 		std::pair<T, U> mValue;
 		unsigned __int64 mHash;
 		cTkLinearHashTable<T, U>::cTkListNode* mpNext;
