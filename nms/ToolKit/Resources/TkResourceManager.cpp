@@ -12,6 +12,22 @@ cTkSmartResHandle* cTkResourceManager::AddResource(cTkSmartResHandle* result, in
 
 	cTkResource* ResourceA = this->FindResourceA(liType, (char*)lsName, lpResourceDescriptor, true, false);
 
+	if (ResourceA)
+	{
+		if ((lxFlags & 0x1000000) == 0)
+		{
+
+		}
+
+		//if (lpResourceDescriptor->mSeed.mbValid == ResourceA->mDescriptor.mSeed.mbValid)
+		//{
+		//	// 100% an inline call of something like IsValid()
+		//	if (lpResourceDescriptor->mSecondarySeed.mbValid == ResourceA->mDescriptor.mSecondarySeed.mbValid
+		//		&& (!lpResourceDescriptor->mSeed.mbValid || !ResourceA->mDescriptor.mSeed.mbValid ||
+		//			lpResourceDescriptor->mSeed.mbValid)
+		//}
+	}
+
 }
 
 cTkResource* cTkResourceManager::FindResourceA(int liType, char* lsName, const cTkResourceDescriptor* lpResourceDescriptor, bool lbIgnoreDefaultFeedback, bool lbIgnoreKilled)

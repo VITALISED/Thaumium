@@ -25,6 +25,12 @@
 #define BRANCH "upstream"
 #endif
 
+#ifdef _MSC_VER
+#define INLINE __forceinline
+#else
+#define INLINE inline
+#endif
+
 #define VERSION "0.0.1_alpha"
 #define __THAUMIUM_VER(branch, version) (std::string(branch) + "_" + version)
 
