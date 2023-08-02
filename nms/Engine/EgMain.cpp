@@ -1,4 +1,4 @@
-#include "Engine.h"
+#include "EgMain.h"
 
 cTkSmartResHandle* Engine::AddResource(
 	cTkSmartResHandle* result,
