@@ -2,6 +2,8 @@
 
 #include <utility>
 
+#include "../pch.h"
+
 template<typename T, typename U>
 class cTkLinearHashTable
 {
@@ -23,4 +25,14 @@ public:
 	int miCapacity;
 	int miSize;
 	int miTableSize;
+
+	size_t INLINE size()
+	{
+		return miSize - 1;
+	}
+
+	size_t INLINE tablesize()
+	{
+		return miTableSize - 1;
+	}
 };

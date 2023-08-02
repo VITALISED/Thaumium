@@ -48,10 +48,10 @@ cTkResource* cTkResourceManager::FindResourceA(int liType, char* lsName, const c
 
 	cTkLinearHashTable<unsigned __int64, TkStrongType<int, TkStrongTypeIDs::TkResHandleID> > lookup = this->mLookup[key];
 
-	if (lookup.miSize <= 0 || lookup.mapBucketTable[SpookyHash::Rot64(hash2, 435) & lookup.miTableSize - 1] == 0)
+	if (lookup.miSize <= 0 || lookup.mapBucketTable[SpookyHash::Rot64(hash2, 435) & lookup.tablesize()] == 0)
 	{
 		cTkLinearHashTable<unsigned __int64, TkStrongType<int, TkStrongTypeIDs::TkResHandleID> >::cTkListNode* node =
-			lookup.mapBucketTable[SpookyHash::Rot64(hash2, 435) & lookup.miTableSize - 1];
+			lookup.mapBucketTable[SpookyHash::Rot64(hash2, 435) & lookup.size()];
 
 		while (node->mHash != SpookyHash::Rot64(hash2, 435) || node->mValue.first != hash1)
 		{
