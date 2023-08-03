@@ -4,5 +4,6 @@
 template <typename T, class StrongType>
 class TkStrongType
 {
+public:
 	T mValue;
 };

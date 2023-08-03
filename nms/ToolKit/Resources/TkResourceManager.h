@@ -46,4 +46,6 @@ public:
 
 	cTkSmartResHandle* AddResource(cTkSmartResHandle* result, int liType, const char* lsName, unsigned int lxFlags, bool lbUserCall, cTkResourceDescriptor* lpResourceDescriptor);
 	cTkResource* FindResourceA(int liType, char* lsName, const cTkResourceDescriptor* lpResourceDescriptor, bool lbIgnoreDefaultFallback, bool lbIgnoreKilled);
+	cTkResource* GetDefaultResource(unsigned int liType, unsigned int liFlags);
+	bool IsResourceDeadInternal(cTkResource* lpResource);
 };

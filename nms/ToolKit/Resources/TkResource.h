@@ -28,6 +28,15 @@ public:
 	std::set<cTkSmartResHandle> mOwnedResources;
 	cTkResourceDescriptor mDescriptor;
 	unsigned __int16 muHotRequestNumber;
-};
 
-constexpr int alignment = alignof(cTkResource);
+	virtual ~cTkResource();
+	virtual bool IsLoaded();
+	virtual void SetDescriptor(const cTkResourceDescriptor* lpDescriptor);
+	virtual int GetDataSize();
+	virtual bool OnResourceLoaded();
+	virtual unsigned int GetDeletionFrameDelay();
+	virtual cTkResource* Clone();
+	virtual void CloneInternal(const cTkResource* lpResource);
+	virtual void Release();
+	virtual bool Equals(const char* lpacName, const cTkResourceDescriptor* lpDescriptor, int liType);
+};
