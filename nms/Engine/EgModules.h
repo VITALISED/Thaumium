@@ -5,4 +5,6 @@ class cEgModules
 {
 public:
 	static cTkResourceManager* mgpResourceManager;
+
+	static void Initialise();
 };

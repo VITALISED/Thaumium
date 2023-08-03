@@ -4,6 +4,7 @@ std::vector<cTkClassPointer> gvDefinedMetadata;
 
 void Core::Init()
 {
+	cEgModules::Initialise();
 	gvDefinedMetadata = std::vector<cTkClassPointer>();
 
 	TextChatHandler::Init();

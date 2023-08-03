@@ -18,7 +18,7 @@ struct Http
 		typedef WinHttpTask::State::Enum Enum;
 	};
 
-	const struct Request
+	struct Request
 	{
 		typedef cGcPlayer::eRocketBootsDoubleTapState PostDataType;
 
