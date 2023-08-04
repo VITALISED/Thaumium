@@ -13,8 +13,8 @@
 #include <fmt/format.h>
 #include <MinHook.h>
 
-#include "common/utilities/Memory.h"
-#include "common/utilities/Hooks.h"
+#include "thaumium/Memory.h"
+#include "thaumium/Hooks.h"
 
 #include <robin_hood.h>
 #include "common/utilities/spookyhash/SpookyV2.h"
