@@ -14,146 +14,77 @@ add_library(ThaumiumDLL SHARED
         "dllmain.h"
         "dllmain.cpp"
         "framework.h"
-        "util/memory.h"
-        "util/memory.cpp"
-        "util/hooks.h"
-        "util/hooks.cpp"
-        "modules/core.h"
-        "modules/core.cpp"
-        "modules/frontendoptions.h"
-        "modules/frontendoptions.cpp"
-        "modules/textchathandler.h"
-        "modules/textchathandler.cpp"
-        "modules/curlhook.h"
-        "modules/curlhook.cpp"
-        "modules/nguimbinexport.h"
-        "modules/nguimbinexport.cpp"
+        "signatures.h"
+        "application/GcApplication.h"
+        "atlas/DownloadType.h"
+        "atlas/GcAtlasDownloadType.h"
+        "atlas/GcAtlasTransportWinHttp.h"
+        "atlas/Http.h"
+        "atlas/WinHttpTask.h"
+        "common/maths/TkBBox2d.h"
+        "common/maths/TkVector2.h"
+        "common/maths/TkVector3.h"
+        "common/maths/TkVector4.h"
+        "common/metadata/TkClassPointer.h"
+        "common/metadata/TkID.h"
+        "common/metadata/TkMetaDataXML.h"
+        "common/resources/TkResource.h"
+        "common/resources/TkResourceDescriptor.h"
+        "common/resources/TkResourceManager.h"
+        "common/resources/TkResourceManager.cpp"
+        "common/simulation/TkSeed.h"
+        "common/utilities/allocators/TkStackAllocator.h"
+        "common/utilities/allocators/TkSTLAllocator.h"
+        "common/utilities/filesystem/FileOpenMode.h"
+        "common/utilities/filesystem/FIOS2HANDLE.h"
+        "common/utilities/filesystem/TkFileSystem.h"
+        "common/utilities/spookyhash/SpookyV2.h"
+        "common/utilities/spookyhash/SpookyV2.cpp"
+        "common/utilities/Hooks.h"
+        "common/utilities/Hooks.cpp"
+        "common/utilities/Memory.h"
+        "common/utilities/Memory.cpp"
+        "common/utilities/TkAlignedBlock.h"
+        "common/utilities/TkArray.h"
+        "common/utilities/TkLinearHashTable.h"
+        "common/utilities/TkLinearMemoryPool.h"
+        "common/utilities/TkMemoryManager.h"
+        "common/utilities/TkMemoryPool.h"
+        "common/utilities/TkString.h"
+        "common/utilities/TkStrongType.h"
+        "engine/EgMain.h"
+        "engine/EgMain.cpp"
+        "engine/EgModules.h"
+        "engine/EgModules.cpp"
+        "graphics/AltMode.h"
+        "graphics/Animate.h"
+        "graphics/Curve.h"
+        "graphics/Gradient.h"
+        "graphics/Horizontal.h"
+        "graphics/Shape.h"
+        "graphics/TkColour.h"
+        "graphics/TkCurveType.h"
+        "graphics/Vertical.h"
+        "metadata/simulation/GcFrigateFlybyType.meta.h"
+        "metadata/simulation/GcFrigateFlybyType.meta.cpp"
+        "network/GcNetworkManager.h"
+        "network/GcNetworkMessageManager.h"
+        "network/GcTextChatInput.h"
+        "network/GcTextChatManager.h"
+        "simulation/GcPlayer.h"
+        "simulation/GcPlayerControlInput.h"
+        "simulation/GcPlayerControlInput.cpp"
+        "thaumium/Core.h"
+        "thaumium/Core.cpp"
+        "thaumium/GcURLHook.h"
+        "thaumium/GcURLHook.cpp"
+        "thaumium/MBINExport.h"
+        "thaumium/MBINExport.cpp"
+        "thaumium/TextChatHandler.h"
+        "thaumium/TextChatHandler.cpp"
+)
 
-        #Spookyhash
-        "util/spookyhash/SpookyV2.h"
-        "util/spookyhash/SpookyV2.cpp"
-
-        #NMS
-        "nms/version.h"
-        
-        #Application
-        "nms/Application/GcApplication.h"
-
-        #Engine
-        "nms/Engine/FileOpenMode.h"
-        "nms/Engine/FIOS2HANDLE.h"
-
-        #Graphics
-
-        #NGui
-        "nms/Graphics/AltMode.h"
-        "nms/Graphics/Animate.h"
-        "nms/Graphics/Curve.h"
-        "nms/Graphics/NGui/GcNGuiElement.h"
-        "nms/Graphics/NGui/GcNGuiElement.cpp"
-        "nms/Graphics/NGui/GcNGuiLayer.h"
-        "nms/Graphics/NGui/GcNGuiLayer.cpp"
-        "nms/Graphics/NGui/GcNGuiPreset.h"
-        "nms/Graphics/NGui/GcNGuiPresetGraphic.h"
-        "nms/Graphics/NGui/GcNGuiPresetText.h"
-        "nms/Graphics/NGui/GcNGuiText.h"
-        "nms/Graphics/NGui/GcNGuiText.cpp"
-        "nms/Graphics/Gradient.h"
-        "nms/Graphics/Horizontal.h"
-        "nms/Graphics/NGui/NGuiAnimationEvent.h"
-        "nms/Graphics/NGui/NGuiEditorIcons.h"
-        "nms/Graphics/NGui/NGuiForcedStyle.h"
-        "nms/Graphics/NGui/NGuiInputType.h"
-        "nms/Graphics/Shape.h"
-        "nms/Graphics/Vertical.h"
-
-        "nms/Graphics/NGui/Options/GcBooleanOption.h"
-        "nms/Graphics/NGui/Options/GcBooleanOption.cpp"
-        "nms/Graphics/NGui/Options/GcFrontendPageOptions.h"
-        "nms/Graphics/NGui/Options/GcOption.h"
-        "nms/Graphics/NGui/Options/GcOptionsInteractionContext.h"
-        "nms/Graphics/NGui/Options/GcOptionsInteractionContext.cpp"
-        "nms/Graphics/NGui/Options/GcOptionsMenuState.h"
-        "nms/Graphics/NGui/Options/GcUIOptionListElement.h"
-        "nms/Graphics/NGui/Options/GcUIOptionListElement.cpp"
-
-        #Havok 
-        "nms/Havok/hknpShapeKeyMask.h"
-
-        #Metadata
-        "nms/Metadata/Graphics/NGui/GcNGuiElementData.meta.h"
-        "nms/Metadata/Graphics/NGui/GcNGuiLayerData.meta.h"
-        "nms/Metadata/Graphics/NGui/GcNGuiLayerData.meta.cpp"
-        "nms/Metadata/Graphics/NGui/GcNGuiLayoutData.meta.h"
-        "nms/Metadata/Graphics/NGui/GcNGuiLayoutData.meta.cpp"
-        "nms/Metadata/Graphics/NGui/GcNGuiSpacingData.meta.h"
-        "nms/Metadata/Graphics/NGui/GcNGuiSpacingData.meta.cpp"
-        "nms/Metadata/Graphics/NGui/GcNGuiTextData.meta.h"
-        "nms/Metadata/Graphics/NGui/GcNGuiTextData.meta.cpp"
-        "nms/Metadata/Graphics/NGui/TkNGuiAlignment.meta.h"
-        "nms/Metadata/Graphics/NGui/TkNGuiAlignment.meta.cpp"
-        "nms/Metadata/Graphics/NGui/TkNGuiForcedStyle.meta.h"
-        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyle.meta.h"
-        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyle.meta.cpp"
-        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyleData.meta.h"
-        "nms/Metadata/Graphics/NGui/TkNGuiGraphicStyleData.meta.cpp"
-        "nms/Metadata/Graphics/NGui/TkNGuiTextStyleData.meta.h"
-
-        #Simulation
-        "nms/Metadata/Simulation/GcFrigateFlybyType.meta.h"
-        "nms/Metadata/Simulation/GcFrigateFlybyType.meta.cpp"
-
-        #Network
-        "nms/Network/GcNetworkManager.h"
-        "nms/Network/GcNetworkMessageManager.h"
-        "nms/Network/GcTextChatInput.h"
-        "nms/Network/GcTextChatManager.h"
-        "nms/Network/GcURL.h"
-
-        #Atlas
-        "nms/Network/Atlas/DownloadType.h"
-        "nms/Network/Atlas/GcAtlasDownloadType.h"
-        "nms/Network/Atlas/GcAtlasTransportWinHttp.h"
-        "nms/Network/Atlas/Http.h"
-        "nms/Network/Atlas/WinHttpTask.h"
-
-        #Simulation
-        "nms/Simulation/GcPlayer.h"
-        "nms/Simulation/GcPlayerControlInput.h"
-        "nms/Simulation/GcPlayerControlInput.cpp"
-
-        #ToolKit
-        "nms/ToolKit/Graphics/NGui/TkHashedNGuiElement.h"
-        "nms/ToolKit/Graphics/NGui/TkNGuiDraggable.h"
-        "nms/Metadata/Graphics/NGui/TkNGuiTextStyle.meta.h"
-        "nms/ToolKit/Graphics/NGui/TkNGuiTypeUndoable.h"
-        "nms/ToolKit/Graphics/NGui/TkNGuiUndoable.h"
-
-        "nms/ToolKit/Graphics/TkColour.h"
-        "nms/ToolKit/Graphics/TkCurveType.h"
-
-        "nms/ToolKit/Maths/TkBBox2d.h"
-        "nms/ToolKit/Maths/TkVector2.h"
-        "nms/ToolKit/Maths/TkVector3.h"
-        "nms/ToolKit/Maths/TkVector4.h"
-
-        "nms/ToolKit/Metadata/TkClassPointer.h"
-        "nms/ToolKit/Metadata/TkID.h"
-        "nms/ToolKit/MetaData/TkMetaDataXML.h"
-
-        "nms/ToolKit/Utilities/Memory/TkAlignedBlock.h"
-        "nms/ToolKit/Utilities/Memory/TkLinearHashTable.h"
-        "nms/ToolKit/Utilities/Memory/TkLinearMemoryPool.h"
-        "nms/ToolKit/Utilities/Memory/TkMemoryManager.h"
-        "nms/ToolKit/Utilities/Memory/TkMemoryPool.h"
-        "nms/ToolKit/Utilities/Memory/TkStackVector.h"
-        "nms/ToolKit/Utilities/Memory/TKSTLAllocatorShim.h"
-
-        "nms/ToolKit/Utilities/TkArray.h"
-        "nms/ToolKit/Utilities/TkBitArray.h"
-        "nms/ToolKit/Utilities/TkFileSystem.h"
-        "nms/ToolKit/Utilities/TkString.h"
-   "nms/Engine/EgMain.h" "nms/Engine/EgMain.cpp" "nms/Engine/EgModules.h" "nms/ToolKit/Resources/TkResourceManager.h" "nms/ToolKit/Resources/TkSmartResHandle.h" "nms/ToolKit/Utilities/TkStrongTypeIDs.h" "nms/ToolKit/Utilities/TkStrongType.h" "nms/ToolKit/Resources/TkResourceDescriptor.h" "nms/ToolKit/Simulation/TkSeed.h" "nms/ToolKit/Resources/TkResource.h" "nms/ToolKit/Resources/TkResourceRegistryEntry.h" "nms/ToolKit/Resources/TkResourceManager.cpp" "nms/Engine/EgModules.cpp")
+target_precompile_headers(ThaumiumDLL PRIVATE pch.h)
 
 IF(USEFRACTAL)
     target_compile_definitions(ThaumiumDLL PRIVATE FRACTAL=1)
@@ -162,14 +93,12 @@ else()
 ENDIF(USEFRACTAL)
 
 target_link_libraries(ThaumiumDLL PRIVATE
-        ${CMAKE_SOURCE_DIR}/lib/MinHook.x64.lib
+        ${CMAKE_SOURCE_DIR}/thirdparty/lib/MinHook.x64.lib
 )
 
 target_include_directories(ThaumiumDLL PRIVATE
-        ${CMAKE_SOURCE_DIR}/include
+        ${CMAKE_SOURCE_DIR}/thirdparty/include
 )
-
-target_precompile_headers(ThaumiumDLL PRIVATE pch.h)
 
 set_target_properties(ThaumiumDLL PROPERTIES
         OUTPUT_NAME Thaumium

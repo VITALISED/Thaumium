@@ -13,11 +13,11 @@
 #include <fmt/format.h>
 #include <MinHook.h>
 
-#include "util/memory.h"
-#include "util/hooks.h"
+#include "common/utilities/Memory.h"
+#include "common/utilities/Hooks.h"
 
 #include <robin_hood.h>
-#include "util/spookyhash/SpookyV2.h"
+#include "common/utilities/spookyhash/SpookyV2.h"
 
 #if FRACTAL
 #define BRANCH "fractal"
