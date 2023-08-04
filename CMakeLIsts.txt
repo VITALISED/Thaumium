@@ -82,7 +82,7 @@ add_library(ThaumiumDLL SHARED
         "thaumium/Memory.cpp"
         "thaumium/TextChatHandler.h"
         "thaumium/TextChatHandler.cpp"
-)
+ "common/xml/XMLNode.h" "common/xml/XMLAttribute.h" "common/xml/XMLClear.h")
 
 target_precompile_headers(ThaumiumDLL PRIVATE pch.h)
 
