@@ -8,6 +8,11 @@
 #include "GcSolarSystemDirector.h"
 #include "CentreJourneyDestination.h"
 #include "../common/maths/TkPhysRelVec3.h"
+#include "../common/system/timer/TkClock.h"
+#include "../common/system/TkIterationState.h"
+#include "GcPlayerRespawn.h"
+#include "GcSceneManager.h"
+#include "../common/system/thread/TkLockFreeQueue.h"
 
 class ALIGN(16) cGcSimulation
 {
