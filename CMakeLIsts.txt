@@ -82,7 +82,7 @@ add_library(ThaumiumDLL SHARED
         "thaumium/Memory.cpp"
         "thaumium/TextChatHandler.h"
         "thaumium/TextChatHandler.cpp"
- "common/xml/XMLNode.h" "common/xml/XMLAttribute.h" "common/xml/XMLClear.h")
+ "common/xml/XMLNode.h" "common/xml/XMLAttribute.h" "common/xml/XMLClear.h" "engine/TkEngineUtils.h" "common/resources/TkHandle.h" "common/maths/TkMatrix.h"  "simulation/GcSimulation.h" "common/simulation/TkRigidBodyPtr.h" "simulation/GcSolarSystem.h" "simulation/GcSolarSystemDirector.h" "simulation/CentreJourneyDestination.h" "common/maths/TkPhysRelVec3.h")
 
 target_precompile_headers(ThaumiumDLL PRIVATE pch.h)
 
