@@ -1,5 +1,6 @@
 #include "../pch.h"
 #include "TextChatHandler.h"
+#include "../engine/TkEngineUtils.h"
 
 cGcTextChatInput::ParseTextForCommands fpParseTextForCommands = NULL;
 
@@ -20,8 +21,14 @@ void __fastcall TextChatHandler::ParseTextForCommandsHook(cGcTextChatInput* _thi
             spdlog::warn("god I hate computers");
 
             cGcApplication* gApplcation = GCAPPLICATION;
+            cGcApplication::GetSimulation getSimulation = (cGcApplication::GetSimulation)SIGSCAN(48 8B 41 38 48 05 10);
+            cGcSimulation* simulation = getSimulation(gApplcation);
             cGcApplication::GetNetworkManager getNetworkManager = (cGcApplication::GetNetworkManager)OFFSET(0x1C2910);
             cGcNetworkManager* network = getNetworkManager(gApplcation);
+            TkHandle* guh = new TkHandle();
+
+            cTkEngineUtils::AddNodes(guh, simulation->maGroupNodes[0], simulation->mSceneManager.mDeathDropRes.miInternalHandle);
+
             cGcTextChatManager* textChat = reinterpret_cast<cGcTextChatManager*>(network->mTextChatManager);
             cGcTextChatManager::Say say = (cGcTextChatManager::Say)OFFSET(0x94C160);
             cTkFixedString<1023, char> msg = cTkFixedString<1023, char>("wires in MY wireless device!");

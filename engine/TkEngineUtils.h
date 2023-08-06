@@ -7,6 +7,7 @@
 
 class cTkEngineUtils
 {
+public:
 	static TkHandle* AddNodes(TkHandle* result,
 		TkHandle lBaseNode,
 		TkStrongType<int, TkStrongTypeIDs::TkResHandleID> lResourceHandle,

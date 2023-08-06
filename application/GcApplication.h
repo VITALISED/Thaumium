@@ -1,8 +1,10 @@
 #pragma once
 #include "../network/GcNetworkManager.h"
+#include "../simulation/GcSimulation.h"
 
 class cGcApplication
 {
 public:
-	typedef cGcNetworkManager* (__fastcall* GetNetworkManager)(cGcApplication* _this);
+	typedef cGcNetworkManager* (*GetNetworkManager)(cGcApplication* _this);
+	typedef cGcSimulation* (*GetSimulation)(cGcApplication* thisptr);
 };
