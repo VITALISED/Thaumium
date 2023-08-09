@@ -8,8 +8,7 @@
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
       "buildCommandArgs": "",
-      "ctestCommandArgs": "",
-      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang-cl"
+      "ctestCommandArgs": ""
     },
     {
       "name": "Fractal",
@@ -17,7 +16,7 @@
       "configurationType": "RelWithDebInfo",
       "buildRoot": "${projectDir}\\build",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-D CMAKE_CXX_COMPILER=clang-cl -D USEFRACTAL=ON",
+      "cmakeCommandArgs": "-D USEFRACTAL=ON",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "clang_cl_x64_x64" ]
     }
