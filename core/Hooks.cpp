@@ -11,6 +11,6 @@ void Hooks::AddHook(LPVOID pTarget, LPVOID pDetour, void* ppOriginal, const char
 		else
 			spdlog::error("MH_EnableHook failed for: {}", formatName);
 	}
-	else 
+	else
 		spdlog::error("MH_CreateHook failed for: {}", formatName);
 }

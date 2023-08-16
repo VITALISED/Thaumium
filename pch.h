@@ -13,10 +13,12 @@
 #include <fmt/format.h>
 #include <MinHook.h>
 
-#include "thaumium/Memory.h"
-#include "thaumium/Hooks.h"
+#include "core/memory.h"
+#include "core/hooks.h"
 
 #include <robin_hood.h>
+#include <iostream>
+#include <vector>
 #include "common/utilities/spookyhash/SpookyV2.h"
 
 #if FRACTAL
@@ -31,8 +33,9 @@
 #define INLINE inline
 #endif
 
-#define VERSION "0.0.1_alpha"
-#define __THAUMIUM_VER(branch, version) (std::string(branch) + "_" + version)
+#define __VERSION(v) #v
+#define __VERSION__(v) __VERSION(v)
+#define __THAUMIUM_VER(branch, version) (std::string(branch) + "_" +  __VERSION__(VERSION))
 
 #define THAUMIUM_VER __THAUMIUM_VER(BRANCH, VERSION)
 

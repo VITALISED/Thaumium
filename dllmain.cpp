@@ -4,13 +4,7 @@
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
-    bool hooked = false;
-    while (!hooked)
-    {
-        Core::Init();
-        hooked = true;
-    }
-    return TRUE;
+    Core::Initialise();
 }
 
 BOOL APIENTRY DllMain( HMODULE hModule,

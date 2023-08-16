@@ -1,30 +1,21 @@
 #include "memory.h"
 
-void Memory::PatchBytes(uintptr_t ptr, const char* sig)
+void Memory::PatchBytes(uintptr_t ptr, uint8_t bytes[])
 {
-    std::vector<uint8_t> bytesVec = IdaPatternToByte(sig);
-
     DWORD oldprotection, newprotection;
     VirtualProtect((LPVOID)ptr, 1, PAGE_EXECUTE_READWRITE, &oldprotection);
-
-    for (int i = 0; i < 10; i++)
-    {
-        uint8_t val = bytesVec[i];
-        uint8_t* code = (uint8_t*)ptr+i;
-        *code = val;
-    }
-
+    memcpy((void*)ptr, (char*)bytes, sizeof(bytes));
     VirtualProtect((LPVOID)ptr, 1, oldprotection, &newprotection);
 }
 
-std::vector<uint8_t> Memory::IdaPatternToByte(const char* sig)
+std::vector<int> Memory::IdaPatternToByte(const char* sig)
 {
-    std::vector<uint8_t> bytes = std::vector<uint8_t>();
+    std::vector<int> bytes = std::vector<int>();
 
-    auto cast = const_cast<char*>(sig);
-    auto end = const_cast<char*>(sig) + std::strlen(sig);
+    char* cast = const_cast<char*>(sig);
+    char* end = const_cast<char*>(sig) + std::strlen(sig);
 
-    for (auto current = cast; current < end; ++current)
+    for (char* current = cast; current < end; ++current)
     {
         if (*current == '?')
         {
@@ -44,34 +35,35 @@ std::vector<uint8_t> Memory::IdaPatternToByte(const char* sig)
     return bytes;
 }
 
-uintptr_t Memory::ScanPattern(std::vector<BYTE> pattern)
-{
-    HMODULE hmodule = (HMODULE)_BASE;
+uintptr_t Memory::ScanPattern(std::vector<int> pattern) {
+    const HMODULE module_handle = GetModuleHandleA(NULL);
 
-    PIMAGE_DOS_HEADER dosHeader = (PIMAGE_DOS_HEADER)hmodule;
-    PIMAGE_NT_HEADERS ntHeaders = (PIMAGE_NT_HEADERS)((std::uint8_t*)hmodule + dosHeader->e_lfanew);
+    if (!module_handle)
+        return (uintptr_t)nullptr;
 
-    DWORD sizeOfImage = ntHeaders->OptionalHeader.SizeOfImage;
-    std::uint8_t* scanBytes = reinterpret_cast<std::uint8_t*>(hmodule);
+    PIMAGE_DOS_HEADER dos_header = reinterpret_cast<PIMAGE_DOS_HEADER>(module_handle);
+    PIMAGE_NT_HEADERS nt_headers =
+        reinterpret_cast<PIMAGE_NT_HEADERS>(reinterpret_cast<std::uint8_t*>(module_handle) + dos_header->e_lfanew);
 
-    size_t s = pattern.size();
-    BYTE* d = pattern.data();
+    DWORD size_of_image = nt_headers->OptionalHeader.SizeOfImage;
+    std::vector<int> pattern_bytes = pattern;
+    uint8_t* scan_bytes = reinterpret_cast<std::uint8_t*>(module_handle);
 
-    for (long i = 0ul; i < sizeOfImage - s; ++i)
-    {
+    int s = pattern_bytes.size();
+    int* d = pattern_bytes.data();
+
+    for (long i = 0ul; i < size_of_image - s; ++i) {
         bool found = true;
-        for (long j = 0ul; j < s; ++j)
-        {
-            if (scanBytes[i + j] != d[j] && d[j] != -1)
-            {
+
+        for (long j = 0ul; j < s; ++j) {
+            if (scan_bytes[i + j] != d[j] && d[j] != -1) {
                 found = false;
                 break;
             }
         }
         if (found)
-        {
-            return (uintptr_t)&scanBytes[i];
-        }
+            return (uintptr_t)&scan_bytes[i];
     }
+
     return (uintptr_t)nullptr;
 }

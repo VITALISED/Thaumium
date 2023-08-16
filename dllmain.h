@@ -2,4 +2,4 @@
 
 #include <mutex>
 #include <condition_variable>
-#include "thaumium/Core.h"
+#include "core/core.h"

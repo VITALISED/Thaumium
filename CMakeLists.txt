@@ -1,137 +1,124 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(Thaumium CXX ASM_MASM)
+project(
+    Thaumium
+    LANGUAGES CXX ASM_MASM
+    VERSION 0.0.1
+)
 
 # Language specs
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-OPTION(USEFRACTAL "Compile for Fractal 4.13 Debug" OFF)
+option(USEFRACTAL "Compile for Fractal 4.13 Debug" OFF)
 
 # Thaumium
-add_library(ThaumiumDLL SHARED
-        "dllmain.h"
-        "dllmain.cpp"
-        "framework.h"
-        "signatures.h"
-        "application/GcApplication.h"
-        "atlas/DownloadType.h"
-        "atlas/GcAtlasDownloadType.h"
-        "atlas/GcAtlasTransportWinHttp.h"
-        "atlas/Http.h"
-        "atlas/WinHttpTask.h"
-        "common/maths/TkBBox2d.h"
-        "common/maths/TkVector2.h"
-        "common/maths/TkVector3.h"
-        "common/maths/TkVector4.h"
-        "common/metadata/TkClassPointer.h"
-        "common/metadata/TkID.h"
-        "common/metadata/TkMetaDataXML.h"
-        "common/resources/TkResource.h"
-        "common/resources/TkResourceDescriptor.h"
-        "common/resources/TkResourceManager.h"
-        "common/resources/TkResourceManager.cpp"
-        "common/simulation/TkSeed.h"
-        "common/utilities/allocators/TkStackAllocator.h"
-        "common/utilities/allocators/TkSTLAllocator.h"
-        "common/utilities/filesystem/FileOpenMode.h"
-        "common/utilities/filesystem/FIOS2HANDLE.h"
-        "common/utilities/filesystem/TkFileSystem.h"
-        "common/utilities/spookyhash/SpookyV2.h"
-        "common/utilities/spookyhash/SpookyV2.cpp"
-        "common/utilities/TkAlignedBlock.h"
-        "common/utilities/TkArray.h"
-        "common/utilities/TkLinearHashTable.h"
-        "common/utilities/TkLinearMemoryPool.h"
-        "common/utilities/TkMemoryManager.h"
-        "common/utilities/TkMemoryPool.h"
-        "common/utilities/TkString.h"
-        "common/utilities/TkStrongType.h"
-        "engine/EgMain.h"
-        "engine/EgMain.cpp"
-        "engine/EgModules.h"
-        "engine/EgModules.cpp"
-        "graphics/AltMode.h"
-        "graphics/Animate.h"
-        "graphics/Curve.h"
-        "graphics/Gradient.h"
-        "graphics/Horizontal.h"
-        "graphics/Shape.h"
-        "graphics/TkColour.h"
-        "graphics/TkCurveType.h"
-        "graphics/Vertical.h"
-        "metadata/simulation/GcFrigateFlybyType.meta.h"
-        "metadata/simulation/GcFrigateFlybyType.meta.cpp"
-        "network/GcNetworkManager.h"
-        "network/GcNetworkMessageManager.h"
-        "network/GcTextChatInput.h"
-        "network/GcTextChatManager.h"
-        "simulation/GcPlayer.h"
-        "simulation/GcPlayerControlInput.h"
-        "simulation/GcPlayerControlInput.cpp"
-        "thaumium/Core.h"
-        "thaumium/Core.cpp"
-        "thaumium/GcURLHook.h"
-        "thaumium/GcURLHook.cpp"
-        "thaumium/Hooks.h"
-        "thaumium/Hooks.cpp"
-        "thaumium/MBINExport.h"
-        "thaumium/MBINExport.cpp"
-        "thaumium/Memory.h"
-        "thaumium/Memory.cpp"
-        "thaumium/TextChatHandler.h"
-        "thaumium/TextChatHandler.cpp"
- "common/xml/XMLNode.h"
- "common/xml/XMLAttribute.h"
- "common/xml/XMLClear.h"
- "engine/TkEngineUtils.h" 
- "common/resources/TkHandle.h"
- "common/maths/TkMatrix.h" 
- "simulation/GcSimulation.h"
- "common/simulation/TkRigidBodyPtr.h"
- "simulation/GcSolarSystem.h"
- "simulation/GcSolarSystemDirector.h"
- "simulation/CentreJourneyDestination.h"
- "common/maths/TkPhysRelVec3.h" 
- "common/system/timer/TkClock.h"
- "common/system/TkIterationState.h"
- "simulation/GcPlayerRespawn.h"
- "simulation/GcPlayerSpawnState.h" 
- "simulation/GcSceneManager.h"
- "metadata/simulation/GcSceneSettings.meta.h"
- "common/system/thread/TkLockFreeQueue.h"
- "simulation/GcAvailableWeapons.h"
- "common/maths/TkAABB.h"
- "simulation/DiscoveryAutoSync.h"
- "simulation/GcGalacticSolarSystemAddress.h"
- "simulation/GcGalaticVoxelCoordinate.h"
- "simulation/GcSolarSystemAstroidFields.h"
- "simulation/GcAstroidGeneratorRing.h" 
- "metadata/simulation/GcAstroidGeneratorAssignment.meta.h"
- "metadata/simulation/GcSolarSystemLocatorChoice.h"
- "metadata/simulation/GcSolarSystemLocatorTypes.h"
+add_library(
+    ThaumiumDLL SHARED
+    "application/GcApplication.h"
+    "atlas/DownloadType.h"
+    "atlas/GcAtlasDownloadType.h"
+    "atlas/GcAtlasTransportWinHttp.h"
+    "atlas/Http.h"
+    "atlas/WinHttpTask.h"
+    "common/graphics/TkColour.h"
+    "common/maths/TkAABB.h"
+    "common/maths/TkBBox2d.h"
+    "common/maths/TkMatrix.h"
+    "common/maths/TkPhysRelVec3.h"
+    "common/maths/TkVector2.h"
+    "common/maths/TkVector3.h"
+    "common/maths/TkVector4.h"
+    "common/metadata/TkClassPointer.h"
+    "common/metadata/TkID.h"
+    "common/metadata/TkMetaDataXML.h"
+    "common/resources/TkHandle.h"
+    "common/resources/TkResource.h"
+    "common/resources/TkResourceDescriptor.h"
+    "common/resources/TkResourceManager.cpp"
+    "common/resources/TkResourceManager.h"
+    "common/simulation/TkRigidBodyPtr.h"
+    "common/simulation/TkSeed.h"
+    "common/system/thread/TkLockFreeQueue.h"
+    "common/system/timer/TkClock.h"
+    "common/system/TkIterationState.h"
+    "common/utilities/allocators/TkStackAllocator.h"
+    "common/utilities/allocators/TkSTLAllocator.h"
+    "common/utilities/filesystem/FileOpenMode.h"
+    "common/utilities/filesystem/FIOS2HANDLE.h"
+    "common/utilities/filesystem/TkFileSystem.h"
+    "common/utilities/spookyhash/SpookyV2.cpp"
+    "common/utilities/spookyhash/SpookyV2.h"
+    "common/utilities/TkAlignedBlock.h"
+    "common/utilities/TkArray.h"
+    "common/utilities/TkLinearHashTable.h"
+    "common/utilities/TkLinearMemoryPool.h"
+    "common/utilities/TkMemoryManager.h"
+    "common/utilities/TkMemoryPool.h"
+    "common/utilities/TkString.h"
+    "common/utilities/TkStrongType.h"
+    "common/xml/XMLAttribute.h"
+    "common/xml/XMLClear.h"
+    "common/xml/XMLNode.h"
+    "core/core.cpp"
+    "core/core.h"
+    "dllmain.cpp"
+    "dllmain.h"
+    "engine/EgMain.cpp"
+    "engine/EgMain.h"
+    "engine/EgModules.h"
+    "engine/TkEngineUtils.h"
+    "framework.h"
+    "graphics/AltMode.h"
+    "graphics/Animate.h"
+    "graphics/Curve.h"
+    "graphics/Gradient.h"
+    "graphics/Horizontal.h"
+    "graphics/Shape.h"
+    "graphics/TkCurveType.h"
+    "graphics/Vertical.h"
+    "network/GcNetworkManager.h"
+    "network/GcNetworkMessageManager.h"
+    "network/GcTextChatInput.h"
+    "network/GcTextChatManager.h"
+    "simulation/CentreJourneyDestination.h"
+    "simulation/DiscoveryAutoSync.h"
+    "simulation/GcSceneManager.h"
+    "simulation/GcSimulation.h"
+    "simulation/player/GcAvailableWeapons.h"
+    "simulation/player/GcPlayer.h"
+    "simulation/player/GcPlayerControlInput.cpp"
+    "simulation/player/GcPlayerControlInput.h"
+    "simulation/player/GcPlayerRespawn.h"
+    "simulation/player/GcPlayerSpawnState.h"
+    "simulation/solarsystem/asteroid/GcAstroidGeneratorRing.h"
+    "simulation/solarsystem/GcGalacticSolarSystemAddress.h"
+    "simulation/solarsystem/GcGalaticVoxelCoordinate.h"
+    "simulation/solarsystem/GcSolarSystem.h"
+    "simulation/solarsystem/GcSolarSystemAstroidFields.h"
+    "simulation/solarsystem/GcSolarSystemDirector.h"
 )
 
 target_precompile_headers(ThaumiumDLL PRIVATE pch.h)
 
-IF(USEFRACTAL)
+target_compile_definitions(ThaumiumDLL PRIVATE VERSION=${CMAKE_PROJECT_VERSION})
+
+if(USEFRACTAL)
     target_compile_definitions(ThaumiumDLL PRIVATE FRACTAL=1)
 else()
     target_compile_definitions(ThaumiumDLL PRIVATE UPSTREAM=1)
-ENDIF(USEFRACTAL)
+endif(USEFRACTAL)
 
-target_link_libraries(ThaumiumDLL PRIVATE
-        ${CMAKE_SOURCE_DIR}/thirdparty/lib/MinHook.x64.lib
+target_link_libraries(
+    ThaumiumDLL PRIVATE ${CMAKE_SOURCE_DIR}/thirdparty/lib/MinHook.x64.lib
 )
 
-target_include_directories(ThaumiumDLL PRIVATE
-        ${CMAKE_SOURCE_DIR}/thirdparty/include
+target_include_directories(
+    ThaumiumDLL PRIVATE ${CMAKE_SOURCE_DIR}/thirdparty/include
 )
 
-set_target_properties(ThaumiumDLL PROPERTIES
-        OUTPUT_NAME Thaumium
-)   
+set_target_properties(ThaumiumDLL PROPERTIES OUTPUT_NAME Thaumium)
 
 # Targets
 add_subdirectory(proxy)
