@@ -1,3 +1,3 @@
-[submodule "Heridium"]
+[submodule "thirdparty/include/Heridium"]
 	path = thirdparty/include/Heridium
 	url = https://github.com/VITALISED/Heridium.git
