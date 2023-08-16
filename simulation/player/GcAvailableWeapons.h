@@ -1,9 +1,8 @@
 #pragma once
 
-#include <vector>
-
-#include "../common/utilities/allocators/TkSTLAllocator.h"
 #include "../common/resources/TkSmartResHandle.h"
+#include "../common/utilities/allocators/TkSTLAllocator.h"
+#include <vector>
 
 class cGcAvailableWeapons
 {
@@ -13,5 +12,5 @@ class cGcAvailableWeapons
 		bool mbIsSecret;
 	};
 
-	std::vector<cGcAvailableWeapons::cGcAvailableWeaponInfo, TkSTLAllocatorShim<cGcAvailableWeapons::cGcAvailableWeaponInfo > > maAvailableWeapons;
+	std::vector<cGcAvailableWeapons::cGcAvailableWeaponInfo, TkSTLAllocatorShim<cGcAvailableWeapons::cGcAvailableWeaponInfo>> maAvailableWeapons;
 };

@@ -6,5 +6,5 @@
 
 namespace Hooks
 {
-	void AddHook(LPVOID pTarget, LPVOID pDetour, void* ppOriginal, const char* name);
+	void AddHook(LPVOID pTarget, LPVOID pDetour, void *ppOriginal, const char *name);
 }

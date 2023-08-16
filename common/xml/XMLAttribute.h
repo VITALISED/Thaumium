@@ -2,6 +2,6 @@
 
 struct XMLAttribute
 {
-	const char* lpszName;
-	const char* lpszValue;
+	const char *lpszName;
+	const char *lpszValue;
 };

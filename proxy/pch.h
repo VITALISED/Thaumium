@@ -7,9 +7,9 @@
 #ifndef PCH_H
 #define PCH_H
 
-#include "framework.h"
 #include "exports.h"
+#include "framework.h"
 
 #define DLLTARGET "Thaumium"
 
-#endif //PCH_H
+#endif // PCH_H

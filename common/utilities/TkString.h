@@ -7,15 +7,14 @@ template <unsigned int size, typename T>
 class ALIGN(4) cTkFixedString
 {
 public:
-	cTkFixedString()
-	{ };
+	cTkFixedString(){};
 
-	cTkFixedString(const char* lpacBuffer)
+	cTkFixedString(const char *lpacBuffer)
 	{
 		this->Copy(lpacBuffer);
 	}
 
-	void Copy(const char* lpacBuffer)
+	void Copy(const char *lpacBuffer)
 	{
 		strcpy_s(macBuffer, size, lpacBuffer);
 	}
@@ -24,4 +23,5 @@ public:
 };
 
 class cTkDynamicString : cTkDynamicArray<char>
-{ };
+{
+};

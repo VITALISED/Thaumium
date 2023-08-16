@@ -6,8 +6,8 @@ template <typename T>
 class cTkLockFreeQueue
 {
 	std::atomic<int> miQueueMarkers;
-	T* mpEntries;
-	std::atomic<int>* maEntryValid;
+	T *mpEntries;
+	std::atomic<int> *maEntryValid;
 	int miMaxNumEntries;
 };
 

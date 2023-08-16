@@ -5,7 +5,8 @@ class cTkVector4
 {
 public:
 	cTkVector4()
-	{ }
+	{
+	}
 
 	cTkVector4(float lfX, float lfY, float lfZ, float lfW)
 	{

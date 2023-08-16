@@ -1,14 +1,15 @@
 #pragma once
-#include "../graphics/TkColour.h"
-#include "../common/utilities/TkString.h"
-#include "../common/resources/TkHandle.h"
+
+#include "../common/maths/TkAABB.h"
 #include "../common/maths/TkMatrix.h"
+#include "../common/resources/TkHandle.h"
 #include "../common/resources/TkSmartResHandle.h"
 #include "../common/system/TkIterationState.h"
-#include "GcPlayerSpawnState.h"
-#include "../common/maths/TkAABB.h"
+#include "../common/utilities/TkString.h"
+#include "../graphics/TkColour.h"
 #include "DiscoveryAutoSync.h"
 #include "GcGalacticSolarSystemAddress.h"
+#include "GcPlayerSpawnState.h"
 
 const class cGcSolarSystem
 {
@@ -17,11 +18,13 @@ const class cGcSolarSystem
 	cGcSolarSystemData mSolarSystemData;
 	cGcSolarSystemAsteroidFields mSolarSystemInfomap;
 	cGcDiscoveryData mSolarDiscoveryData;
-	ALIGN(16) cGcGalaxyAttributesAtAddress mGalaxyAttributes;
+	ALIGN(16)
+	cGcGalaxyAttributesAtAddress mGalaxyAttributes;
 	std::array<cGcPlanet, 6> maPlanets;
 	int miPrimaryPlanet;
 	std::array<bool, 6> mabImGuiBrowsePlanets;
-	ALIGN(8) cGcAsteroidManager mAsteroidManager;
+	ALIGN(8)
+	cGcAsteroidManager mAsteroidManager;
 	cGcPlanetGenerator mPlanetGenerator;
 	cGcSolarSystemGenerator mSolarSystemGenerator;
 	TkHandle mPlanetRootNode;

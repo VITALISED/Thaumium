@@ -1,19 +1,18 @@
 #pragma once
 
 #include "../../pch.h"
-
 #include "../TkAlignedBlock.h"
-
-#include <vector>
 #include <memory>
+#include <vector>
 
 template <typename T>
 struct ALIGN(8) StackAllocator : std::allocator<T>
 {
 	using value_type = T;
 
-	template<typename U>
-	struct rebind {
+	template <typename U>
+	struct rebind
+	{
 		using other = StackAllocator<U>;
 	};
 
@@ -23,15 +22,3 @@ struct ALIGN(8) StackAllocator : std::allocator<T>
 		bool used_stack_buffer_;
 	};
 };
-
-template <typename T>
-struct StackContainer
-{
-	typename T::allocator_type::Source stack_data_;
-	typename T::allocator_type allocator_;
-	T container_;
-};
-
-template <typename T>
-class cTkStackVector : public StackContainer<std::vector<T, StackAllocator<T> > >
-{ };

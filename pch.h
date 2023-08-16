@@ -9,17 +9,17 @@
 
 #include "framework.h"
 
-#include <spdlog/spdlog.h>
-#include <fmt/format.h>
 #include <MinHook.h>
+#include <fmt/format.h>
+#include <spdlog/spdlog.h>
 
-#include "core/memory.h"
 #include "core/hooks.h"
+#include "core/memory.h"
 
-#include <robin_hood.h>
-#include <iostream>
-#include <vector>
 #include "common/utilities/spookyhash/SpookyV2.h"
+#include <iostream>
+#include <robin_hood.h>
+#include <vector>
 
 #if FRACTAL
 #define BRANCH "fractal"
@@ -35,9 +35,8 @@
 
 #define __VERSION(v) #v
 #define __VERSION__(v) __VERSION(v)
-#define __THAUMIUM_VER(branch, version) (std::string(branch) + "_" +  __VERSION__(VERSION))
+#define __THAUMIUM_VER(branch, version) (std::string(branch) + "_" + __VERSION__(VERSION))
 
 #define THAUMIUM_VER __THAUMIUM_VER(BRANCH, VERSION)
 
-#endif //PCH_H
-
+#endif // PCH_H

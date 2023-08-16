@@ -5,6 +5,6 @@
 class cGcApplication
 {
 public:
-	typedef cGcNetworkManager* (*GetNetworkManager)(cGcApplication* _this);
-	typedef cGcSimulation* (*GetSimulation)(cGcApplication* thisptr);
+	typedef cGcNetworkManager* (*GetNetworkManager)(cGcApplication* self);
+	typedef cGcSimulation* (*GetSimulation)(cGcApplication* self);
 };

@@ -7,7 +7,7 @@ class cTkClassPointer
 public:
 	union cTkClassPointerData // wow hg, i cant believe you screwed up the naming, absolutely despicable
 	{
-		void* mpClass;
+		void *mpClass;
 		__int64 miOffset;
 	};
 

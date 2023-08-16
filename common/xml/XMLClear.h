@@ -2,7 +2,7 @@
 
 struct XMLClear
 {
-	const char* lpszValue;
-	const char* lpszOpenTag;
-	const char* lpszCloseTag;
+	const char *lpszValue;
+	const char *lpszOpenTag;
+	const char *lpszCloseTag;
 };

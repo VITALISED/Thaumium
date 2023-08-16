@@ -1,11 +1,11 @@
 #include "EgMain.h"
 
-cTkSmartResHandle* Engine::AddResource(
-	cTkSmartResHandle* result,
+cTkSmartResHandle *Engine::AddResource(
+	cTkSmartResHandle *result,
 	int liType,
-	const char* lpcName,
+	const char *lpcName,
 	unsigned int liFlags,
-	cTkResourceDescriptor* lAlternateMaterialId)
+	cTkResourceDescriptor *lAlternateMaterialId)
 {
 	if (!lpcName || !*lpcName)
 	{

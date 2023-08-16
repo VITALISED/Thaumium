@@ -1,16 +1,17 @@
 #pragma once
 
-template<int size>
+template <unsigned int uiSize>
 union TkID
 {
 	TkID()
-	{ }
-	TkID(const char* lacString)
+	{
+	}
+	TkID(const char *lpacString)
 	{
 		// uses hashes pretty sure, gonna have to figure out spookyhash later
-		strcpy_s(mChars, size, lacString);
+		strcpy_s(mChars, uiSize, lpacString);
 	}
 
-	char mChars[size / 8];
-	unsigned __int64 mUInt64[size / 64];
+	char mChars[uiSize / 8];
+	unsigned __int64 mUInt64[uiSize / 64];
 };

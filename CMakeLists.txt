@@ -22,6 +22,7 @@ add_library(
     "atlas/GcAtlasTransportWinHttp.h"
     "atlas/Http.h"
     "atlas/WinHttpTask.h"
+    "common/attachments/TkHandle.h"
     "common/graphics/TkColour.h"
     "common/maths/TkAABB.h"
     "common/maths/TkBBox2d.h"
@@ -32,8 +33,6 @@ add_library(
     "common/maths/TkVector4.h"
     "common/metadata/TkClassPointer.h"
     "common/metadata/TkID.h"
-    "common/metadata/TkMetaDataXML.h"
-    "common/resources/TkHandle.h"
     "common/resources/TkResource.h"
     "common/resources/TkResourceDescriptor.h"
     "common/resources/TkResourceManager.cpp"
@@ -45,6 +44,9 @@ add_library(
     "common/system/TkIterationState.h"
     "common/utilities/allocators/TkStackAllocator.h"
     "common/utilities/allocators/TkSTLAllocator.h"
+    "common/utilities/containers/TkStackContainer.h"
+    "common/utilities/containers/TkStackVector.h"
+    "common/utilities/containers/TkVector.h"
     "common/utilities/filesystem/FileOpenMode.h"
     "common/utilities/filesystem/FIOS2HANDLE.h"
     "common/utilities/filesystem/TkFileSystem.h"
@@ -112,6 +114,7 @@ endif(USEFRACTAL)
 
 target_link_libraries(
     ThaumiumDLL PRIVATE ${CMAKE_SOURCE_DIR}/thirdparty/lib/MinHook.x64.lib
+                        ${CMAKE_SOURCE_DIR}/thirdparty/lib/Heridium.lib
 )
 
 target_include_directories(

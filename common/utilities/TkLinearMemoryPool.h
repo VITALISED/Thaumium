@@ -3,27 +3,25 @@
 
 class cTkLinearMemoryPool : public cTkMemoryPool
 {
-	typedef void(*Create)(
-		cTkLinearMemoryPool* thiscall,
-		void* lpAlloc,
+	typedef void (*Create)(
+		cTkLinearMemoryPool *thiscall,
+		void *lpAlloc,
 		size_t liBufferSize,
-		unsigned int liBufferAlignment
-		);
-	typedef void*(*Malloc)(
-		cTkLinearMemoryPool* thiscall,
+		unsigned int liBufferAlignment);
+	typedef void *(*Malloc)(
+		cTkLinearMemoryPool *thiscall,
 		int liSize,
 		int liAlignment,
-		int* lpiAllocatedSize
-		);
+		int *lpiAllocatedSize);
 
-	//void* mpAllocAddress;
-	//unsigned __int64 miStartAddress;
-	//unsigned __int64 miEndVirtualAddress;
-	//unsigned __int64 miEndMappedAddress;
-	//unsigned __int64 miNextAddress;
-	//void* mpLastAllocation;
+	// void* mpAllocAddress;
+	// unsigned __int64 miStartAddress;
+	// unsigned __int64 miEndVirtualAddress;
+	// unsigned __int64 miEndMappedAddress;
+	// unsigned __int64 miNextAddress;
+	// void* mpLastAllocation;
 	//__int64 miHighWater;
-	//unsigned __int64 miUserData;
-	//bool mbCreated;
-	//bool mbVirtualBacked;
+	// unsigned __int64 miUserData;
+	// bool mbCreated;
+	// bool mbVirtualBacked;
 };

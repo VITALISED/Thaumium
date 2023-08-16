@@ -1,19 +1,19 @@
 #pragma once
 
-#include "../common/utilities/TkString.h"
 #include "../common/resources/TkHandle.h"
 #include "../common/resources/TkSmartResHandle.h"
+#include "../common/utilities/TkString.h"
 #include "../common/utilities/allocators/TkSTLAllocator.h"
 #include "../metadata/simulation/GcSceneSettings.meta.h"
 
 struct cGcSceneManager
 {
-	cGcSceneSettings* mpSettings;
+	cGcSceneSettings *mpSettings;
 	cTkFixedString<256, char> mCurrentScene;
 	TkHandle mSceneNode;
 	TkHandle mSpawnNode;
 	TkHandle mLightNode;
-	std::vector<TkHandle, TkSTLAllocatorShim<TkHandle> > maPlanetSceneNodes;
+	std::vector<TkHandle, TkSTLAllocatorShim<TkHandle>> maPlanetSceneNodes;
 	cTkSmartResHandle maTrailResources[5];
 	cTkSmartResHandle mDefaultTrailRes;
 	cTkSmartResHandle maShipFlares[5];

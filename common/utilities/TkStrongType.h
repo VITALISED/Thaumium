@@ -3,7 +3,8 @@
 namespace TkStrongTypeIDs
 {
 	struct TkResHandleID
-	{ };
+	{
+	};
 }
 
 // No idea how this is meant to work, probably just inline assert crap

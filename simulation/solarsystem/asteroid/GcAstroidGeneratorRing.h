@@ -1,9 +1,8 @@
 #pragma once
 
-#include <Heridium/metadata/source/metadata/simulation/solarsystem/gcasteroidgeneratorassignment.meta.h>
-
-#include "../pch.h"
 #include "../common/maths/TkVector3.h"
+#include "../pch.h"
+#include <Heridium/metadata/source/metadata/simulation/solarsystem/gcasteroidgeneratorassignment.meta.h>
 
 class ALIGN(8) cGcAsteroidGeneratorRing
 {

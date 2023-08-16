@@ -1,6 +1,6 @@
 #pragma once
 
-struct  cTkRigidBodyPtr
+class cTkRigidBodyPtr
 {
 	int miBodyIndex;
 	__int64 miUniqueID;
