@@ -16,6 +16,7 @@ option(USEFRACTAL "Compile for Fractal 4.13 Debug" OFF)
 # Thaumium
 add_library(
     ThaumiumDLL SHARED
+    "application/GcApplication.cpp"
     "application/GcApplication.h"
     "atlas/DownloadType.h"
     "atlas/GcAtlasDownloadType.h"

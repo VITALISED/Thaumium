@@ -6,4 +6,5 @@
 template <typename T>
 class cTkVector : std::vector<T, TkSTLAllocatorShim<T>>
 {
-}
+};
+constexpr int wire = sizeof(cTkVector<int>);

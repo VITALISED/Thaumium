@@ -4,7 +4,11 @@
 
 class cGcApplication
 {
+private:
+	typedef cGcNetworkManager *(*_GetNetworkManager)(cGcApplication *self);
+	typedef cGcSimulation *(*_GetSimulation)(cGcApplication *self);
+
 public:
-	typedef cGcNetworkManager* (*GetNetworkManager)(cGcApplication* self);
-	typedef cGcSimulation* (*GetSimulation)(cGcApplication* self);
+	cGcSimulation *GetSimulation();
+	cGcNetworkManager *GetNetworkManager();
 };
