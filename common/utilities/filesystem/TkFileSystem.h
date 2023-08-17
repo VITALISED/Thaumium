@@ -6,6 +6,6 @@
 class cTkFileSystem
 {
 public:
-	typedef FIOS2HANDLE *(*Open)(cTkFileSystem *thiscall, const char *lpacFileName, eFileOpenMode leMode);
-	typedef void (*CreatePath)(cTkFileSystem *thiscall, const char *lpacPath);
+	typedef FIOS2HANDLE *(*Open)(cTkFileSystem *self, const char *lpacFileName, eFileOpenMode leMode);
+	typedef void (*CreatePath)(cTkFileSystem *self, const char *lpacPath);
 };

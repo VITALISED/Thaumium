@@ -4,6 +4,5 @@
 
 class cTkBBox2d
 {
-	cTkVector2 mMin;
-	cTkVector2 mMax;
+	cTkVector2 mMin, mMax;
 };

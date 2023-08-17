@@ -7,7 +7,7 @@
 class cGcURL
 {
 public:
-	typedef char (*ToString)(cGcURL *thiscall, cTkFixedString<512, char> *lURLStringOutput, bool lbJustPathAndQuery);
+	typedef char (*_ToString)(cGcURL *self, cTkFixedString<512, char> *lURLStringOutput, bool lbJustPathAndQuery);
 
 	struct Scheme
 	{

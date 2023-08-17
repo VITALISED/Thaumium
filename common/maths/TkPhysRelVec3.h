@@ -4,6 +4,5 @@
 
 class cTkPhysRelVec3
 {
-	cTkVector3 mvLocal;
-	cTkVector3 mvOffset;
+	cTkVector3 mvLocal, mvOffset;
 };

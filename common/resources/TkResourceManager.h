@@ -1,10 +1,10 @@
 #pragma once
 
 #include "../../core/globals/hash.h"
-#include "../../pch.h"
 #include "../utilities/TkLinearHashTable.h"
 #include "../utilities/TkStrongType.h"
 #include "../utilities/allocators/TkSTLAllocator.h"
+#include "../utilities/containers/TkVector.h"
 #include "TkResource.h"
 #include "TkResourceDescriptor.h"
 #include "TkResourceRegistryEntry.h"
@@ -17,6 +17,11 @@ public:
 
 class cTkResourceManager : public cTkResourceManagerBase
 {
+private:
+	typedef cTkSmartResHandle *(*_AddResource)(cTkSmartResHandle *result, int liType, const char *lsName, unsigned int lxFlags, bool lbUserCall, cTkResourceDescriptor *lpResourceDescriptor);
+	typedef cTkResource *(*_GetDefaultResource)(unsigned int liType, unsigned int liFlags);
+	typedef bool (*_IsResourceDeadInternal)(cTkResource *lpResource);
+
 public:
 	class cTkKillResource
 	{
@@ -25,12 +30,12 @@ public:
 	};
 
 	robin_hood::detail::Table<false, 80, int, cTkLinearHashTable<unsigned __int64, TkStrongType<int, TkStrongTypeIDs::TkResHandleID>>, robin_hood::hash<int, void>, std::equal_to<int>> mLookup;
-	std::vector<cTkResource *, TkSTLAllocatorShim<cTkResource *>> mResources;
-	std::vector<TkStrongType<int, TkStrongTypeIDs::TkResHandleID>, TkSTLAllocatorShim<TkStrongType<int, TkStrongTypeIDs::TkResHandleID>>> mFreeResourceHandles;
+	cTkVector<cTkResource *> mResources;
+	cTkVector<TkStrongType<int, TkStrongTypeIDs::TkResHandleID>> mFreeResourceHandles;
 	std::unordered_map<cTkResource *, cTkResourceManager::cTkKillResource, std::hash<cTkResource *>, std::equal_to<cTkResource *>, TkSTLAllocatorShim<std::pair<cTkResource *const, cTkResourceManager::cTkKillResource>>> mKillMap;
 	robin_hood::detail::Table<false, 80, int, cTkResourceRegistryEntry, robin_hood::hash<int, void>, std::equal_to<int>> mRegistry;
 	robin_hood::detail::Table<true, 80, int, void, robin_hood::hash<int, void>, std::equal_to<int>> mResourcesLoading;
-	std::vector<std::pair<cTkResource *, cTkResourceDescriptor const *>, TkSTLAllocatorShim<std::pair<cTkResource *, cTkResourceDescriptor const *>>> mGeometryWaitingForStream;
+	cTkVector<std::pair<cTkResource *, cTkResourceDescriptor const *>> mGeometryWaitingForStream;
 	int miDebugResourceType;
 	bool mbForceReload;
 	bool mbIgnoreTimestamp;

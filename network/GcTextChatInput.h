@@ -4,5 +4,5 @@
 class cGcTextChatInput
 {
 public:
-	typedef void(__fastcall *ParseTextForCommands)(cGcTextChatInput *_this, const cTkFixedString<1023, char> lMessageText);
+	typedef void (*ParseTextForCommands)(cGcTextChatInput *self, const cTkFixedString<1023, char> lMessageText);
 };

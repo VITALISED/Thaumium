@@ -2,32 +2,8 @@
 
 cTkSmartResHandle *cTkResourceManager::AddResource(cTkSmartResHandle *result, int liType, const char *lsName, unsigned int lxFlags, bool lbUserCall, cTkResourceDescriptor *lpResourceDescriptor)
 {
-	// this->mMutex.lock();
-
-	// if (!strlen(lsName))
-	//	spdlog::error("lsName is null");
-
-	// cTkResource* ResourceA = this->FindResourceA(liType, (char*)lsName, lpResourceDescriptor, true, false);
-
-	// if (ResourceA)
-	//{
-	//	if ((lxFlags & 0x1000000) == 0)
-	//	{
-
-	//	}
-
-	//	//if (lpResourceDescriptor->mSeed.mbValid == ResourceA->mDescriptor.mSeed.mbValid)
-	//	//{
-	//	//	// 100% an inline call of something like IsValid()
-	//	//	if (lpResourceDescriptor->mSecondarySeed.mbValid == ResourceA->mDescriptor.mSecondarySeed.mbValid
-	//	//		&& (!lpResourceDescriptor->mSeed.mbValid || !ResourceA->mDescriptor.mSeed.mbValid ||
-	//	//			lpResourceDescriptor->mSeed.mbValid)
-	//	//}
-	//}
-	MAKE_FUNCTION_TYPE(__redirType, cTkSmartResHandle *, cTkResourceManager *, cTkSmartResHandle *, int, const char *, unsigned int, bool, cTkResourceDescriptor *);
-	DECLARE_METHOD_REDIR(SIGSCAN(44 89 44 24 18 48 89 54 24 10 55 53 57 41 54 41),
-						 __redirType, cTkSmartResHandle * cTkResourceManager::AddResource,
-						 this, result, liType, lsName, lxFlags, lbUserCall, lpResourceDescriptor);
+	cTkResourceManager::_AddResource fpAddResource = (cTkResourceManager::_AddResource)SIGSCAN("44 89 44 24 18 48 89 54 24 10 55 53 57 41 54 41");
+	return fpAddResource(result, liType, lsName, lxFlags, lbUserCall, lpResourceDescriptor);
 }
 
 cTkResource *cTkResourceManager::FindResourceA(int liType, char *lsName, const cTkResourceDescriptor *lpResourceDescriptor, bool lbIgnoreDefaultFeedback, bool lbIgnoreKilled)
@@ -150,16 +126,12 @@ cTkResource *cTkResourceManager::FindResourceA(int liType, char *lsName, const c
 
 cTkResource *cTkResourceManager::GetDefaultResource(unsigned int liType, unsigned int liFlags)
 {
-	MAKE_FUNCTION_TYPE(__redirType, cTkResource *, cTkResourceManager *, unsigned int, unsigned int);
-	DECLARE_METHOD_REDIR(SIGSCAN(48 89 5C 24 20 44 89 44 24 18 89 54 24 10 55),
-						 __redirType, cTkResource * cTkResourceManager::GetDefaultResource,
-						 this, liType, liFlags);
+	cTkResourceManager::_GetDefaultResource fpGetDefaultResource = (cTkResourceManager::_GetDefaultResource)SIGSCAN("48 89 5C 24 20 44 89 44 24 18 89 54 24 10 55");
+	return fpGetDefaultResource(liType, liFlags);
 }
 
 bool cTkResourceManager::IsResourceDeadInternal(cTkResource *lpResource)
 {
-	MAKE_FUNCTION_TYPE(__redirType, bool, cTkResourceManager *, cTkResource *);
-	DECLARE_METHOD_REDIR(SIGSCAN(4C 8B DC 49 89 53 10 55 49),
-						 __redirType, bool cTkResourceManager::IsResourceDeadInternal,
-						 this, lpResource);
+	cTkResourceManager::_IsResourceDeadInternal fpIsResourceDeadInternal = (cTkResourceManager::_IsResourceDeadInternal)SIGSCAN("4C 8B DC 49 89 53 10 55 49");
+	return fpIsResourceDeadInternal(lpResource);
 }

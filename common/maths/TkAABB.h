@@ -4,6 +4,5 @@
 
 class cTkAABB
 {
-	cTkVector3 mMin;
-	cTkVector3 mMax;
+	cTkVector3 mMin, mMax;
 };

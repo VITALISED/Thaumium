@@ -27,7 +27,7 @@ add_library(
     "common/graphics/TkColour.h"
     "common/maths/TkAABB.h"
     "common/maths/TkBBox2d.h"
-    "common/maths/TkMatrix.h"
+    "common/maths/TkMatrix34.h"
     "common/maths/TkPhysRelVec3.h"
     "common/maths/TkVector2.h"
     "common/maths/TkVector3.h"

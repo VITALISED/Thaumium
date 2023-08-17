@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../pch.h"
 #include "TkArray.h"
 
 template <unsigned int size, typename T>
-class ALIGN(4) cTkFixedString
+class cTkFixedString
 {
 public:
 	cTkFixedString(){};
