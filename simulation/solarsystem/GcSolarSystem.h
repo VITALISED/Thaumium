@@ -1,15 +1,15 @@
 #pragma once
 
-#include "../common/maths/TkAABB.h"
-#include "../common/maths/TkMatrix.h"
-#include "../common/resources/TkHandle.h"
-#include "../common/resources/TkSmartResHandle.h"
-#include "../common/system/TkIterationState.h"
-#include "../common/utilities/TkString.h"
-#include "../graphics/TkColour.h"
-#include "DiscoveryAutoSync.h"
+#include "../../common/attachments/TkHandle.h"
+#include "../../common/maths/TkAABB.h"
+#include "../../common/maths/TkMatrix34.h"
+#include "../../common/resources/TkSmartResHandle.h"
+#include "../../common/system/TkIterationState.h"
+#include "../../common/utilities/TkString.h"
+#include "../../graphics/TkColour.h"
+#include "../DiscoveryAutoSync.h"
+#include "../player/GcPlayerSpawnState.h"
 #include "GcGalacticSolarSystemAddress.h"
-#include "GcPlayerSpawnState.h"
 
 const class cGcSolarSystem
 {
