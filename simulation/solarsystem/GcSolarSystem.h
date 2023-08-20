@@ -7,11 +7,14 @@
 #include "../../common/resources/TkSmartResHandle.h"
 #include "../../common/system/TkIterationState.h"
 #include "../../common/utilities/TkString.h"
+#include "../../common/utilities/containers/TkClassPool.h"
 #include "../DiscoveryAutoSync.h"
 #include "../particles/HeavyAirType.h"
 #include "../player/GcPlayerSpawnState.h"
 #include "GalaxyStarAnomaly.h"
 #include "GcGalacticSolarSystemAddress.h"
+#include <Heridium/metadata/source/metadata/simulation/solarsystem/gcsolarsystemdata.h>
+#include <Heridium/metadata/source/metadata/simulation/solarsystem/gcsolarsystemdata.h>
 
 const class cGcSolarSystem
 {

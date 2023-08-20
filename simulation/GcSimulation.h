@@ -1,7 +1,7 @@
 #pragma once
 
+#include "../common/attachments/TkHandle.h"
 #include "../common/maths/TkPhysRelVec3.h"
-#include "../common/resources/TkHandle.h"
 #include "../common/simulation/TkRigidBodyPtr.h"
 #include "../common/system/TkIterationState.h"
 #include "../common/system/thread/TkLockFreeQueue.h"

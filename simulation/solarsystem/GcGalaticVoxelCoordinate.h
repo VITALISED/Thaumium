@@ -7,5 +7,3 @@ class cGcGalacticVoxelCoordinate
 	__int16 mY;
 	bool mbValid;
 };
-
-constexpr int alignment = alignof(cGcGalacticVoxelCoordinate);

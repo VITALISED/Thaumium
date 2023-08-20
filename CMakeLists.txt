@@ -67,6 +67,7 @@ add_library(
     "common/xml/XMLNode.h"
     "core/core.cpp"
     "core/core.h"
+    "core/globals/lookup.cpp"
     "dllmain.cpp"
     "dllmain.h"
     "engine/EgMain.cpp"

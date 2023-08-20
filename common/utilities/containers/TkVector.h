@@ -23,4 +23,4 @@ public:
     using const_reference = const _Ty &;
     using size_type = typename _Alty_traits::size_type;
     using difference_type = typename _Alty_traits::difference_type;
-}
+};

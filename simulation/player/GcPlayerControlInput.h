@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../common/metadata/TkClassPointer.h"
-#include "../common/utilities/TkArray.h"
+#include "../../common/metadata/TkClassPointer.h"
+#include "../../common/utilities/TkArray.h"
 
 class cGcPlayerControlInput
 {

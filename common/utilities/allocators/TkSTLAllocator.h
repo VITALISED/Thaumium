@@ -2,10 +2,8 @@
 
 #include <memory>
 
-std::_Container_Base =
-
-    template <typename T>
-    struct TkSTLAllocatorShim : std::allocator<T>
+template <typename T>
+struct TkSTLAllocatorShim : std::allocator<T>
 {
     // TODO: force container to use _Container_base0
 
