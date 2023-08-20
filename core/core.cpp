@@ -4,4 +4,5 @@ void Core::Initialise()
 {
     Globals::SetEngineDefaults();
     Globals::SetApplicationDefaults();
+    Globals::SetMetadataLookupDefaults();
 }
