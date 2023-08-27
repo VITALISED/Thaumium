@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../common/utilities/TkArray.h"
-#include "../common/utilities/allocators/TkSTLAllocator.h"
+#include "../../common/utilities/TkArray.h"
+#include "../../common/utilities/allocators/TkSTLAllocator.h"
 #include "../network/GcURL.h"
-#include "../simulation/GcPlayer.h"
 #include <Havok/hknpShapeKeyMask.h>
 #include <iostream>
 #include <vector>

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../utilities/TkLinearMemoryPool.h"
 #include "../utilities/TkString.h"
+#include "../utilities/pools/TkLinearMemoryPool.h"
 #include "../xml/XMLNode.h"
 #include "TkClassPointer.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../pch.h"
+#include "../../pch.h"
 #include "GcNetworkMessageManager.h"
 
 class ALIGN(16) cGcNetworkManager

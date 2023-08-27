@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../atlas/Http.h"
-#include "../common/maths/TkVector3.h"
+#include "../../common/maths/TkVector3.h"
+#include "Http.h"
 #include <functional>
 
 class cGcAtlasTransportWinHttp

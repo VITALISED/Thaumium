@@ -1,5 +1,5 @@
 #pragma once
-#include "../atlas/DownloadType.h"
+#include "DownloadType.h"
 
 class cGcAtlasDownloadType
 {

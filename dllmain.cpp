@@ -5,6 +5,8 @@
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
     Core::Initialise();
+
+    return TRUE;
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule,

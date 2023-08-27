@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../pch.h"
-#include "TkArray.h"
+#include "../../pch.h"
+#include "../TkArray.h"
 
 class ALIGN(8) cTkMemoryPool
 {

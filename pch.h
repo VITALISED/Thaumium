@@ -13,8 +13,8 @@
 #include <fmt/format.h>
 #include <spdlog/spdlog.h>
 
-#include "core/hooks.h"
-#include "core/memory.h"
+#include "source/core/hooks.h"
+#include "source/core/memory.h"
 
 #include "common/utilities/spookyhash/SpookyV2.h"
 #include <iostream>

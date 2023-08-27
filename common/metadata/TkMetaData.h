@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../utilities/TkLinearMemoryPool.h"
+#include "../utilities/pools/TkLinearMemoryPool.h"
 #include "TkClassPointer.h"
 #include "TkMetaDataClass.h"
 

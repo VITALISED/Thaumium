@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../core/globals/hash.h"
+#include "../../source/core/globals/hash.h"
 #include "../utilities/TkLinearHashTable.h"
 #include "../utilities/TkStrongType.h"
 #include "../utilities/allocators/TkSTLAllocator.h"

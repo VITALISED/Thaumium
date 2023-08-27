@@ -1,8 +1,11 @@
 #pragma once
 
-#include "../../application/GcApplication.h"
-#include "../../common/utilities/containers/TkFlatMap.h"
+#include "../../../common/metadata/TkMetaData.h"
+#include "../../../common/metadata/TkMetaDataXML.h"
+#include "../../../common/utilities/containers/TkFlatMap.h"
 #include "../../engine/EgModules.h"
+
+class cGcApplication;
 
 namespace Globals
 {

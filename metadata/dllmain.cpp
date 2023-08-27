@@ -1,9 +1,10 @@
 #include "pch.h"
+#include <fstream>
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
     spdlog::info("Starting");
-    ADDHOOK(OFFSET(0x2511EC0), RegisterHook, reinterpret_cast<LPVOID *>(&fpRegister), cTkMetaData::Register);
+    // ADDHOOK(OFFSET(0x2511EC0), RegisterHook, reinterpret_cast<LPVOID *>(&fpRegister), cTkMetaData::Register);
 
     std::ofstream PrimaryHeader("./HERIDIUM/metadata/metadata.h");
 

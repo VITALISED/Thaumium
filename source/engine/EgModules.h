@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../common/resources/TkResourceManager.h"
+#include "../../common/resources/TkResourceManager.h"
 
 class cEgModules
 {

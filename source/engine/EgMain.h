@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../common/resources/TkResourceDescriptor.h"
-#include "../common/resources/TkSmartResHandle.h"
-#include "../pch.h"
+#include "../../common/resources/TkResourceDescriptor.h"
+#include "../../common/resources/TkSmartResHandle.h"
+#include "../../pch.h"
 #include "EgModules.h"
 
 namespace Engine
