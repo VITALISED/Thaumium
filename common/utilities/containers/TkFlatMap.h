@@ -4,10 +4,10 @@
 #include <utility>
 
 // TODO: add sorting type
-template <unsigned __int64 lui64Hash, typename T>
-class cTkFlatMap<unsigned __int64, cTkMetaDataFunctionLookup, cTkKeyPairCompareLess<unsigned __int64, cTkMetaDataFunctionLookup>, -1>
+template <typename Key, typename T>
+class cTkFlatMap
 {
 public:
-    cTkVector<std::pair<lui64Hash, T>> mVector;
+    cTkVector<std::pair<Key, T>> mVector;
     bool mbDirty;
 };

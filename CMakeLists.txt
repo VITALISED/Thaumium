@@ -13,16 +13,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(USEFRACTAL "Compile for Fractal 4.13 Debug" OFF)
 
+file(GLOB_RECURSE METADATA_SOURCE ${CMAKE_SOURCE_DIR}/metadata/source/*)
+file(GLOB_RECURSE METADATA_TOOLKIT ${CMAKE_SOURCE_DIR}/metadata/toolkit/*)
+
 # Thaumium
 add_library(
     ThaumiumDLL SHARED
-    "application/GcApplication.cpp"
-    "application/GcApplication.h"
-    "atlas/DownloadType.h"
-    "atlas/GcAtlasDownloadType.h"
-    "atlas/GcAtlasTransportWinHttp.h"
-    "atlas/Http.h"
-    "atlas/WinHttpTask.h"
     "common/attachments/TkHandle.h"
     "common/graphics/TkColour.h"
     "common/maths/TkAABB.h"
@@ -52,59 +48,50 @@ add_library(
     "common/utilities/filesystem/FileOpenMode.h"
     "common/utilities/filesystem/FIOS2HANDLE.h"
     "common/utilities/filesystem/TkFileSystem.h"
+    "common/utilities/pools/TkLinearMemoryPool.h"
+    "common/utilities/pools/TkMemoryPool.h"
     "common/utilities/spookyhash/SpookyV2.cpp"
     "common/utilities/spookyhash/SpookyV2.h"
     "common/utilities/TkAlignedBlock.h"
     "common/utilities/TkArray.h"
     "common/utilities/TkLinearHashTable.h"
-    "common/utilities/TkLinearMemoryPool.h"
     "common/utilities/TkMemoryManager.h"
-    "common/utilities/TkMemoryPool.h"
     "common/utilities/TkString.h"
     "common/utilities/TkStrongType.h"
     "common/xml/XMLAttribute.h"
     "common/xml/XMLClear.h"
     "common/xml/XMLNode.h"
-    "core/core.cpp"
-    "core/core.h"
-    "core/globals/lookup.cpp"
     "dllmain.cpp"
     "dllmain.h"
-    "engine/EgMain.cpp"
-    "engine/EgMain.h"
-    "engine/EgModules.h"
-    "engine/TkEngineUtils.h"
     "framework.h"
-    "graphics/AltMode.h"
-    "graphics/Animate.h"
-    "graphics/Curve.h"
-    "graphics/Gradient.h"
-    "graphics/Horizontal.h"
-    "graphics/Shape.h"
-    "graphics/TkCurveType.h"
-    "graphics/Vertical.h"
-    "network/GcNetworkManager.h"
-    "network/GcNetworkMessageManager.h"
-    "network/GcTextChatInput.h"
-    "network/GcTextChatManager.h"
-    "simulation/CentreJourneyDestination.h"
-    "simulation/DiscoveryAutoSync.h"
-    "simulation/GcSceneManager.h"
-    "simulation/GcSimulation.h"
-    "simulation/particles/GcParticleManager.h"
-    "simulation/particles/HeavyAirType.h"
-    "simulation/player/GcAvailableWeapons.h"
-    "simulation/player/GcPlayer.h"
-    "simulation/player/GcPlayerControlInput.cpp"
-    "simulation/player/GcPlayerControlInput.h"
-    "simulation/player/GcPlayerRespawn.h"
-    "simulation/player/GcPlayerSpawnState.h"
-    "simulation/solarsystem/asteroid/GcAstroidGeneratorRing.h"
-    "simulation/solarsystem/GcGalacticSolarSystemAddress.h"
-    "simulation/solarsystem/GcGalaticVoxelCoordinate.h"
-    "simulation/solarsystem/GcSolarSystem.h"
-    "simulation/solarsystem/GcSolarSystemAstroidFields.h"
-    "simulation/solarsystem/GcSolarSystemDirector.h"
+    "source/application/GcApplication.cpp"
+    "source/application/GcApplication.h"
+    "source/atlas/DownloadType.h"
+    "source/atlas/GcAtlasDownloadType.h"
+    "source/atlas/GcAtlasTransportWinHttp.h"
+    "source/atlas/Http.h"
+    "source/atlas/WinHttpTask.h"
+    "source/core/core.cpp"
+    "source/core/core.h"
+    "source/core/globals/lookup.cpp"
+    "source/engine/EgMain.cpp"
+    "source/engine/EgMain.h"
+    "source/engine/EgModules.h"
+    "source/engine/TkEngineUtils.h"
+    "source/graphics/AltMode.h"
+    "source/graphics/Animate.h"
+    "source/graphics/Curve.h"
+    "source/graphics/Gradient.h"
+    "source/graphics/Horizontal.h"
+    "source/graphics/Shape.h"
+    "source/graphics/TkCurveType.h"
+    "source/graphics/Vertical.h"
+    "source/network/GcNetworkManager.h"
+    "source/network/GcNetworkMessageManager.h"
+    "source/network/GcTextChatInput.h"
+    "source/network/GcTextChatManager.h"
+    ${METADATA_SOURCE}
+    ${METADATA_TOOLKIT}
 )
 
 target_precompile_headers(ThaumiumDLL PRIVATE pch.h)
@@ -119,7 +106,6 @@ endif(USEFRACTAL)
 
 target_link_libraries(
     ThaumiumDLL PRIVATE ${CMAKE_SOURCE_DIR}/thirdparty/lib/MinHook.x64.lib
-                        ${CMAKE_SOURCE_DIR}/thirdparty/lib/Heridium.lib
 )
 
 target_include_directories(
@@ -130,3 +116,4 @@ set_target_properties(ThaumiumDLL PROPERTIES OUTPUT_NAME Thaumium)
 
 # Targets
 add_subdirectory(proxy)
+add_subdirectory(metadata)
