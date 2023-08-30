@@ -1,0 +1,3 @@
+[submodule "thirdparty/include/libSceFios2"]
+	path = thirdparty/include/libSceFios2
+	url = https://github.com/VITALISED/libSceFios2.git
