@@ -117,7 +117,7 @@ cTkResource *cTkResourceManager::FindResourceA(int liType, char *lsName, const c
 
 	if (!DefaultResource)
 	{
-		spdlog::error("Need to replace resource with default, but there is no default");
+		// spdlog::error("Need to replace resource with default, but there is no default");
 	}
 
 	this->mMutex.unlock();

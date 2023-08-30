@@ -1,6 +1,6 @@
 #include "globals.h"
 
-cTkResourceManager *cEgModules::mgpResourceManager;
+// cTkResourceManager *cEgModules::mgpResourceManager;
 
 void Globals::SetEngineDefaults()
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "../../pch.h"
 
 #define _BASE (uintptr_t)GetModuleHandleA("NMS.exe")
 #define OFFSET(offset) (LPVOID)(_BASE + (uintptr_t)offset)

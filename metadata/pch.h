@@ -11,8 +11,10 @@
 
 #include <MinHook.h>
 #include <fmt/format.h>
+#include <fstream>
 #include <spdlog/spdlog.h>
 
+#include "dump.h"
 #include "hooks.h"
 #include "memory.h"
 #include "paths.h"

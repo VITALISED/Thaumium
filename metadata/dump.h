@@ -12,3 +12,14 @@
 
 #define HM_NEWBLOCK(chars) chars + HM_NEWLINE + HM_BLOCK_OPEN
 #define HM_ENBLOCK(chars) chars + HM_BLOCK_CLOSE
+
+class Dump
+{
+    std::fstream *currentHeaderFile;
+    std::string *fileBuffer;
+    const char *metadataName;
+
+    void CreateHeaderFile();
+    void AddMemberDefinitions();
+    void AddFunctionPointerCalls();
+};

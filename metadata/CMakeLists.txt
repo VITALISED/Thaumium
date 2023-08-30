@@ -1,6 +1,7 @@
 # Metadata
 add_library(
-    Heridium
+    Heridium SHARED
+    # ${TOOLKIT_SOURCES}
     "dllmain.cpp"
     "dump.cpp"
     "dump.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "../../pch.h"
 
 #define ADDHOOK(pTarget, pDetour, ppOriginal, name) Hooks::AddHook(pTarget, pDetour, ppOriginal, #name)
 

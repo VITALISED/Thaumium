@@ -26,12 +26,12 @@ public:
 	int miSize;
 	int miTableSize;
 
-	size_t INLINE size()
+	size_t inline size()
 	{
 		return miSize - 1;
 	}
 
-	size_t INLINE tablesize()
+	size_t inline tablesize()
 	{
 		return miTableSize - 1;
 	}

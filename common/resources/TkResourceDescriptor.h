@@ -8,7 +8,7 @@
 class cTkResourceDescriptor
 {
 	// TODO: This is probably a sum of multiple inline funcs
-	bool INLINE IsValid(cTkResourceDescriptor *descriptor, cTkResourceDescriptor *existing)
+	bool inline IsValid(cTkResourceDescriptor *descriptor, cTkResourceDescriptor *existing)
 	{
 		if (descriptor->mSeed.mbValid == existing->mSeed.mbValid)
 		{

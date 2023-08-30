@@ -1,5 +1,4 @@
 #include "pch.h"
-#include <fstream>
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
